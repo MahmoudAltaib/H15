@@ -35,9 +35,6 @@
 		<Unit filename="../../session2/forloop/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="session4/task2.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
