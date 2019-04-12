@@ -15,12 +15,7 @@ int main()
     z = x+y;
 
     printf("z = %03d",z);*/
-   /* switch(grade)
-    {
-        case 50: printf("5");
-        case 6: printf("6"); break;
-        default: 0;
-    }*/
+
     /*if(printf("Ahmed"))
     {
 
