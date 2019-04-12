@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1555063981 source:d:\my-embedded-tasks\h15\task-1\task-1-if\main.c
+	<stdio.h>
+	<stdlib.h>
+
