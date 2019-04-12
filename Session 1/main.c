@@ -42,7 +42,7 @@ int main()
 
     }*/
     //------------------------------------------------------------------------------------------------------
-    uint32_t i8Cnt = 0 ;
+    /*uint32_t i8Cnt = 0 ;
     uint32_t input = 0 ;
     uint32_t result = 1;
 
@@ -54,6 +54,36 @@ int main()
         result *= i8Cnt;
 
     }
-    printf("Result = %u",result);
+    printf("Result = %u",result);*/
+    //-----------------------------------------------------------------------------------------------------
+    /*int8_t input = 0;
+
+    printf("Please Enter the number below: \n");
+    scanf("%d", &input);
+
+    if(input % 2 == 0)
+    {
+        printf("Even");
+    }
+    else
+    {
+      printf("Odd");
+    }*/
+    //---------------------------------------------------------------------------------------------------
+    uint32_t num1 = 0;
+    uint32_t num2 = 0;
+    uint32_t tmp = 0;
+
+    printf("Please Enter the two numbers below: \n");
+    scanf("%d", &num1);
+    scanf("%d", &num2);
+
+    printf("The Entered numbers in order are: %d and %d\n",num1,num2);
+
+    tmp = num1;
+    num1 = num2;
+    num2 = tmp;
+
+    printf("The swapped numbers in order are: %d and %d\n",num1,num2);
     return 0;
 }
