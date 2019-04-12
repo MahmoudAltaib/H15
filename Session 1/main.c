@@ -30,7 +30,7 @@ int main()
 
     }*/
     //----------------------------------------------------------------------------------------------------
-    float x = 5.001;
+    /*float x = 5.001;
     if(x == 5.001f)
     {
 
@@ -40,7 +40,20 @@ int main()
     {
         printf("Wrong");
 
-    }
+    }*/
+    //------------------------------------------------------------------------------------------------------
+    uint32_t i8Cnt = 0 ;
+    uint32_t input = 0 ;
+    uint32_t result = 1;
 
+    printf("Please Enter the number below: \n");
+    scanf("%d", &input);
+
+    for(i8Cnt = input; i8Cnt > 0; i8Cnt--)
+    {
+        result *= i8Cnt;
+
+    }
+    printf("Result = %u",result);
     return 0;
 }
