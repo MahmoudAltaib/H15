@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555073187 source:c:\users\a.elkady\documents\github\h15\session2_work\work2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+
