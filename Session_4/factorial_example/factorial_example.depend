@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555073775 source:d:\skills\my work\factorial_example\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+

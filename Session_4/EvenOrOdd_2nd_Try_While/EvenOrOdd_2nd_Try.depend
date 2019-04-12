@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555104273 source:d:\skills\my work\evenorodd_2nd_try\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+
