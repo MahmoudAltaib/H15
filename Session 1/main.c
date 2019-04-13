@@ -70,7 +70,7 @@ int main()
       printf("Odd");
     }*/
     //---------------------------------------------------------------------------------------------------
-    uint32_t num1 = 0;
+    /*uint32_t num1 = 0;
     uint32_t num2 = 0;
     uint32_t tmp = 0;
 
@@ -84,6 +84,17 @@ int main()
     num1 = num2;
     num2 = tmp;
 
-    printf("The swapped numbers in order are: %d and %d\n",num1,num2);
+    printf("The swapped numbers in order are: %d and %d\n",num1,num2);*/
+    //-----------------------------------------------------------------------------------------------------
+    uint8_t u8Bit = 0x4;
+
+    for(uint8_t i = 0; i < 4; i++)
+    {
+
+        u8Bit = ~u8Bit;
+        u8Bit &= (1<<2);
+        printf("%d\n",u8Bit);
+    }
+
     return 0;
 }
