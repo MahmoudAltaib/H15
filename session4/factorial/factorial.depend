@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555074535 source:c:\users\ahmed elkholi\desktop\git hub new\h15\session4\factorial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+

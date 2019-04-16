@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555137127 source:c:\users\ahmed elkholi\desktop\git hub new\h15\session4\odd even task\odd even task\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+

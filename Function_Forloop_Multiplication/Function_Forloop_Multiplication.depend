@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555289915 source:c:\users\ahmed elkholi\desktop\git hub new\h15\function_forloop_multiplication\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+
