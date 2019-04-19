@@ -4,19 +4,21 @@
 
 int main()
 {
-    int32_t u32Var = 0;
-    int32_t *pu32Var = 0;
+    int32_t i32Var = 0;
+    int32_t *pi32Var = 0;
 
-    pu32Var = &u32Var;
+    pi32Var = &i32Var;
 
-    *pu32Var = 15 ;
+    *pi32Var = 15 ;
 
-   printf("%d\n",*pu32Var);
+   printf("%d\n",*pi32Var);
 
-   (*pu32Var)++;
+   (*pi32Var)++;
 
-   printf("%d\n",*pu32Var);
+   printf("%d\n",*pi32Var);
 
 
 return 0;
 }
+
+
