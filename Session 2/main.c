@@ -5,6 +5,7 @@ int fact(int var);
 
 int main()
 {
+    // FACTORIAL USING RECURSION
     unsigned int x = 0;
     printf("please enter the number below\n");
     scanf("%d", &x);
