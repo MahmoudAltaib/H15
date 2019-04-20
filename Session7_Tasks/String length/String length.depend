@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1555786099 source:c:\users\a.elkady\documents\github\h15\session7_tasks\string length\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+
+1555777106 c:\users\a.elkady\documents\github\h15\session7_tasks\string length\functions.h
+
