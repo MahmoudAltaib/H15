@@ -1,0 +1,4 @@
+int32_t i32Add(int32_t a, int32_t b)
+{
+    reutrn a+b;
+}
