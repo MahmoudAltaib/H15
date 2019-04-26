@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555628631 source:d:\skills\my work\multipication_using_function_bitwise\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+

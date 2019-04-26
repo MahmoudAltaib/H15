@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555626350 source:d:\skills\my work\multipication\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+

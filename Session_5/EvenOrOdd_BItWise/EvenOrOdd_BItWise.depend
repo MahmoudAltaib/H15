@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555286969 source:d:\skills\my work\evenorodd_bitwise\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+
