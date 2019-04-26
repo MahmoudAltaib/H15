@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1556189617 source:c:\users\a.elkady\documents\github\h15\session7_tasks\mt2\func.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	"func.h"
+
+1556189617 c:\users\a.elkady\documents\github\h15\session7_tasks\mt2\func.h
+
+1556189627 source:c:\users\a.elkady\documents\github\h15\session7_tasks\mt2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	"func.h"
+

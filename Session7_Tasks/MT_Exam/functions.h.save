@@ -1,0 +1,4 @@
+#define Num_of_elements 10
+
+
+extern uint32_t u32Max_occurence(uint32_t u32Arr[10]);

@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1556169198 source:c:\users\a.elkady\documents\github\h15\session7_tasks\matrix_multiply\main.c
+1556265138 source:c:\users\a.elkady\documents\github\h15\session7_tasks\matrix_multiply\main.c
 	<stdio.h>
 	<stdlib.h>
 	<inttypes.h>
 	"functions.h"
 
-1556169127 source:c:\users\a.elkady\documents\github\h15\session7_tasks\matrix_multiply\functions.c
+1556265516 source:c:\users\a.elkady\documents\github\h15\session7_tasks\matrix_multiply\functions.c
 	<stdio.h>
 	<inttypes.h>
 	"functions.h"
 
-1556163421 c:\users\a.elkady\documents\github\h15\session7_tasks\matrix_multiply\functions.h
+1556177682 c:\users\a.elkady\documents\github\h15\session7_tasks\matrix_multiply\functions.h
 

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1556186651 source:c:\users\a.elkady\documents\github\h15\session7_tasks\mt_exam\functions.c
+	<inttypes.h>
+	<stdio.h>
+	"functions.h"
+
+1556186164 source:c:\users\a.elkady\documents\github\h15\session7_tasks\mt_exam\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	"functions.h"
+
+1556186017 c:\users\a.elkady\documents\github\h15\session7_tasks\mt_exam\functions.h
+

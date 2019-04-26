@@ -75,7 +75,9 @@ void c8Conc(char c8Str1[100],char c8Str2[100],char (*c8Conc_string)[100] )
         (*c8Conc_string)[u32Conc_element] = c8Str1[u32Conc_repeat];
         u32Conc_element ++;
     }
+
 printf("%d",u32Conc_element);
+
     for (u32Conc_repeat = 0;u32Conc_repeat<u32Size_str2;u32Conc_repeat++)
     {
         (*c8Conc_string)[u32Conc_element] = c8Str2[u32Conc_repeat];
