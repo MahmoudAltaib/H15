@@ -2,17 +2,19 @@
 #include <stdlib.h>
 
 
-   typedef struct
+   typedef union
    {
-       char string[10];
-       int i;
-   char x;
-   char*p;
 
-   }student;
+       int i;
+
+   char string[8];
+
+   }y;
+y w;
    int main()
 {
-    student q;
-    printf("%d",sizeof q);
+w.i=10;
+w.string[0]=5;
+printf("%d",w.i);
     return 0;
 }
