@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555749494 source:d:\skills\my work\recrusive_function\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inttypes.h"
+

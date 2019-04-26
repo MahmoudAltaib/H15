@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1556241941 source:d:\skills\my work\stringlength\main.c
+	<stdio.h>
+	<stdlib.h>
+
