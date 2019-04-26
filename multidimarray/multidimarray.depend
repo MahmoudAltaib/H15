@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1556276147 source:c:\users\ahmed elkholi\desktop\git hub new\h15\multidimarray\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1555675291 source:c:\users\ahmed elkholi\desktop\git hub new\h15\function_call_bypointer\main.c
+	<stdio.h>
+	<stdlib.h>
+

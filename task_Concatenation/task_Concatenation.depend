@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1556276627 source:c:\users\ahmed elkholi\desktop\git hub new\h15\task_concatenation\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
