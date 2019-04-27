@@ -22,15 +22,18 @@ int main()
 	Node *pe2    = 0;
 
 	peHead = (Node *) malloc(sizeof(Node));
-	pe1    = (Node *) malloc(sizeof(Node));
-	pe2    = (Node *) malloc(sizeof(Node));
-
 	peHead->u32Num = 75 ;
 	peHead->psNode   = pe1 ;
 
+	pe1    = (Node *) malloc(sizeof(Node));
 	pe1->u32Num = 65 ;
 	pe1->psNode = pe2 ;
 
+	pe2    = (Node *) malloc(sizeof(Node));
 	pe2->u32Num =  85 ;
 	pe2->psNode = 0 ;
+	
+	
+
+
 }

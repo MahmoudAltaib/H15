@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1556366819 source:c:\users\a.elkady\documents\github\h15\session9\work1\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"linkedlist.h"
+
+1556363255 c:\users\a.elkady\documents\github\h15\session9\work1\linkedlist.h
+	<inttypes.h>
+
+1556366598 source:c:\users\a.elkady\documents\github\h15\session9\work1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"linkedlist.h"
+
