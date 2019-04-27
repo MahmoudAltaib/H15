@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1556382416 source:c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"string.h"
+	"Searching.h"
+	"Stack_m.h"
+
+1556379178 source:c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\linkedlist.c
+	"LinkedList.h"
+	<stdlib.h>
+	<stdio.h>
+	<strings.h>
+	<string.h>
+
+1556377272 c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\linkedlist.h
+	<inttypes.h>
+
+1556382215 c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\searching.h
+
+1556382229 source:c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\searching.c
+	"Searching.h"
+	<inttypes.h>
+
+1556381342 source:c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\queue_m.c
+	"Queue_m.h"
+
+1556380617 source:c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\stack_m.c
+	"Stack_m.h"
+
+1556381344 c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\stack_m.h
+	"LinkedList.h"
+
+1556381348 c:\users\hp\desktop\engineering\engineering softwares\code blocks projects\linkedlist_session9\queue_m.h
+	"LinkedList.h"
+
