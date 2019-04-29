@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1556515359 source:c:\users\a.elkady\documents\github\h15\session9\queue\linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"Linked_list.h"
+	<windows.h>
+
+1556515361 c:\users\a.elkady\documents\github\h15\session9\queue\linked_list.h
+	<inttypes.h>
+
+1556515600 source:c:\users\a.elkady\documents\github\h15\session9\queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"Linked_list.h"
+	<windows.h>
+	"queue.h"
+
+1556515480 c:\users\a.elkady\documents\github\h15\session9\queue\queue.h
+
+1556515500 source:c:\users\a.elkady\documents\github\h15\session9\queue\queue.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"Linked_list.h"
+	<windows.h>
+	"queue.h"
+

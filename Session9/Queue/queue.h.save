@@ -1,0 +1,11 @@
+#ifndef queue
+#define queue
+
+extern uint8_t Create_queue(Node *pElement);
+extern uint8_t Push(Node *pElement);
+extern uint8_t Pop();
+extern void Get_queue_size(uint8_t *pu8Get_size);
+extern void Print_queue(void);
+
+#endif // queue
+

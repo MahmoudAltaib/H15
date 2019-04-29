@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1556514851 source:c:\users\a.elkady\documents\github\h15\session9\stack\linked_list.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"Linked_list.h"
+	<windows.h>
+
+1556445492 c:\users\a.elkady\documents\github\h15\session9\stack\linked_list.h
+	<inttypes.h>
+
+1556514949 source:c:\users\a.elkady\documents\github\h15\session9\stack\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"Linked_list.h"
+	<windows.h>
+	"stack.h"
+
+1556513997 c:\users\a.elkady\documents\github\h15\session9\stack\stack.h
+
+1556513997 source:c:\users\a.elkady\documents\github\h15\session9\stack\stack.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"Linked_list.h"
+	<windows.h>
+	"stack.h"
+

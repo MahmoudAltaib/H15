@@ -60,3 +60,12 @@ org.osgi.framework.BundleException: The bundle "org.eclipse.m2e.logback.configur
 	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-29 07:36:27.006
+!MESSAGE Indexed 'Eclipse1' (513 sources, 245 headers) in 18.58 sec: 24,950 declarations; 106,225 references; 31 unresolved inclusions; 90 syntax errors; 2,123 unresolved names (1.59%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-29 07:36:46.060
+!MESSAGE Indexed 'Ec1' (0 sources, 20 headers) in 0.08 sec: 135 declarations; 362 references; 4 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2019-04-29 07:40:35.180
+!MESSAGE Indexed 'Ec1' (0 sources, 20 headers) in 0.06 sec: 135 declarations; 362 references; 4 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)

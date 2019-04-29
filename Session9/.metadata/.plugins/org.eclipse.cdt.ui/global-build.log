@@ -1,0 +1,10 @@
+
+**** Rebuild of configuration Debug for project Ec1 ****
+
+**** Internal Builder is used for build               ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o ..\main.c
+gcc -static -o Ec1.exe main.o
+c:/mingw/bin/../lib/gcc/x86_64-w64-mingw32/8.3.0/../../../../x86_64-w64-mingw32/lib/../lib\libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+Build error occurred, build is stopped
+Time consumed: 1508  ms.  
