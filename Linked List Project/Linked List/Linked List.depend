@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1556649897 source:e:\linked list project\linked list\linkedlist.c
+	"LinkedList.h"
+	"string.h"
+	"stdlib.h"
+	<stdio.h>
+
+1556649785 e:\linked list project\linked list\linkedlist.h
+	"inttypes.h"
+
+1556649987 source:e:\linked list project\linked list\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"string.h"
+	"Searching.h"
+
+1556372446 e:\linked list project\linked list\searching.h
+	"inttypes.h"
+
+1556372576 source:e:\linked list project\linked list\searching.c
+	"Searching.h"
+	"string.h"
+	"stdlib.h"
+	<stdio.h>
+
