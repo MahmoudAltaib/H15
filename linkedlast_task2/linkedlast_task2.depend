@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1556678259 source:c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"mm.h"
+	"string.h"
+
+1556678241 c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\mm.h
+	"inttypes.h"
+
