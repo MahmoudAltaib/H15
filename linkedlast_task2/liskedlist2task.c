@@ -127,7 +127,31 @@ extern void printList(void)
         cnt++;
     }
 
-}
+   extern uint8_t deletehead(Node *pElement);
+   {
+      int* pElement=0;
+    Node *pTemp = 0;
+    if(pElement == 0)
+    {
+        return 0;
+    }
 
+    if(pHead == 0)
+    {
+         {
+        printf("List is already empty.");
+    }
+
+}    else
+    {
+       pTemp = (Node*) malloc(0);
+       if(pTemp == 0)
+       {
+           return 0;
+       }
+    }
+   }
+
+}
 
 

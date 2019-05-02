@@ -14,6 +14,7 @@ typedef struct stNode
 extern uint8_t createList(Node *n);
 extern uint8_t addHead(Node *pElement);
 extern uint8_t addTail(Node *pElement);
+extern uint8_t deletehead(Node *pElement);
 extern void printList(void);
 
 

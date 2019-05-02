@@ -1,10 +1,16 @@
 # depslib dependency file v1.0
-1556678259 source:c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\main.c
+1556758442 source:c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"mm.h"
 	"string.h"
 
-1556678241 c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\mm.h
+1556755473 c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\mm.h
 	"inttypes.h"
+
+1556758288 source:c:\users\ahmed elkholi\desktop\git hub new\h15\linkedlast_task2\liskedlist2task.c
+	"mm.h"
+	"string.h"
+	"stdlib.h"
+	<stdio.h>
 

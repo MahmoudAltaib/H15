@@ -4,7 +4,7 @@
 #include "mm.h"
 #include "string.h"
 int main()
-{
+{   int choice;
     // CREATE LIST
     Node *pElement = 0;
     pElement = (Node *) malloc(sizeof(Node));
@@ -68,5 +68,24 @@ int main()
 
 
 
+
+ printf("\nPress 1 to delete first node: ");
+    scanf("%d", &choice);
+
+    if(choice == 1)
+{
+extern uint8_t deletehead (Node *pElement);
+
+}
+
+
+
+    printf("\nData in the list \n");
+    printList();
+
     return 0;
+
+
+
+
 }
