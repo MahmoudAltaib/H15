@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1556851415 source:d:\skills\my work\sorting\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Sorting.h"
+	"search.h"
+	"search_and_sort.h"
+
+1556851077 source:d:\skills\my work\sorting\sorting.c
+	<stdio.h>
+	<stdlib.h>
+	"Sorting.h"
+	"inttypes.h"
+	"strings.h"
+
+1556851076 d:\skills\my work\sorting\sorting.h
+
+1556851076 source:d:\skills\my work\sorting\search.c
+	<stdio.h>
+	"search.h"
+	"Sorting.h"
+
+1556850308 d:\skills\my work\sorting\search.h
+
+1556851415 d:\skills\my work\sorting\search_and_sort.h
+
+1556851543 source:d:\skills\my work\sorting\search_and_sort.c
+	<stdio.h>
+	"search_and_sort.h"
+
