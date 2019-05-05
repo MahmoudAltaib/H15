@@ -288,9 +288,9 @@ uint8_t Delete_tail ()
        }
        else
        {
-           pPrevious_to_tail = pHead ;printf("1");
+           pPrevious_to_tail = pHead ;
            while (u8Previous_index !=  (u8Tail_index -1))
-           {printf("1");
+           {
                pPrevious_to_tail = pPrevious_to_tail -> psNext ;
            }
            free(pMove);

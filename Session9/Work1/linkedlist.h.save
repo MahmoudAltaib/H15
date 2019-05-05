@@ -20,7 +20,7 @@ extern void printList(void);
 extern uint8_t addElement_by_index(Node *pElement , uint8_t u8pIndex);
 extern uint8_t Delete_head ();
 extern uint8_t Delete_tail ();
-extern void Length_of_linked_list (*pLength);
+extern void Length_of_linked_list (uint8_t *pLength);
 
 
 #endif

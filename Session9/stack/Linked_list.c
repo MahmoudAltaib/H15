@@ -293,7 +293,7 @@ uint8_t Delete_tail ()
            {
                pPrevious_to_tail = pPrevious_to_tail -> psNext ;
                u8Previous_index ++;
-           }
+          }
            free(pMove);
            pMove = 0;
 

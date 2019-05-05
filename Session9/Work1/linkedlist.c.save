@@ -289,6 +289,7 @@ uint8_t Delete_tail ()
            while (u8Previous_index !=  (u8Tail_index -1))
            {
                pPrevious_to_tail = pPrevious_to_tail -> psNext ;
+               u8Previous_index ++;
            }
            free(pMove);
            pMove = 0;
@@ -306,10 +307,12 @@ uint8_t Delete_tail ()
 void Length_of_linked_list (uint8_t *pLength)
 {
     Node *pMove = 0;
-    *pLength =0;
-    
+    *pLength = 1;
+    pMove = pHead ;
+
     while (pMove -> psNext != 0)
     {
-        
+        pMove = pMove -> psNext ;
+       (*pLength) ++;
     }
 }

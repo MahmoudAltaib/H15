@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1556887460 source:c:\users\a.elkady\documents\github\h15\selection_sorting\main.c
+	"Selection_sorting.h"
+
+1556887553 c:\users\a.elkady\documents\github\h15\selection_sorting\selection_sorting.h
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+
+1556887469 source:c:\users\a.elkady\documents\github\h15\selection_sorting\selection_sorting.c
+	"Selection_sorting.h"
+

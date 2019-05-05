@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1556865636 source:c:\users\a.elkady\documents\github\h15\session9\searching algorithms\main.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"searching.h"
+
+1556865516 c:\users\a.elkady\documents\github\h15\session9\searching algorithms\searching.h
+
+1556865616 source:c:\users\a.elkady\documents\github\h15\session9\searching algorithms\searching.c
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+	"searching.h"
+

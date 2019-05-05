@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1557033700 source:c:\users\a.elkady\documents\github\h15\database\main.c
+	"Database.h"
+
+1557033262 c:\users\a.elkady\documents\github\h15\database\database.h
+	<stdio.h>
+	<stdlib.h>
+	<inttypes.h>
+	<string.h>
+
+1557034297 source:c:\users\a.elkady\documents\github\h15\database\database.c
+	"Database.h"
+

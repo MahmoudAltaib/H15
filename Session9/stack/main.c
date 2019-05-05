@@ -87,8 +87,6 @@ int main()
     Get_stack_size(&u8Length_of_stack);
     printf("Now the length of the stack is %d \n\n\n",u8Length_of_stack);
 
-
-
 }
 
 
