@@ -2,13 +2,13 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="forloop" />
-		<Option execution_dir="C:/Users/hp/Desktop/session2/forloop/" />
+		<Option title="volatile" />
+		<Option execution_dir="C:/Users/hp/Desktop/session2/volatile/" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/forloop" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/volatile" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/forloop" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/volatile" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,7 +32,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../session2/forloop/main.c">
+		<Unit filename="../../../../session2/volatile/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
