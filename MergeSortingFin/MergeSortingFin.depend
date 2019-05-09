@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1557282115 source:c:\users\ahmed elkholi\desktop\git hub new\h15\mergesortingfin\main.c
+	<stdio.h>
+	"mergin.h"
+
+1557282061 c:\users\ahmed elkholi\desktop\git hub new\h15\mergesortingfin\mergin.h
+
+1557282061 source:c:\users\ahmed elkholi\desktop\git hub new\h15\mergesortingfin\merging.c
+	"mergin.h"
+

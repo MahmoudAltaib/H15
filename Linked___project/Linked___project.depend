@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1557369422 source:c:\users\ahmed elkholi\desktop\git hub new\h15\linked___project\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ListProject.h"
+	"string.h"
+
+1557369421 c:\users\ahmed elkholi\desktop\git hub new\h15\linked___project\listproject.h
+	"inttypes.h"
+
+1557369559 source:c:\users\ahmed elkholi\desktop\git hub new\h15\linked___project\linked2.c
+	"ListProject.h"
+	"string.h"
+	"stdlib.h"
+	<stdio.h>
+
