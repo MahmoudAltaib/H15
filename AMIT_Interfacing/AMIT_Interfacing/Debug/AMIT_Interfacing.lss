@@ -1,0 +1,206 @@
+
+AMIT_Interfacing.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000012c  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000180  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000180  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001b0  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000058  00000000  00000000  000001ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000072d  00000000  00000000  00000244  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005ad  00000000  00000000  00000971  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000022a  00000000  00000000  00000f1e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000088  00000000  00000000  00001148  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000316  00000000  00000000  000011d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000ea  00000000  00000000  000014e6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  000015d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+  64:	0c 94 94 00 	jmp	0x128	; 0x128 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <main>:
+#include "AMIT_UTIL.h"
+
+
+
+int main(void)
+{
+  6c:	cf 93       	push	r28
+  6e:	df 93       	push	r29
+  70:	00 d0       	rcall	.+0      	; 0x72 <main+0x6>
+  72:	cd b7       	in	r28, 0x3d	; 61
+  74:	de b7       	in	r29, 0x3e	; 62
+	unsigned int temp = 0 ;
+  76:	1a 82       	std	Y+2, r1	; 0x02
+  78:	19 82       	std	Y+1, r1	; 0x01
+	DIO_PinIn(DDRD , DDD0);
+  7a:	60 e0       	ldi	r22, 0x00	; 0
+  7c:	70 e0       	ldi	r23, 0x00	; 0
+  7e:	81 e3       	ldi	r24, 0x31	; 49
+  80:	90 e0       	ldi	r25, 0x00	; 0
+  82:	0e 94 6c 00 	call	0xd8	; 0xd8 <DIO_PinIn>
+//	DIO_pinOut(DDRD , DDD5);
+//	DIO_writePin(PORTD , PIND5 ,1);
+    /* Replace with your application code */
+    while (1) 
+    {
+		DIO_readPin(PIND , PIND0 , &temp);
+  86:	ae 01       	movw	r20, r28
+  88:	4f 5f       	subi	r20, 0xFF	; 255
+  8a:	5f 4f       	sbci	r21, 0xFF	; 255
+  8c:	60 e0       	ldi	r22, 0x00	; 0
+  8e:	70 e0       	ldi	r23, 0x00	; 0
+  90:	80 e3       	ldi	r24, 0x30	; 48
+  92:	90 e0       	ldi	r25, 0x00	; 0
+  94:	0e 94 84 00 	call	0x108	; 0x108 <DIO_readPin>
+		if (temp != 0)
+  98:	89 81       	ldd	r24, Y+1	; 0x01
+  9a:	9a 81       	ldd	r25, Y+2	; 0x02
+  9c:	89 2b       	or	r24, r25
+  9e:	99 f3       	breq	.-26     	; 0x86 <main+0x1a>
+		{
+			DIO_pinOut(DDRD , DDD5);
+  a0:	65 e0       	ldi	r22, 0x05	; 5
+  a2:	70 e0       	ldi	r23, 0x00	; 0
+  a4:	81 e3       	ldi	r24, 0x31	; 49
+  a6:	90 e0       	ldi	r25, 0x00	; 0
+  a8:	0e 94 5d 00 	call	0xba	; 0xba <DIO_pinOut>
+			UTIL_TOGGLEPIN (PORTD , PD5);
+  ac:	82 b3       	in	r24, 0x12	; 18
+  ae:	93 b3       	in	r25, 0x13	; 19
+  b0:	20 e2       	ldi	r18, 0x20	; 32
+  b2:	82 27       	eor	r24, r18
+  b4:	93 bb       	out	0x13, r25	; 19
+  b6:	82 bb       	out	0x12, r24	; 18
+  b8:	e6 cf       	rjmp	.-52     	; 0x86 <main+0x1a>
+
+000000ba <DIO_pinOut>:
+#include "PORT_DIO.h"
+#include "AMIT_UTIL.h"
+
+extern void DIO_pinOut(unsigned int PORTADD , unsigned int PIN_NUMBER )
+{
+	UTIL_SETPIN(PORTADD , PIN_NUMBER);
+  ba:	fc 01       	movw	r30, r24
+  bc:	40 81       	ld	r20, Z
+  be:	51 81       	ldd	r21, Z+1	; 0x01
+  c0:	21 e0       	ldi	r18, 0x01	; 1
+  c2:	30 e0       	ldi	r19, 0x00	; 0
+  c4:	02 c0       	rjmp	.+4      	; 0xca <DIO_pinOut+0x10>
+  c6:	22 0f       	add	r18, r18
+  c8:	33 1f       	adc	r19, r19
+  ca:	6a 95       	dec	r22
+  cc:	e2 f7       	brpl	.-8      	; 0xc6 <DIO_pinOut+0xc>
+  ce:	24 2b       	or	r18, r20
+  d0:	35 2b       	or	r19, r21
+  d2:	31 83       	std	Z+1, r19	; 0x01
+  d4:	20 83       	st	Z, r18
+  d6:	08 95       	ret
+
+000000d8 <DIO_PinIn>:
+}
+extern void DIO_PinIn(unsigned int PORTADD , unsigned int PIN_NUMBER)
+{
+  d8:	fc 01       	movw	r30, r24
+		UTIL_CLRPIN (PORTADD , PIN_NUMBER);
+  da:	20 81       	ld	r18, Z
+  dc:	31 81       	ldd	r19, Z+1	; 0x01
+  de:	81 e0       	ldi	r24, 0x01	; 1
+  e0:	90 e0       	ldi	r25, 0x00	; 0
+  e2:	02 c0       	rjmp	.+4      	; 0xe8 <DIO_PinIn+0x10>
+  e4:	88 0f       	add	r24, r24
+  e6:	99 1f       	adc	r25, r25
+  e8:	6a 95       	dec	r22
+  ea:	e2 f7       	brpl	.-8      	; 0xe4 <DIO_PinIn+0xc>
+  ec:	ac 01       	movw	r20, r24
+  ee:	40 95       	com	r20
+  f0:	50 95       	com	r21
+  f2:	24 23       	and	r18, r20
+  f4:	35 23       	and	r19, r21
+  f6:	31 83       	std	Z+1, r19	; 0x01
+  f8:	20 83       	st	Z, r18
+		UTIL_SETPIN(PORTADD+1 , PIN_NUMBER);
+  fa:	21 81       	ldd	r18, Z+1	; 0x01
+  fc:	32 81       	ldd	r19, Z+2	; 0x02
+  fe:	82 2b       	or	r24, r18
+ 100:	93 2b       	or	r25, r19
+ 102:	92 83       	std	Z+2, r25	; 0x02
+ 104:	81 83       	std	Z+1, r24	; 0x01
+ 106:	08 95       	ret
+
+00000108 <DIO_readPin>:
+}
+
+extern void DIO_readPin(unsigned int PORTADD , unsigned int PIN_NUMBER , unsigned int *pinvalue)
+{
+*pinvalue =(*(volatile unsigned int *)(PORTADD) & (1<<PIN_NUMBER));
+ 108:	fc 01       	movw	r30, r24
+ 10a:	20 81       	ld	r18, Z
+ 10c:	31 81       	ldd	r19, Z+1	; 0x01
+ 10e:	81 e0       	ldi	r24, 0x01	; 1
+ 110:	90 e0       	ldi	r25, 0x00	; 0
+ 112:	02 c0       	rjmp	.+4      	; 0x118 <DIO_readPin+0x10>
+ 114:	88 0f       	add	r24, r24
+ 116:	99 1f       	adc	r25, r25
+ 118:	6a 95       	dec	r22
+ 11a:	e2 f7       	brpl	.-8      	; 0x114 <DIO_readPin+0xc>
+ 11c:	82 23       	and	r24, r18
+ 11e:	93 23       	and	r25, r19
+ 120:	fa 01       	movw	r30, r20
+ 122:	91 83       	std	Z+1, r25	; 0x01
+ 124:	80 83       	st	Z, r24
+ 126:	08 95       	ret
+
+00000128 <_exit>:
+ 128:	f8 94       	cli
+
+0000012a <__stop_program>:
+ 12a:	ff cf       	rjmp	.-2      	; 0x12a <__stop_program>
