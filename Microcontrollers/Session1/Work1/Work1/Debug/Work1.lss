@@ -72,23 +72,23 @@ Disassembly of section .text:
 
 int main(void)
 {
-	 DDRD |= (1<<5);
+	DDRD |= (1<<5);
   6c:	8d 9a       	sbi	0x11, 5	; 17
-	_SFR_IO8(0x11) |= (1<<6);
+	DDRD |= (1<<6);
   6e:	8e 9a       	sbi	0x11, 6	; 17
-	_SFR_IO8(0x11) |= (1<<7);
+	DDRD |= (1<<7);
   70:	8f 9a       	sbi	0x11, 7	; 17
-    _SFR_IO8(0x12) &= ~(1<<5);
+    PORTD &= ~(1<<5);
   72:	95 98       	cbi	0x12, 5	; 18
-    _SFR_IO8(0x12) &= ~(1<<6);
+    PORTD &= ~(1<<6);
   74:	96 98       	cbi	0x12, 6	; 18
-    _SFR_IO8(0x12) &= ~(1<<7);
+    PORTD &= ~(1<<7);
   76:	97 98       	cbi	0x12, 7	; 18
     
 
     while (1) 
     {
-		 _SFR_IO8(0x12)  |= (1<<PD5);
+		 PORTD  |= (1<<PD5);
   78:	95 9a       	sbi	0x12, 5	; 18
 	#else
 		//round up by default
@@ -106,7 +106,7 @@ int main(void)
   88:	00 c0       	rjmp	.+0      	; 0x8a <main+0x1e>
   8a:	00 00       	nop
 		 _delay_ms(200);
-		_SFR_IO8(0x12) &= ~(1<<PD5);
+		PORTD &= ~(1<<PD5);
   8c:	95 98       	cbi	0x12, 5	; 18
   8e:	2f ef       	ldi	r18, 0xFF	; 255
   90:	83 ec       	ldi	r24, 0xC3	; 195
@@ -118,7 +118,7 @@ int main(void)
   9c:	00 c0       	rjmp	.+0      	; 0x9e <main+0x32>
   9e:	00 00       	nop
 		 _delay_ms(200);
-		_SFR_IO8(0x12) |= (1<<PD6);
+		PORTD |= (1<<PD6);
   a0:	96 9a       	sbi	0x12, 6	; 18
   a2:	2f ef       	ldi	r18, 0xFF	; 255
   a4:	83 ec       	ldi	r24, 0xC3	; 195
@@ -130,7 +130,7 @@ int main(void)
   b0:	00 c0       	rjmp	.+0      	; 0xb2 <main+0x46>
   b2:	00 00       	nop
 		 _delay_ms(200);
-		_SFR_IO8(0x12) &= ~(1<<PD6);
+		PORTD &= ~(1<<PD6);
   b4:	96 98       	cbi	0x12, 6	; 18
   b6:	2f ef       	ldi	r18, 0xFF	; 255
   b8:	83 ec       	ldi	r24, 0xC3	; 195
@@ -142,7 +142,7 @@ int main(void)
   c4:	00 c0       	rjmp	.+0      	; 0xc6 <main+0x5a>
   c6:	00 00       	nop
 		 _delay_ms(200);
-		_SFR_IO8(0x12) |= (1<<PD7);
+		PORTD |= (1<<PD7);
   c8:	97 9a       	sbi	0x12, 7	; 18
   ca:	2f ef       	ldi	r18, 0xFF	; 255
   cc:	83 ec       	ldi	r24, 0xC3	; 195
@@ -154,7 +154,7 @@ int main(void)
   d8:	00 c0       	rjmp	.+0      	; 0xda <main+0x6e>
   da:	00 00       	nop
 		 _delay_ms(200);
-		_SFR_IO8(0x12) &= ~(1<<PD7);
+		PORTD &= ~(1<<PD7);
   dc:	97 98       	cbi	0x12, 7	; 18
   de:	2f ef       	ldi	r18, 0xFF	; 255
   e0:	83 ec       	ldi	r24, 0xC3	; 195

@@ -7,25 +7,25 @@
 
 #include "Functions.h"
 
-extern void Set_bit( char cPORT_index , uint8_t u8Bit_index)
+extern void Set_bit(volatile unsigned char *PORT_address , uint8_t Pin_index)
 {
-	cPORT_index |= (1<<u8Bit_index);
+	*(PORT_address) |= (1<<Pin_index);
 }
 
-extern void Reset_bit( char cPORT_index , uint8_t u8Bit_index)
+extern void Reset_bit(volatile unsigned char *PORT_address , uint8_t Pin_index)
 {
-	cPORT_index &= ~(1<<u8Bit_index);
+	*(PORT_address) &= ~(1<<Pin_index);
 }
 
-extern void Port_mode( char cPORT_index , uint8_t u8Port_state)
+extern void Port_mode(volatile unsigned char *PORT_address , uint8_t Port_state)
 {
-	if (u8Port_state == OUTPUT)
+	if (Port_state == INPUT)
 	{
-		cPORT_index |= 0xFF;
+		*(PORT_address) |= 0x00  ;
 	}
-	else if  (u8Port_state == INPUT)
+	else if   (Port_state == OUTPUT)
 	{
-		cPORT_index &= 0x00;
+		*(PORT_address) &=0xFF ;
 	}
 	else
 	{
@@ -33,15 +33,15 @@ extern void Port_mode( char cPORT_index , uint8_t u8Port_state)
 	}
 }
 
-extern void Pin_mode( char cPORT_index , uint8_t u8Pin_index , uint8_t u8Pin_state)
+extern void Pin_mode( volatile unsigned char *PORT_address , uint8_t Pin_index , uint8_t Pin_state)
 {
-	if (u8Pin_state == OUTPUT)
+	if (Pin_state == INPUT)
 	{
-		cPORT_index |= (1<<u8Pin_index);
+		*(PORT_address) |= ~(1<<Pin_index) ;
 	}
-	else if  (u8Pin_state == INPUT)
+	else if  (Pin_state == OUTPUT)
 	{
-		cPORT_index &= ~(1<<u8Pin_index);
+		*(PORT_address) &= (1<<Pin_index) ;
 	}
 	else
 	{

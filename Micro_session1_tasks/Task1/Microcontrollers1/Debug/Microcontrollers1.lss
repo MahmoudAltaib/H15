@@ -3,29 +3,29 @@ Microcontrollers1.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000014a  00000000  00000000  00000054  2**1
+  0 .text         000001ce  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  0000019e  2**0
+  1 .data         00000000  00800060  00800060  00000222  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  0000019e  2**0
+  2 .comment      00000030  00000000  00000000  00000222  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001d0  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000254  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000058  00000000  00000000  0000020c  2**0
+  4 .debug_aranges 00000058  00000000  00000000  00000290  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000981  00000000  00000000  00000264  2**0
+  5 .debug_info   0000098c  00000000  00000000  000002e8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000063d  00000000  00000000  00000be5  2**0
+  6 .debug_abbrev 0000064d  00000000  00000000  00000c74  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000003b2  00000000  00000000  00001222  2**0
+  7 .debug_line   000003ee  00000000  00000000  000012c1  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000078  00000000  00000000  000015d4  2**2
+  8 .debug_frame  00000078  00000000  00000000  000016b0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000003a5  00000000  00000000  0000164c  2**0
+  9 .debug_str    00000394  00000000  00000000  00001728  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000001cb  00000000  00000000  000019f1  2**0
+ 10 .debug_loc    000001a2  00000000  00000000  00001abc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000038  00000000  00000000  00001bbc  2**0
+ 11 .debug_ranges 00000038  00000000  00000000  00001c5e  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -60,166 +60,238 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 39 00 	call	0x72	; 0x72 <main>
-  64:	0c 94 a3 00 	jmp	0x146	; 0x146 <_exit>
+  60:	0e 94 6c 00 	call	0xd8	; 0xd8 <main>
+  64:	0c 94 e5 00 	jmp	0x1ca	; 0x1ca <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 0000006c <Set_bit>:
-{
-	cPORT_index &= ~(1<<u8Bit_index);
-}
+	{
+		*(PORT_address) |= 0x00  ;
+	}
+	else if   (Port_state == OUTPUT)
+	{
+		*(PORT_address) &=0xFF ;
+  6c:	fc 01       	movw	r30, r24
+  6e:	40 81       	ld	r20, Z
+  70:	21 e0       	ldi	r18, 0x01	; 1
+  72:	30 e0       	ldi	r19, 0x00	; 0
+  74:	02 c0       	rjmp	.+4      	; 0x7a <Set_bit+0xe>
+  76:	22 0f       	add	r18, r18
+  78:	33 1f       	adc	r19, r19
+  7a:	6a 95       	dec	r22
+  7c:	e2 f7       	brpl	.-8      	; 0x76 <Set_bit+0xa>
+  7e:	24 2b       	or	r18, r20
+  80:	20 83       	st	Z, r18
+  82:	08 95       	ret
 
-extern void Port_mode( char cPORT_index , uint8_t u8Port_state)
-{
-  6c:	08 95       	ret
+00000084 <Reset_bit>:
+  84:	fc 01       	movw	r30, r24
+  86:	90 81       	ld	r25, Z
+  88:	21 e0       	ldi	r18, 0x01	; 1
+  8a:	30 e0       	ldi	r19, 0x00	; 0
+  8c:	02 c0       	rjmp	.+4      	; 0x92 <Reset_bit+0xe>
+  8e:	22 0f       	add	r18, r18
+  90:	33 1f       	adc	r19, r19
+  92:	6a 95       	dec	r22
+  94:	e2 f7       	brpl	.-8      	; 0x8e <Reset_bit+0xa>
+  96:	20 95       	com	r18
+  98:	29 23       	and	r18, r25
+  9a:	20 83       	st	Z, r18
+  9c:	08 95       	ret
 
-0000006e <Reset_bit>:
-  6e:	08 95       	ret
-
-00000070 <Pin_mode>:
-		/* Do nothing */
+0000009e <Pin_mode>:
 	}
 }
 
-extern void Pin_mode( char cPORT_index , uint8_t u8Pin_index , uint8_t u8Pin_state)
+extern void Pin_mode( volatile unsigned char *PORT_address , uint8_t Pin_index , uint8_t Pin_state)
 {
-  70:	08 95       	ret
+	if (Pin_state == INPUT)
+  9e:	41 11       	cpse	r20, r1
+  a0:	0d c0       	rjmp	.+26     	; 0xbc <Pin_mode+0x1e>
+	{
+		*(PORT_address) |= ~(1<<Pin_index) ;
+  a2:	fc 01       	movw	r30, r24
+  a4:	40 81       	ld	r20, Z
+  a6:	21 e0       	ldi	r18, 0x01	; 1
+  a8:	30 e0       	ldi	r19, 0x00	; 0
+  aa:	02 c0       	rjmp	.+4      	; 0xb0 <Pin_mode+0x12>
+  ac:	22 0f       	add	r18, r18
+  ae:	33 1f       	adc	r19, r19
+  b0:	6a 95       	dec	r22
+  b2:	e2 f7       	brpl	.-8      	; 0xac <Pin_mode+0xe>
+  b4:	20 95       	com	r18
+  b6:	24 2b       	or	r18, r20
+  b8:	20 83       	st	Z, r18
+  ba:	08 95       	ret
+	}
+	else if  (Pin_state == OUTPUT)
+  bc:	41 30       	cpi	r20, 0x01	; 1
+  be:	59 f4       	brne	.+22     	; 0xd6 <Pin_mode+0x38>
+	{
+		*(PORT_address) &= (1<<Pin_index) ;
+  c0:	fc 01       	movw	r30, r24
+  c2:	40 81       	ld	r20, Z
+  c4:	21 e0       	ldi	r18, 0x01	; 1
+  c6:	30 e0       	ldi	r19, 0x00	; 0
+  c8:	02 c0       	rjmp	.+4      	; 0xce <Pin_mode+0x30>
+  ca:	22 0f       	add	r18, r18
+  cc:	33 1f       	adc	r19, r19
+  ce:	6a 95       	dec	r22
+  d0:	e2 f7       	brpl	.-8      	; 0xca <Pin_mode+0x2c>
+  d2:	24 23       	and	r18, r20
+  d4:	20 83       	st	Z, r18
+  d6:	08 95       	ret
 
-00000072 <main>:
+000000d8 <main>:
  */ 
 #include "Functions.h"
 
 int main(void)
 {
-	Pin_mode(DDRD , 5 , OUTPUT);
-  72:	81 b3       	in	r24, 0x11	; 17
-  74:	41 e0       	ldi	r20, 0x01	; 1
-  76:	65 e0       	ldi	r22, 0x05	; 5
-  78:	0e 94 38 00 	call	0x70	; 0x70 <Pin_mode>
-	Pin_mode(DDRD , 6 , OUTPUT);
-  7c:	81 b3       	in	r24, 0x11	; 17
-  7e:	41 e0       	ldi	r20, 0x01	; 1
-  80:	66 e0       	ldi	r22, 0x06	; 6
-  82:	0e 94 38 00 	call	0x70	; 0x70 <Pin_mode>
-	Pin_mode(DDRD , 7 , OUTPUT);
-  86:	81 b3       	in	r24, 0x11	; 17
-  88:	41 e0       	ldi	r20, 0x01	; 1
-  8a:	67 e0       	ldi	r22, 0x07	; 7
-  8c:	0e 94 38 00 	call	0x70	; 0x70 <Pin_mode>
+	Pin_mode(D-1 , 5 , OUTPUT);
+  d8:	82 b3       	in	r24, 0x12	; 18
+  da:	90 e0       	ldi	r25, 0x00	; 0
+  dc:	41 e0       	ldi	r20, 0x01	; 1
+  de:	65 e0       	ldi	r22, 0x05	; 5
+  e0:	01 97       	sbiw	r24, 0x01	; 1
+  e2:	0e 94 4f 00 	call	0x9e	; 0x9e <Pin_mode>
+	Pin_mode(D -1, 6 , OUTPUT);
+  e6:	82 b3       	in	r24, 0x12	; 18
+  e8:	90 e0       	ldi	r25, 0x00	; 0
+  ea:	41 e0       	ldi	r20, 0x01	; 1
+  ec:	66 e0       	ldi	r22, 0x06	; 6
+  ee:	01 97       	sbiw	r24, 0x01	; 1
+  f0:	0e 94 4f 00 	call	0x9e	; 0x9e <Pin_mode>
+	Pin_mode(D -1, 7 , OUTPUT);
+  f4:	82 b3       	in	r24, 0x12	; 18
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	41 e0       	ldi	r20, 0x01	; 1
+  fa:	67 e0       	ldi	r22, 0x07	; 7
+  fc:	01 97       	sbiw	r24, 0x01	; 1
+  fe:	0e 94 4f 00 	call	0x9e	; 0x9e <Pin_mode>
 
 	
-	Reset_bit(PORTD , 5);
-  90:	82 b3       	in	r24, 0x12	; 18
-  92:	65 e0       	ldi	r22, 0x05	; 5
-  94:	0e 94 37 00 	call	0x6e	; 0x6e <Reset_bit>
-	Reset_bit(PORTD , 6);
-  98:	82 b3       	in	r24, 0x12	; 18
-  9a:	66 e0       	ldi	r22, 0x06	; 6
-  9c:	0e 94 37 00 	call	0x6e	; 0x6e <Reset_bit>
-	Reset_bit(PORTD , 7);
-  a0:	82 b3       	in	r24, 0x12	; 18
-  a2:	67 e0       	ldi	r22, 0x07	; 7
-  a4:	0e 94 37 00 	call	0x6e	; 0x6e <Reset_bit>
+	Reset_bit(D , 5);
+ 102:	82 b3       	in	r24, 0x12	; 18
+ 104:	65 e0       	ldi	r22, 0x05	; 5
+ 106:	90 e0       	ldi	r25, 0x00	; 0
+ 108:	0e 94 42 00 	call	0x84	; 0x84 <Reset_bit>
+	Reset_bit(D, 6);
+ 10c:	82 b3       	in	r24, 0x12	; 18
+ 10e:	66 e0       	ldi	r22, 0x06	; 6
+ 110:	90 e0       	ldi	r25, 0x00	; 0
+ 112:	0e 94 42 00 	call	0x84	; 0x84 <Reset_bit>
+	Reset_bit(D , 7);
+ 116:	82 b3       	in	r24, 0x12	; 18
+ 118:	67 e0       	ldi	r22, 0x07	; 7
+ 11a:	90 e0       	ldi	r25, 0x00	; 0
+ 11c:	0e 94 42 00 	call	0x84	; 0x84 <Reset_bit>
 	
 	while (1)
 	{
-		Set_bit(PORTD , 5);
-  a8:	82 b3       	in	r24, 0x12	; 18
-  aa:	65 e0       	ldi	r22, 0x05	; 5
-  ac:	0e 94 36 00 	call	0x6c	; 0x6c <Set_bit>
+		Set_bit(D , 5);
+ 120:	82 b3       	in	r24, 0x12	; 18
+ 122:	65 e0       	ldi	r22, 0x05	; 5
+ 124:	90 e0       	ldi	r25, 0x00	; 0
+ 126:	0e 94 36 00 	call	0x6c	; 0x6c <Set_bit>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  b0:	2f ef       	ldi	r18, 0xFF	; 255
-  b2:	83 ec       	ldi	r24, 0xC3	; 195
-  b4:	99 e0       	ldi	r25, 0x09	; 9
-  b6:	21 50       	subi	r18, 0x01	; 1
-  b8:	80 40       	sbci	r24, 0x00	; 0
-  ba:	90 40       	sbci	r25, 0x00	; 0
-  bc:	e1 f7       	brne	.-8      	; 0xb6 <main+0x44>
-  be:	00 c0       	rjmp	.+0      	; 0xc0 <main+0x4e>
-  c0:	00 00       	nop
-		_delay_ms(200);
-		Reset_bit(PORTD , 5);
-  c2:	82 b3       	in	r24, 0x12	; 18
-  c4:	65 e0       	ldi	r22, 0x05	; 5
-  c6:	0e 94 37 00 	call	0x6e	; 0x6e <Reset_bit>
-  ca:	2f ef       	ldi	r18, 0xFF	; 255
-  cc:	83 ec       	ldi	r24, 0xC3	; 195
-  ce:	99 e0       	ldi	r25, 0x09	; 9
-  d0:	21 50       	subi	r18, 0x01	; 1
-  d2:	80 40       	sbci	r24, 0x00	; 0
-  d4:	90 40       	sbci	r25, 0x00	; 0
-  d6:	e1 f7       	brne	.-8      	; 0xd0 <main+0x5e>
-  d8:	00 c0       	rjmp	.+0      	; 0xda <main+0x68>
-  da:	00 00       	nop
-		_delay_ms(200);
+ 12a:	2f ef       	ldi	r18, 0xFF	; 255
+ 12c:	89 e6       	ldi	r24, 0x69	; 105
+ 12e:	98 e1       	ldi	r25, 0x18	; 24
+ 130:	21 50       	subi	r18, 0x01	; 1
+ 132:	80 40       	sbci	r24, 0x00	; 0
+ 134:	90 40       	sbci	r25, 0x00	; 0
+ 136:	e1 f7       	brne	.-8      	; 0x130 <main+0x58>
+ 138:	00 c0       	rjmp	.+0      	; 0x13a <main+0x62>
+ 13a:	00 00       	nop
+		_delay_ms(500);
+		Reset_bit(D , 5);
+ 13c:	82 b3       	in	r24, 0x12	; 18
+ 13e:	65 e0       	ldi	r22, 0x05	; 5
+ 140:	90 e0       	ldi	r25, 0x00	; 0
+ 142:	0e 94 42 00 	call	0x84	; 0x84 <Reset_bit>
+ 146:	2f ef       	ldi	r18, 0xFF	; 255
+ 148:	89 e6       	ldi	r24, 0x69	; 105
+ 14a:	98 e1       	ldi	r25, 0x18	; 24
+ 14c:	21 50       	subi	r18, 0x01	; 1
+ 14e:	80 40       	sbci	r24, 0x00	; 0
+ 150:	90 40       	sbci	r25, 0x00	; 0
+ 152:	e1 f7       	brne	.-8      	; 0x14c <main+0x74>
+ 154:	00 c0       	rjmp	.+0      	; 0x156 <main+0x7e>
+ 156:	00 00       	nop
+		_delay_ms(500);
 		
-		Set_bit(PORTD , 6);
-  dc:	82 b3       	in	r24, 0x12	; 18
-  de:	66 e0       	ldi	r22, 0x06	; 6
-  e0:	0e 94 36 00 	call	0x6c	; 0x6c <Set_bit>
-  e4:	2f ef       	ldi	r18, 0xFF	; 255
-  e6:	83 ec       	ldi	r24, 0xC3	; 195
-  e8:	99 e0       	ldi	r25, 0x09	; 9
-  ea:	21 50       	subi	r18, 0x01	; 1
-  ec:	80 40       	sbci	r24, 0x00	; 0
-  ee:	90 40       	sbci	r25, 0x00	; 0
-  f0:	e1 f7       	brne	.-8      	; 0xea <main+0x78>
-  f2:	00 c0       	rjmp	.+0      	; 0xf4 <main+0x82>
-  f4:	00 00       	nop
-		_delay_ms(200);
-		Reset_bit(PORTD , 6);
-  f6:	82 b3       	in	r24, 0x12	; 18
-  f8:	66 e0       	ldi	r22, 0x06	; 6
-  fa:	0e 94 37 00 	call	0x6e	; 0x6e <Reset_bit>
-  fe:	2f ef       	ldi	r18, 0xFF	; 255
- 100:	83 ec       	ldi	r24, 0xC3	; 195
- 102:	99 e0       	ldi	r25, 0x09	; 9
- 104:	21 50       	subi	r18, 0x01	; 1
- 106:	80 40       	sbci	r24, 0x00	; 0
- 108:	90 40       	sbci	r25, 0x00	; 0
- 10a:	e1 f7       	brne	.-8      	; 0x104 <main+0x92>
- 10c:	00 c0       	rjmp	.+0      	; 0x10e <main+0x9c>
- 10e:	00 00       	nop
-		_delay_ms(200);
+		Set_bit(D , 6);
+ 158:	82 b3       	in	r24, 0x12	; 18
+ 15a:	66 e0       	ldi	r22, 0x06	; 6
+ 15c:	90 e0       	ldi	r25, 0x00	; 0
+ 15e:	0e 94 36 00 	call	0x6c	; 0x6c <Set_bit>
+ 162:	2f ef       	ldi	r18, 0xFF	; 255
+ 164:	89 e6       	ldi	r24, 0x69	; 105
+ 166:	98 e1       	ldi	r25, 0x18	; 24
+ 168:	21 50       	subi	r18, 0x01	; 1
+ 16a:	80 40       	sbci	r24, 0x00	; 0
+ 16c:	90 40       	sbci	r25, 0x00	; 0
+ 16e:	e1 f7       	brne	.-8      	; 0x168 <main+0x90>
+ 170:	00 c0       	rjmp	.+0      	; 0x172 <main+0x9a>
+ 172:	00 00       	nop
+		_delay_ms(500);
+		Reset_bit(D, 6);
+ 174:	82 b3       	in	r24, 0x12	; 18
+ 176:	66 e0       	ldi	r22, 0x06	; 6
+ 178:	90 e0       	ldi	r25, 0x00	; 0
+ 17a:	0e 94 42 00 	call	0x84	; 0x84 <Reset_bit>
+ 17e:	2f ef       	ldi	r18, 0xFF	; 255
+ 180:	89 e6       	ldi	r24, 0x69	; 105
+ 182:	98 e1       	ldi	r25, 0x18	; 24
+ 184:	21 50       	subi	r18, 0x01	; 1
+ 186:	80 40       	sbci	r24, 0x00	; 0
+ 188:	90 40       	sbci	r25, 0x00	; 0
+ 18a:	e1 f7       	brne	.-8      	; 0x184 <main+0xac>
+ 18c:	00 c0       	rjmp	.+0      	; 0x18e <main+0xb6>
+ 18e:	00 00       	nop
+		_delay_ms(500);
 		
-		Set_bit(PORTD , 7);
- 110:	82 b3       	in	r24, 0x12	; 18
- 112:	67 e0       	ldi	r22, 0x07	; 7
- 114:	0e 94 36 00 	call	0x6c	; 0x6c <Set_bit>
- 118:	2f ef       	ldi	r18, 0xFF	; 255
- 11a:	83 ec       	ldi	r24, 0xC3	; 195
- 11c:	99 e0       	ldi	r25, 0x09	; 9
- 11e:	21 50       	subi	r18, 0x01	; 1
- 120:	80 40       	sbci	r24, 0x00	; 0
- 122:	90 40       	sbci	r25, 0x00	; 0
- 124:	e1 f7       	brne	.-8      	; 0x11e <main+0xac>
- 126:	00 c0       	rjmp	.+0      	; 0x128 <main+0xb6>
- 128:	00 00       	nop
-		_delay_ms(200);
-		Reset_bit(PORTD , 7);
- 12a:	82 b3       	in	r24, 0x12	; 18
- 12c:	67 e0       	ldi	r22, 0x07	; 7
- 12e:	0e 94 37 00 	call	0x6e	; 0x6e <Reset_bit>
- 132:	2f ef       	ldi	r18, 0xFF	; 255
- 134:	83 ec       	ldi	r24, 0xC3	; 195
- 136:	99 e0       	ldi	r25, 0x09	; 9
- 138:	21 50       	subi	r18, 0x01	; 1
- 13a:	80 40       	sbci	r24, 0x00	; 0
- 13c:	90 40       	sbci	r25, 0x00	; 0
- 13e:	e1 f7       	brne	.-8      	; 0x138 <main+0xc6>
- 140:	00 c0       	rjmp	.+0      	; 0x142 <main+0xd0>
- 142:	00 00       	nop
- 144:	b1 cf       	rjmp	.-158    	; 0xa8 <main+0x36>
+		Set_bit(D , 7);
+ 190:	82 b3       	in	r24, 0x12	; 18
+ 192:	67 e0       	ldi	r22, 0x07	; 7
+ 194:	90 e0       	ldi	r25, 0x00	; 0
+ 196:	0e 94 36 00 	call	0x6c	; 0x6c <Set_bit>
+ 19a:	2f ef       	ldi	r18, 0xFF	; 255
+ 19c:	89 e6       	ldi	r24, 0x69	; 105
+ 19e:	98 e1       	ldi	r25, 0x18	; 24
+ 1a0:	21 50       	subi	r18, 0x01	; 1
+ 1a2:	80 40       	sbci	r24, 0x00	; 0
+ 1a4:	90 40       	sbci	r25, 0x00	; 0
+ 1a6:	e1 f7       	brne	.-8      	; 0x1a0 <main+0xc8>
+ 1a8:	00 c0       	rjmp	.+0      	; 0x1aa <main+0xd2>
+ 1aa:	00 00       	nop
+		_delay_ms(500);
+		Reset_bit(D , 7);
+ 1ac:	82 b3       	in	r24, 0x12	; 18
+ 1ae:	67 e0       	ldi	r22, 0x07	; 7
+ 1b0:	90 e0       	ldi	r25, 0x00	; 0
+ 1b2:	0e 94 42 00 	call	0x84	; 0x84 <Reset_bit>
+ 1b6:	2f ef       	ldi	r18, 0xFF	; 255
+ 1b8:	89 e6       	ldi	r24, 0x69	; 105
+ 1ba:	98 e1       	ldi	r25, 0x18	; 24
+ 1bc:	21 50       	subi	r18, 0x01	; 1
+ 1be:	80 40       	sbci	r24, 0x00	; 0
+ 1c0:	90 40       	sbci	r25, 0x00	; 0
+ 1c2:	e1 f7       	brne	.-8      	; 0x1bc <main+0xe4>
+ 1c4:	00 c0       	rjmp	.+0      	; 0x1c6 <main+0xee>
+ 1c6:	00 00       	nop
+ 1c8:	ab cf       	rjmp	.-170    	; 0x120 <main+0x48>
 
-00000146 <_exit>:
- 146:	f8 94       	cli
+000001ca <_exit>:
+ 1ca:	f8 94       	cli
 
-00000148 <__stop_program>:
- 148:	ff cf       	rjmp	.-2      	; 0x148 <__stop_program>
+000001cc <__stop_program>:
+ 1cc:	ff cf       	rjmp	.-2      	; 0x1cc <__stop_program>

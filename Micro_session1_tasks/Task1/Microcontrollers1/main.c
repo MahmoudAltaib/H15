@@ -8,31 +8,31 @@
 
 int main(void)
 {
-	Pin_mode(DDRD , 5 , OUTPUT);
-	Pin_mode(DDRD , 6 , OUTPUT);
-	Pin_mode(DDRD , 7 , OUTPUT);
+	Pin_mode(D-1 , 5 , OUTPUT);
+	Pin_mode(D -1, 6 , OUTPUT);
+	Pin_mode(D -1, 7 , OUTPUT);
 
 	
-	Reset_bit(PORTD , 5);
-	Reset_bit(PORTD , 6);
-	Reset_bit(PORTD , 7);
+	Reset_bit(D , 5);
+	Reset_bit(D, 6);
+	Reset_bit(D , 7);
 	
 	while (1)
 	{
-		Set_bit(PORTD , 5);
-		_delay_ms(200);
-		Reset_bit(PORTD , 5);
-		_delay_ms(200);
+		Set_bit(D , 5);
+		_delay_ms(500);
+		Reset_bit(D , 5);
+		_delay_ms(500);
 		
-		Set_bit(PORTD , 6);
-		_delay_ms(200);
-		Reset_bit(PORTD , 6);
-		_delay_ms(200);
+		Set_bit(D , 6);
+		_delay_ms(500);
+		Reset_bit(D, 6);
+		_delay_ms(500);
 		
-		Set_bit(PORTD , 7);
-		_delay_ms(200);
-		Reset_bit(PORTD , 7);
-		_delay_ms(200);
+		Set_bit(D , 7);
+		_delay_ms(500);
+		Reset_bit(D , 7);
+		_delay_ms(500);
 	}
 }
 

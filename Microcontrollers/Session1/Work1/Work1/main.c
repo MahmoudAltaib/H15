@@ -10,27 +10,27 @@
 
 int main(void)
 {
-	 DDRD |= (1<<5);
-	_SFR_IO8(0x11) |= (1<<6);
-	_SFR_IO8(0x11) |= (1<<7);
-    _SFR_IO8(0x12) &= ~(1<<5);
-    _SFR_IO8(0x12) &= ~(1<<6);
-    _SFR_IO8(0x12) &= ~(1<<7);
+	DDRD |= (1<<5);
+	DDRD |= (1<<6);
+	DDRD |= (1<<7);
+    PORTD &= ~(1<<5);
+    PORTD &= ~(1<<6);
+    PORTD &= ~(1<<7);
     
 
     while (1) 
     {
-		 _SFR_IO8(0x12)  |= (1<<PD5);
+		 PORTD  |= (1<<PD5);
 		 _delay_ms(200);
-		_SFR_IO8(0x12) &= ~(1<<PD5);
+		PORTD &= ~(1<<PD5);
 		 _delay_ms(200);
-		_SFR_IO8(0x12) |= (1<<PD6);
+		PORTD |= (1<<PD6);
 		 _delay_ms(200);
-		_SFR_IO8(0x12) &= ~(1<<PD6);
+		PORTD &= ~(1<<PD6);
 		 _delay_ms(200);
-		_SFR_IO8(0x12) |= (1<<PD7);
+		PORTD |= (1<<PD7);
 		 _delay_ms(200);
-		_SFR_IO8(0x12) &= ~(1<<PD7);
+		PORTD &= ~(1<<PD7);
 		 _delay_ms(200);
     }
 }
