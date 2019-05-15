@@ -9,7 +9,9 @@
 #ifndef AMIT_SHCEMATIC_H_
 #define AMIT_SHCEMATIC_H_
 
-
+#include "AMIT_7SEG.h"
+#include "AMIT_BUTTON.h"
+#include "AMIT_LED.h"
 
 
 

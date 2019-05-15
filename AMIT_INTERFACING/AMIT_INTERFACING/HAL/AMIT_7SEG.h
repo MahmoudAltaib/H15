@@ -9,6 +9,7 @@
 #ifndef AMIT_7SEG_H_
 #define AMIT_7SEG_H_
 
+#include "PORT_DIO.h"
 
 
 

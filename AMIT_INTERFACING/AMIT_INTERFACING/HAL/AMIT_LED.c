@@ -5,4 +5,9 @@
  *  Author: A.Elkady
  */ 
 
+#include "AMIT_LED.h"
 
+extern void LED_ON(unsigned int LED_Num)
+{
+	
+}

@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>AMIT_INTERFACING</AssemblyName>
-    <Name>AMIT_INTERFACING</Name>
-    <RootNamespace>AMIT_INTERFACING</RootNamespace>
+    <AssemblyName>Layered_Arch</AssemblyName>
+    <Name>Layered_Arch</Name>
+    <RootNamespace>Layered_Arch</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -93,14 +93,11 @@
   <avrgcc.compiler.symbols.DefSymbols>
     <ListValues>
       <Value>DEBUG</Value>
-      <Value>__ASSEMBLER__</Value>
     </ListValues>
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
       <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
-      <Value>../MCAL/AMIT_UTIL</Value>
-      <Value>../MCAL/DIO</Value>
     </ListValues>
   </avrgcc.compiler.directories.IncludePaths>
   <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -123,45 +120,24 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="HAL\AMIT_7SEG.c">
+    <Compile Include="AMIT_Board.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\AMIT_7SEG.h">
+    <Compile Include="AMIT_Board.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\AMIT_BUTTON.c">
+    <Compile Include="AMIT_Layout.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\AMIT_BUTTON.h">
+    <Compile Include="GPIO_Driver.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HAL\AMIT_LED.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="HAL\AMIT_LED.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="HAL\AMIT_SHCEMATIC.h">
+    <Compile Include="GPIO_Driver.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MCAL\AMIT_UTIL\AMIT_UTIL.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="MCAL\DIO\PORT_DIO.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="MCAL\DIO\PORT_DIO.h">
-      <SubType>compile</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MCAL" />
-    <Folder Include="MCAL\DIO" />
-    <Folder Include="MCAL\AMIT_UTIL" />
-    <Folder Include="HAL" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

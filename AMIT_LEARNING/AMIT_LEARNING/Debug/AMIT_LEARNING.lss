@@ -1,0 +1,1257 @@
+
+AMIT_LEARNING.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000068e  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000006e2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000006e2  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000714  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000170  00000000  00000000  00000750  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000020b9  00000000  00000000  000008c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000a19  00000000  00000000  00002979  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000f15  00000000  00000000  00003392  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000002b8  00000000  00000000  000042a8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000005a8  00000000  00000000  00004560  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00001081  00000000  00000000  00004b08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000100  00000000  00000000  00005b89  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 c8 01 	call	0x390	; 0x390 <main>
+  64:	0c 94 45 03 	jmp	0x68a	; 0x68a <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <BUTTON0_READ>:
+ */ 
+
+#include "BUTTON_INTERFACE.h"
+
+extern void BUTTON0_READ(uint8_t *pu8Reading)
+{
+  6c:	ef 92       	push	r14
+  6e:	ff 92       	push	r15
+  70:	0f 93       	push	r16
+  72:	1f 93       	push	r17
+  74:	cf 93       	push	r28
+  76:	df 93       	push	r29
+  78:	1f 92       	push	r1
+  7a:	cd b7       	in	r28, 0x3d	; 61
+  7c:	de b7       	in	r29, 0x3e	; 62
+  7e:	7c 01       	movw	r14, r24
+	uint8_t u8Temp = 0;
+  80:	19 82       	std	Y+1, r1	; 0x01
+	uint8_t u8Count = 0;
+	uint8_t u8Num_of_correct_checks = 0;
+	
+	Pin_read(BUTTON0_PIN , BUTTON0_PIN_NUMBER , &u8Temp);
+  82:	ae 01       	movw	r20, r28
+  84:	4f 5f       	subi	r20, 0xFF	; 255
+  86:	5f 4f       	sbci	r21, 0xFF	; 255
+  88:	60 e0       	ldi	r22, 0x00	; 0
+  8a:	80 e3       	ldi	r24, 0x30	; 48
+  8c:	90 e0       	ldi	r25, 0x00	; 0
+  8e:	0e 94 38 03 	call	0x670	; 0x670 <Pin_read>
+	
+	if (u8Temp != 0)
+  92:	89 81       	ldd	r24, Y+1	; 0x01
+  94:	88 23       	and	r24, r24
+  96:	b9 f0       	breq	.+46     	; 0xc6 <BUTTON0_READ+0x5a>
+  98:	16 e9       	ldi	r17, 0x96	; 150
+  9a:	00 e0       	ldi	r16, 0x00	; 0
+	{
+		for (u8Count = 0 ; u8Count < NUMBER_OF_CHECKS ; u8Count ++)
+		{
+			Pin_read(BUTTON0_PIN , BUTTON0_PIN_NUMBER , &u8Temp);
+  9c:	ae 01       	movw	r20, r28
+  9e:	4f 5f       	subi	r20, 0xFF	; 255
+  a0:	5f 4f       	sbci	r21, 0xFF	; 255
+  a2:	60 e0       	ldi	r22, 0x00	; 0
+  a4:	80 e3       	ldi	r24, 0x30	; 48
+  a6:	90 e0       	ldi	r25, 0x00	; 0
+  a8:	0e 94 38 03 	call	0x670	; 0x670 <Pin_read>
+			
+			if (u8Temp != 0)
+  ac:	89 81       	ldd	r24, Y+1	; 0x01
+  ae:	81 11       	cpse	r24, r1
+			{
+				u8Num_of_correct_checks ++ ;
+  b0:	0f 5f       	subi	r16, 0xFF	; 255
+  b2:	11 50       	subi	r17, 0x01	; 1
+	
+	Pin_read(BUTTON0_PIN , BUTTON0_PIN_NUMBER , &u8Temp);
+	
+	if (u8Temp != 0)
+	{
+		for (u8Count = 0 ; u8Count < NUMBER_OF_CHECKS ; u8Count ++)
+  b4:	99 f7       	brne	.-26     	; 0x9c <BUTTON0_READ+0x30>
+			{
+				
+			}
+		}
+		
+		if (u8Num_of_correct_checks == NUMBER_OF_CHECKS)
+  b6:	06 39       	cpi	r16, 0x96	; 150
+  b8:	19 f4       	brne	.+6      	; 0xc0 <BUTTON0_READ+0x54>
+		{
+			*pu8Reading = u8Temp;
+  ba:	f7 01       	movw	r30, r14
+  bc:	80 83       	st	Z, r24
+  be:	05 c0       	rjmp	.+10     	; 0xca <BUTTON0_READ+0x5e>
+		}
+		else
+		{
+			*pu8Reading = 0;
+  c0:	f7 01       	movw	r30, r14
+  c2:	10 82       	st	Z, r1
+  c4:	02 c0       	rjmp	.+4      	; 0xca <BUTTON0_READ+0x5e>
+		}
+	}
+	else
+	{
+		*pu8Reading = 0;
+  c6:	f7 01       	movw	r30, r14
+  c8:	10 82       	st	Z, r1
+	}
+	
+}
+  ca:	0f 90       	pop	r0
+  cc:	df 91       	pop	r29
+  ce:	cf 91       	pop	r28
+  d0:	1f 91       	pop	r17
+  d2:	0f 91       	pop	r16
+  d4:	ff 90       	pop	r15
+  d6:	ef 90       	pop	r14
+  d8:	08 95       	ret
+
+000000da <BUTTON1_READ>:
+
+extern void BUTTON1_READ(uint8_t *pu8Reading)
+{
+  da:	ef 92       	push	r14
+  dc:	ff 92       	push	r15
+  de:	0f 93       	push	r16
+  e0:	1f 93       	push	r17
+  e2:	cf 93       	push	r28
+  e4:	df 93       	push	r29
+  e6:	1f 92       	push	r1
+  e8:	cd b7       	in	r28, 0x3d	; 61
+  ea:	de b7       	in	r29, 0x3e	; 62
+  ec:	7c 01       	movw	r14, r24
+	uint8_t u8Temp = 0;
+  ee:	19 82       	std	Y+1, r1	; 0x01
+	uint8_t u8Count = 0;
+	uint8_t u8Num_of_correct_checks = 0;
+	
+	Pin_read(BUTTON1_PIN , BUTTON1_PIN_NUMBER , &u8Temp);
+  f0:	ae 01       	movw	r20, r28
+  f2:	4f 5f       	subi	r20, 0xFF	; 255
+  f4:	5f 4f       	sbci	r21, 0xFF	; 255
+  f6:	61 e0       	ldi	r22, 0x01	; 1
+  f8:	80 e3       	ldi	r24, 0x30	; 48
+  fa:	90 e0       	ldi	r25, 0x00	; 0
+  fc:	0e 94 38 03 	call	0x670	; 0x670 <Pin_read>
+	
+	if (u8Temp != 0)
+ 100:	89 81       	ldd	r24, Y+1	; 0x01
+ 102:	88 23       	and	r24, r24
+ 104:	b9 f0       	breq	.+46     	; 0x134 <BUTTON1_READ+0x5a>
+ 106:	16 e9       	ldi	r17, 0x96	; 150
+ 108:	00 e0       	ldi	r16, 0x00	; 0
+	{
+		for (u8Count = 0 ; u8Count < NUMBER_OF_CHECKS ; u8Count ++)
+		{
+			Pin_read(BUTTON1_PIN , BUTTON1_PIN_NUMBER , &u8Temp);
+ 10a:	ae 01       	movw	r20, r28
+ 10c:	4f 5f       	subi	r20, 0xFF	; 255
+ 10e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 110:	61 e0       	ldi	r22, 0x01	; 1
+ 112:	80 e3       	ldi	r24, 0x30	; 48
+ 114:	90 e0       	ldi	r25, 0x00	; 0
+ 116:	0e 94 38 03 	call	0x670	; 0x670 <Pin_read>
+			
+			if (u8Temp != 0)
+ 11a:	89 81       	ldd	r24, Y+1	; 0x01
+ 11c:	81 11       	cpse	r24, r1
+			{
+				u8Num_of_correct_checks ++ ;
+ 11e:	0f 5f       	subi	r16, 0xFF	; 255
+ 120:	11 50       	subi	r17, 0x01	; 1
+	
+	Pin_read(BUTTON1_PIN , BUTTON1_PIN_NUMBER , &u8Temp);
+	
+	if (u8Temp != 0)
+	{
+		for (u8Count = 0 ; u8Count < NUMBER_OF_CHECKS ; u8Count ++)
+ 122:	99 f7       	brne	.-26     	; 0x10a <BUTTON1_READ+0x30>
+			{
+				
+			}
+		}
+		
+		if (u8Num_of_correct_checks == NUMBER_OF_CHECKS)
+ 124:	06 39       	cpi	r16, 0x96	; 150
+ 126:	19 f4       	brne	.+6      	; 0x12e <BUTTON1_READ+0x54>
+		{
+			*pu8Reading = u8Temp;
+ 128:	f7 01       	movw	r30, r14
+ 12a:	80 83       	st	Z, r24
+ 12c:	05 c0       	rjmp	.+10     	; 0x138 <BUTTON1_READ+0x5e>
+		}
+		else
+		{
+			*pu8Reading = 0;
+ 12e:	f7 01       	movw	r30, r14
+ 130:	10 82       	st	Z, r1
+ 132:	02 c0       	rjmp	.+4      	; 0x138 <BUTTON1_READ+0x5e>
+		}
+	}
+	else
+	{
+		*pu8Reading = 0;
+ 134:	f7 01       	movw	r30, r14
+ 136:	10 82       	st	Z, r1
+	}
+}
+ 138:	0f 90       	pop	r0
+ 13a:	df 91       	pop	r29
+ 13c:	cf 91       	pop	r28
+ 13e:	1f 91       	pop	r17
+ 140:	0f 91       	pop	r16
+ 142:	ff 90       	pop	r15
+ 144:	ef 90       	pop	r14
+ 146:	08 95       	ret
+
+00000148 <BUTTON2_READ>:
+
+extern void BUTTON2_READ(uint8_t *pu8Reading)
+{
+ 148:	ef 92       	push	r14
+ 14a:	ff 92       	push	r15
+ 14c:	0f 93       	push	r16
+ 14e:	1f 93       	push	r17
+ 150:	cf 93       	push	r28
+ 152:	df 93       	push	r29
+ 154:	1f 92       	push	r1
+ 156:	cd b7       	in	r28, 0x3d	; 61
+ 158:	de b7       	in	r29, 0x3e	; 62
+ 15a:	7c 01       	movw	r14, r24
+	uint8_t u8Temp = 0;
+ 15c:	19 82       	std	Y+1, r1	; 0x01
+	uint8_t u8Count = 0;
+	uint8_t u8Num_of_correct_checks = 0;
+	
+	Pin_read(BUTTON2_PIN , BUTTON2_PIN_NUMBER , &u8Temp);
+ 15e:	ae 01       	movw	r20, r28
+ 160:	4f 5f       	subi	r20, 0xFF	; 255
+ 162:	5f 4f       	sbci	r21, 0xFF	; 255
+ 164:	62 e0       	ldi	r22, 0x02	; 2
+ 166:	80 e3       	ldi	r24, 0x30	; 48
+ 168:	90 e0       	ldi	r25, 0x00	; 0
+ 16a:	0e 94 38 03 	call	0x670	; 0x670 <Pin_read>
+	
+	if (u8Temp != 0)
+ 16e:	89 81       	ldd	r24, Y+1	; 0x01
+ 170:	88 23       	and	r24, r24
+ 172:	b9 f0       	breq	.+46     	; 0x1a2 <BUTTON2_READ+0x5a>
+ 174:	16 e9       	ldi	r17, 0x96	; 150
+ 176:	00 e0       	ldi	r16, 0x00	; 0
+	{
+		for (u8Count = 0 ; u8Count < NUMBER_OF_CHECKS ; u8Count ++)
+		{
+			Pin_read(BUTTON2_PIN , BUTTON2_PIN_NUMBER , &u8Temp);
+ 178:	ae 01       	movw	r20, r28
+ 17a:	4f 5f       	subi	r20, 0xFF	; 255
+ 17c:	5f 4f       	sbci	r21, 0xFF	; 255
+ 17e:	62 e0       	ldi	r22, 0x02	; 2
+ 180:	80 e3       	ldi	r24, 0x30	; 48
+ 182:	90 e0       	ldi	r25, 0x00	; 0
+ 184:	0e 94 38 03 	call	0x670	; 0x670 <Pin_read>
+			
+			if (u8Temp != 0)
+ 188:	89 81       	ldd	r24, Y+1	; 0x01
+ 18a:	81 11       	cpse	r24, r1
+			{
+				u8Num_of_correct_checks ++ ;
+ 18c:	0f 5f       	subi	r16, 0xFF	; 255
+ 18e:	11 50       	subi	r17, 0x01	; 1
+	
+	Pin_read(BUTTON2_PIN , BUTTON2_PIN_NUMBER , &u8Temp);
+	
+	if (u8Temp != 0)
+	{
+		for (u8Count = 0 ; u8Count < NUMBER_OF_CHECKS ; u8Count ++)
+ 190:	99 f7       	brne	.-26     	; 0x178 <BUTTON2_READ+0x30>
+			{
+				
+			}
+		}
+		
+		if (u8Num_of_correct_checks == NUMBER_OF_CHECKS)
+ 192:	06 39       	cpi	r16, 0x96	; 150
+ 194:	19 f4       	brne	.+6      	; 0x19c <BUTTON2_READ+0x54>
+		{
+			*pu8Reading = u8Temp;
+ 196:	f7 01       	movw	r30, r14
+ 198:	80 83       	st	Z, r24
+ 19a:	05 c0       	rjmp	.+10     	; 0x1a6 <BUTTON2_READ+0x5e>
+		}
+		else
+		{
+			*pu8Reading = 0;
+ 19c:	f7 01       	movw	r30, r14
+ 19e:	10 82       	st	Z, r1
+ 1a0:	02 c0       	rjmp	.+4      	; 0x1a6 <BUTTON2_READ+0x5e>
+		}
+	}
+	else
+	{
+		*pu8Reading = 0;
+ 1a2:	f7 01       	movw	r30, r14
+ 1a4:	10 82       	st	Z, r1
+	}
+ 1a6:	0f 90       	pop	r0
+ 1a8:	df 91       	pop	r29
+ 1aa:	cf 91       	pop	r28
+ 1ac:	1f 91       	pop	r17
+ 1ae:	0f 91       	pop	r16
+ 1b0:	ff 90       	pop	r15
+ 1b2:	ef 90       	pop	r14
+ 1b4:	08 95       	ret
+
+000001b6 <BUZZER_ON>:
+ */ 
+#include "BUZZER_INTERFACE.h"
+
+extern void BUZZER_ON()
+{
+	Pin_set(BUZZER_PORT , BUZZER_PIN_NUMBER);
+ 1b6:	64 e0       	ldi	r22, 0x04	; 4
+ 1b8:	82 e3       	ldi	r24, 0x32	; 50
+ 1ba:	90 e0       	ldi	r25, 0x00	; 0
+ 1bc:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 1c0:	08 95       	ret
+
+000001c2 <BUZZER_OFF>:
+}
+
+extern void BUZZER_OFF()
+{
+	Pin_reset(BUZZER_PORT , BUZZER_PIN_NUMBER);
+ 1c2:	64 e0       	ldi	r22, 0x04	; 4
+ 1c4:	82 e3       	ldi	r24, 0x32	; 50
+ 1c6:	90 e0       	ldi	r25, 0x00	; 0
+ 1c8:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 1cc:	08 95       	ret
+
+000001ce <LED_ON>:
+
+#include "LEDS_INTERFACE.h"
+
+extern void LED_ON(uint8_t u8LED_Number)
+{
+	if (u8LED_Number == LED1)
+ 1ce:	81 30       	cpi	r24, 0x01	; 1
+ 1d0:	31 f4       	brne	.+12     	; 0x1de <LED_ON+0x10>
+	{
+		Pin_set(LED1_PORT , LED1_PIN_NUMBER);
+ 1d2:	65 e0       	ldi	r22, 0x05	; 5
+ 1d4:	82 e3       	ldi	r24, 0x32	; 50
+ 1d6:	90 e0       	ldi	r25, 0x00	; 0
+ 1d8:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 1dc:	08 95       	ret
+	}
+	else if (u8LED_Number == LED2)
+ 1de:	82 30       	cpi	r24, 0x02	; 2
+ 1e0:	31 f4       	brne	.+12     	; 0x1ee <LED_ON+0x20>
+	{
+		Pin_set(LED2_PORT , LED2_PIN_NUMBER);
+ 1e2:	66 e0       	ldi	r22, 0x06	; 6
+ 1e4:	82 e3       	ldi	r24, 0x32	; 50
+ 1e6:	90 e0       	ldi	r25, 0x00	; 0
+ 1e8:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 1ec:	08 95       	ret
+	}
+	else if (u8LED_Number == LED3)
+ 1ee:	83 30       	cpi	r24, 0x03	; 3
+ 1f0:	29 f4       	brne	.+10     	; 0x1fc <LED_ON+0x2e>
+	{
+		Pin_set(LED3_PORT , LED3_PIN_NUMBER);
+ 1f2:	67 e0       	ldi	r22, 0x07	; 7
+ 1f4:	82 e3       	ldi	r24, 0x32	; 50
+ 1f6:	90 e0       	ldi	r25, 0x00	; 0
+ 1f8:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 1fc:	08 95       	ret
+
+000001fe <LED_OFF>:
+	}
+}
+
+extern void LED_OFF(uint8_t u8LED_Number)
+{
+	if (u8LED_Number == LED1)
+ 1fe:	81 30       	cpi	r24, 0x01	; 1
+ 200:	31 f4       	brne	.+12     	; 0x20e <LED_OFF+0x10>
+	{
+		Pin_reset(LED1_PORT , LED1_PIN_NUMBER);
+ 202:	65 e0       	ldi	r22, 0x05	; 5
+ 204:	82 e3       	ldi	r24, 0x32	; 50
+ 206:	90 e0       	ldi	r25, 0x00	; 0
+ 208:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 20c:	08 95       	ret
+	}
+	else if (u8LED_Number == LED2)
+ 20e:	82 30       	cpi	r24, 0x02	; 2
+ 210:	31 f4       	brne	.+12     	; 0x21e <LED_OFF+0x20>
+	{
+		Pin_reset(LED2_PORT , LED2_PIN_NUMBER);
+ 212:	66 e0       	ldi	r22, 0x06	; 6
+ 214:	82 e3       	ldi	r24, 0x32	; 50
+ 216:	90 e0       	ldi	r25, 0x00	; 0
+ 218:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 21c:	08 95       	ret
+	}
+	else if (u8LED_Number == LED3)
+ 21e:	83 30       	cpi	r24, 0x03	; 3
+ 220:	29 f4       	brne	.+10     	; 0x22c <LED_OFF+0x2e>
+	{
+		Pin_reset(LED3_PORT , LED3_PIN_NUMBER);
+ 222:	67 e0       	ldi	r22, 0x07	; 7
+ 224:	82 e3       	ldi	r24, 0x32	; 50
+ 226:	90 e0       	ldi	r25, 0x00	; 0
+ 228:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 22c:	08 95       	ret
+
+0000022e <RELAY_ON>:
+
+#include "RELAY_INTERFACE.h"
+
+extern void RELAY_ON()
+{
+	Pin_set(RELAY_PORT , RELAY_PIN_NUMBER);
+ 22e:	63 e0       	ldi	r22, 0x03	; 3
+ 230:	82 e3       	ldi	r24, 0x32	; 50
+ 232:	90 e0       	ldi	r25, 0x00	; 0
+ 234:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 238:	08 95       	ret
+
+0000023a <RELAY_OFF>:
+}
+
+extern void RELAY_OFF()
+{
+	Pin_reset(RELAY_PORT , RELAY_PIN_NUMBER);
+ 23a:	63 e0       	ldi	r22, 0x03	; 3
+ 23c:	82 e3       	ldi	r24, 0x32	; 50
+ 23e:	90 e0       	ldi	r25, 0x00	; 0
+ 240:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 244:	08 95       	ret
+
+00000246 <SEGMENT_ON>:
+		_delay_ms(150);
+		SEGMENT_ON(SEGMENT1);
+		SEGMENT_ON(SEGMENT2);
+		_delay_ms(150);	
+	}
+}
+ 246:	81 30       	cpi	r24, 0x01	; 1
+ 248:	31 f4       	brne	.+12     	; 0x256 <SEGMENT_ON+0x10>
+ 24a:	62 e0       	ldi	r22, 0x02	; 2
+ 24c:	85 e3       	ldi	r24, 0x35	; 53
+ 24e:	90 e0       	ldi	r25, 0x00	; 0
+ 250:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 254:	08 95       	ret
+ 256:	82 30       	cpi	r24, 0x02	; 2
+ 258:	29 f4       	brne	.+10     	; 0x264 <SEGMENT_ON+0x1e>
+ 25a:	63 e0       	ldi	r22, 0x03	; 3
+ 25c:	85 e3       	ldi	r24, 0x35	; 53
+ 25e:	90 e0       	ldi	r25, 0x00	; 0
+ 260:	0e 94 fd 02 	call	0x5fa	; 0x5fa <Pin_set>
+ 264:	08 95       	ret
+
+00000266 <SEGMENT_OFF>:
+ 266:	81 30       	cpi	r24, 0x01	; 1
+ 268:	31 f4       	brne	.+12     	; 0x276 <SEGMENT_OFF+0x10>
+ 26a:	62 e0       	ldi	r22, 0x02	; 2
+ 26c:	85 e3       	ldi	r24, 0x35	; 53
+ 26e:	90 e0       	ldi	r25, 0x00	; 0
+ 270:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 274:	08 95       	ret
+ 276:	82 30       	cpi	r24, 0x02	; 2
+ 278:	29 f4       	brne	.+10     	; 0x284 <SEGMENT_OFF+0x1e>
+ 27a:	63 e0       	ldi	r22, 0x03	; 3
+ 27c:	85 e3       	ldi	r24, 0x35	; 53
+ 27e:	90 e0       	ldi	r25, 0x00	; 0
+ 280:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 284:	08 95       	ret
+
+00000286 <BCD_PIN_RESET>:
+ 286:	81 30       	cpi	r24, 0x01	; 1
+ 288:	31 f4       	brne	.+12     	; 0x296 <BCD_PIN_RESET+0x10>
+ 28a:	64 e0       	ldi	r22, 0x04	; 4
+ 28c:	85 e3       	ldi	r24, 0x35	; 53
+ 28e:	90 e0       	ldi	r25, 0x00	; 0
+ 290:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 294:	08 95       	ret
+ 296:	82 30       	cpi	r24, 0x02	; 2
+ 298:	31 f4       	brne	.+12     	; 0x2a6 <BCD_PIN_RESET+0x20>
+ 29a:	65 e0       	ldi	r22, 0x05	; 5
+ 29c:	85 e3       	ldi	r24, 0x35	; 53
+ 29e:	90 e0       	ldi	r25, 0x00	; 0
+ 2a0:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 2a4:	08 95       	ret
+ 2a6:	83 30       	cpi	r24, 0x03	; 3
+ 2a8:	31 f4       	brne	.+12     	; 0x2b6 <BCD_PIN_RESET+0x30>
+ 2aa:	66 e0       	ldi	r22, 0x06	; 6
+ 2ac:	85 e3       	ldi	r24, 0x35	; 53
+ 2ae:	90 e0       	ldi	r25, 0x00	; 0
+ 2b0:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 2b4:	08 95       	ret
+ 2b6:	84 30       	cpi	r24, 0x04	; 4
+ 2b8:	29 f4       	brne	.+10     	; 0x2c4 <BCD_PIN_RESET+0x3e>
+ 2ba:	67 e0       	ldi	r22, 0x07	; 7
+ 2bc:	85 e3       	ldi	r24, 0x35	; 53
+ 2be:	90 e0       	ldi	r25, 0x00	; 0
+ 2c0:	0e 94 09 03 	call	0x612	; 0x612 <Pin_reset>
+ 2c4:	08 95       	ret
+
+000002c6 <SEGMENT_RESET>:
+ 2c6:	81 e0       	ldi	r24, 0x01	; 1
+ 2c8:	0e 94 43 01 	call	0x286	; 0x286 <BCD_PIN_RESET>
+ 2cc:	82 e0       	ldi	r24, 0x02	; 2
+ 2ce:	0e 94 43 01 	call	0x286	; 0x286 <BCD_PIN_RESET>
+ 2d2:	83 e0       	ldi	r24, 0x03	; 3
+ 2d4:	0e 94 43 01 	call	0x286	; 0x286 <BCD_PIN_RESET>
+ 2d8:	84 e0       	ldi	r24, 0x04	; 4
+ 2da:	0e 94 43 01 	call	0x286	; 0x286 <BCD_PIN_RESET>
+ 2de:	08 95       	ret
+
+000002e0 <SEGMENT_SHOW_NUMBER>:
+ 2e0:	cf 93       	push	r28
+ 2e2:	c8 2f       	mov	r28, r24
+ 2e4:	0e 94 63 01 	call	0x2c6	; 0x2c6 <SEGMENT_RESET>
+ 2e8:	25 b3       	in	r18, 0x15	; 21
+ 2ea:	36 b3       	in	r19, 0x16	; 22
+ 2ec:	40 e1       	ldi	r20, 0x10	; 16
+ 2ee:	c4 9f       	mul	r28, r20
+ 2f0:	c0 01       	movw	r24, r0
+ 2f2:	11 24       	eor	r1, r1
+ 2f4:	82 2b       	or	r24, r18
+ 2f6:	93 2b       	or	r25, r19
+ 2f8:	96 bb       	out	0x16, r25	; 22
+ 2fa:	85 bb       	out	0x15, r24	; 21
+ 2fc:	8f ef       	ldi	r24, 0xFF	; 255
+ 2fe:	93 ef       	ldi	r25, 0xF3	; 243
+ 300:	21 e0       	ldi	r18, 0x01	; 1
+ 302:	81 50       	subi	r24, 0x01	; 1
+ 304:	90 40       	sbci	r25, 0x00	; 0
+ 306:	20 40       	sbci	r18, 0x00	; 0
+ 308:	e1 f7       	brne	.-8      	; 0x302 <SEGMENT_SHOW_NUMBER+0x22>
+ 30a:	00 c0       	rjmp	.+0      	; 0x30c <SEGMENT_SHOW_NUMBER+0x2c>
+ 30c:	00 00       	nop
+ 30e:	cf 91       	pop	r28
+ 310:	08 95       	ret
+
+00000312 <SEGMENT_LEDS_FLASH>:
+
+extern void SEGMENT_LEDS_FLASH()
+{
+ 312:	cf 93       	push	r28
+ 314:	c3 e0       	ldi	r28, 0x03	; 3
+	uint8_t u8Count = 0;
+	
+	for (u8Count = 0 ; u8Count < NUMBER_OF_FLASHES ; u8Count ++)
+	{
+		LED_OFF(LED1);
+ 316:	81 e0       	ldi	r24, 0x01	; 1
+ 318:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+		LED_OFF(LED2);
+ 31c:	82 e0       	ldi	r24, 0x02	; 2
+ 31e:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+		LED_OFF(LED3);
+ 322:	83 e0       	ldi	r24, 0x03	; 3
+ 324:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+		SEGMENT_OFF(SEGMENT1);
+ 328:	81 e0       	ldi	r24, 0x01	; 1
+ 32a:	0e 94 33 01 	call	0x266	; 0x266 <SEGMENT_OFF>
+		SEGMENT_OFF(SEGMENT2);
+ 32e:	82 e0       	ldi	r24, 0x02	; 2
+ 330:	0e 94 33 01 	call	0x266	; 0x266 <SEGMENT_OFF>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 334:	2f ef       	ldi	r18, 0xFF	; 255
+ 336:	82 e5       	ldi	r24, 0x52	; 82
+ 338:	97 e0       	ldi	r25, 0x07	; 7
+ 33a:	21 50       	subi	r18, 0x01	; 1
+ 33c:	80 40       	sbci	r24, 0x00	; 0
+ 33e:	90 40       	sbci	r25, 0x00	; 0
+ 340:	e1 f7       	brne	.-8      	; 0x33a <SEGMENT_LEDS_FLASH+0x28>
+ 342:	00 c0       	rjmp	.+0      	; 0x344 <SEGMENT_LEDS_FLASH+0x32>
+ 344:	00 00       	nop
+		_delay_ms(150);
+		LED_ON(LED1);
+ 346:	81 e0       	ldi	r24, 0x01	; 1
+ 348:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+		LED_ON(LED2);
+ 34c:	82 e0       	ldi	r24, 0x02	; 2
+ 34e:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+		LED_ON(LED3);
+ 352:	83 e0       	ldi	r24, 0x03	; 3
+ 354:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+		SEGMENT_ON(SEGMENT1);
+ 358:	81 e0       	ldi	r24, 0x01	; 1
+ 35a:	0e 94 23 01 	call	0x246	; 0x246 <SEGMENT_ON>
+		SEGMENT_ON(SEGMENT2);
+ 35e:	82 e0       	ldi	r24, 0x02	; 2
+ 360:	0e 94 23 01 	call	0x246	; 0x246 <SEGMENT_ON>
+ 364:	2f ef       	ldi	r18, 0xFF	; 255
+ 366:	82 e5       	ldi	r24, 0x52	; 82
+ 368:	97 e0       	ldi	r25, 0x07	; 7
+ 36a:	21 50       	subi	r18, 0x01	; 1
+ 36c:	80 40       	sbci	r24, 0x00	; 0
+ 36e:	90 40       	sbci	r25, 0x00	; 0
+ 370:	e1 f7       	brne	.-8      	; 0x36a <SEGMENT_LEDS_FLASH+0x58>
+ 372:	00 c0       	rjmp	.+0      	; 0x374 <SEGMENT_LEDS_FLASH+0x62>
+ 374:	00 00       	nop
+ 376:	c1 50       	subi	r28, 0x01	; 1
+
+extern void SEGMENT_LEDS_FLASH()
+{
+	uint8_t u8Count = 0;
+	
+	for (u8Count = 0 ; u8Count < NUMBER_OF_FLASHES ; u8Count ++)
+ 378:	71 f6       	brne	.-100    	; 0x316 <SEGMENT_LEDS_FLASH+0x4>
+		LED_ON(LED3);
+		SEGMENT_ON(SEGMENT1);
+		SEGMENT_ON(SEGMENT2);
+		_delay_ms(150);	
+	}
+	LED_OFF(LED1);
+ 37a:	81 e0       	ldi	r24, 0x01	; 1
+ 37c:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+	LED_OFF(LED2);
+ 380:	82 e0       	ldi	r24, 0x02	; 2
+ 382:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+	LED_OFF(LED3);
+ 386:	83 e0       	ldi	r24, 0x03	; 3
+ 388:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+}
+ 38c:	cf 91       	pop	r28
+ 38e:	08 95       	ret
+
+00000390 <main>:
+#include "HAL/BUZZER_INTERFACE.h"
+#include "HAL/RELAY_INTERFACE.h"
+#include "HAL/BUTTON_INTERFACE.h"
+
+int main(void)
+{	
+ 390:	cf 93       	push	r28
+ 392:	df 93       	push	r29
+ 394:	1f 92       	push	r1
+ 396:	cd b7       	in	r28, 0x3d	; 61
+ 398:	de b7       	in	r29, 0x3e	; 62
+	uint8_t u8Reading = 0;
+ 39a:	19 82       	std	Y+1, r1	; 0x01
+	uint8_t u8Button0_hold = 0 ;
+	uint8_t u8Button1_hold = 0 ;
+	uint8_t u8Button2_hold = 0 ;
+	
+	// OUTPUTS
+	Pin_mode(LED1_PORT , LED1_DDR , LED1_PIN_NUMBER , OUTPUT);
+ 39c:	21 e0       	ldi	r18, 0x01	; 1
+ 39e:	45 e0       	ldi	r20, 0x05	; 5
+ 3a0:	61 e3       	ldi	r22, 0x31	; 49
+ 3a2:	70 e0       	ldi	r23, 0x00	; 0
+ 3a4:	82 e3       	ldi	r24, 0x32	; 50
+ 3a6:	90 e0       	ldi	r25, 0x00	; 0
+ 3a8:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(LED2_PORT , LED2_DDR , LED2_PIN_NUMBER , OUTPUT);
+ 3ac:	21 e0       	ldi	r18, 0x01	; 1
+ 3ae:	46 e0       	ldi	r20, 0x06	; 6
+ 3b0:	61 e3       	ldi	r22, 0x31	; 49
+ 3b2:	70 e0       	ldi	r23, 0x00	; 0
+ 3b4:	82 e3       	ldi	r24, 0x32	; 50
+ 3b6:	90 e0       	ldi	r25, 0x00	; 0
+ 3b8:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(LED3_PORT , LED3_DDR , LED3_PIN_NUMBER , OUTPUT);
+ 3bc:	21 e0       	ldi	r18, 0x01	; 1
+ 3be:	47 e0       	ldi	r20, 0x07	; 7
+ 3c0:	61 e3       	ldi	r22, 0x31	; 49
+ 3c2:	70 e0       	ldi	r23, 0x00	; 0
+ 3c4:	82 e3       	ldi	r24, 0x32	; 50
+ 3c6:	90 e0       	ldi	r25, 0x00	; 0
+ 3c8:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(BUZZER_PORT , BUZZER_DDR , BUZZER_PIN_NUMBER , OUTPUT);
+ 3cc:	21 e0       	ldi	r18, 0x01	; 1
+ 3ce:	44 e0       	ldi	r20, 0x04	; 4
+ 3d0:	61 e3       	ldi	r22, 0x31	; 49
+ 3d2:	70 e0       	ldi	r23, 0x00	; 0
+ 3d4:	82 e3       	ldi	r24, 0x32	; 50
+ 3d6:	90 e0       	ldi	r25, 0x00	; 0
+ 3d8:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(RELAY_PORT , RELAY_DDR , RELAY_PIN_NUMBER , OUTPUT);
+ 3dc:	21 e0       	ldi	r18, 0x01	; 1
+ 3de:	43 e0       	ldi	r20, 0x03	; 3
+ 3e0:	61 e3       	ldi	r22, 0x31	; 49
+ 3e2:	70 e0       	ldi	r23, 0x00	; 0
+ 3e4:	82 e3       	ldi	r24, 0x32	; 50
+ 3e6:	90 e0       	ldi	r25, 0x00	; 0
+ 3e8:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(SEGMENT1_ENABLE_PORT , SEGMENT1_ENABLE_DDR , SEGMENT1_ENABLE_PIN_NUMBER , OUTPUT);
+ 3ec:	21 e0       	ldi	r18, 0x01	; 1
+ 3ee:	42 e0       	ldi	r20, 0x02	; 2
+ 3f0:	64 e3       	ldi	r22, 0x34	; 52
+ 3f2:	70 e0       	ldi	r23, 0x00	; 0
+ 3f4:	85 e3       	ldi	r24, 0x35	; 53
+ 3f6:	90 e0       	ldi	r25, 0x00	; 0
+ 3f8:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(SEGMENT2_ENABLE_PORT , SEGMENT2_ENABLE_DDR , SEGMENT2_ENABLE_PIN_NUMBER , OUTPUT);
+ 3fc:	21 e0       	ldi	r18, 0x01	; 1
+ 3fe:	43 e0       	ldi	r20, 0x03	; 3
+ 400:	64 e3       	ldi	r22, 0x34	; 52
+ 402:	70 e0       	ldi	r23, 0x00	; 0
+ 404:	85 e3       	ldi	r24, 0x35	; 53
+ 406:	90 e0       	ldi	r25, 0x00	; 0
+ 408:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(SEGMENT_A_PORT , SEGMENT_A_DDR , SEGMENT_A_PIN_NUMBER , OUTPUT);
+ 40c:	21 e0       	ldi	r18, 0x01	; 1
+ 40e:	44 e0       	ldi	r20, 0x04	; 4
+ 410:	64 e3       	ldi	r22, 0x34	; 52
+ 412:	70 e0       	ldi	r23, 0x00	; 0
+ 414:	85 e3       	ldi	r24, 0x35	; 53
+ 416:	90 e0       	ldi	r25, 0x00	; 0
+ 418:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(SEGMENT_B_PORT , SEGMENT_B_DDR , SEGMENT_B_PIN_NUMBER , OUTPUT);
+ 41c:	21 e0       	ldi	r18, 0x01	; 1
+ 41e:	45 e0       	ldi	r20, 0x05	; 5
+ 420:	64 e3       	ldi	r22, 0x34	; 52
+ 422:	70 e0       	ldi	r23, 0x00	; 0
+ 424:	85 e3       	ldi	r24, 0x35	; 53
+ 426:	90 e0       	ldi	r25, 0x00	; 0
+ 428:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(SEGMENT_C_PORT , SEGMENT_C_DDR , SEGMENT_C_PIN_NUMBER , OUTPUT);
+ 42c:	21 e0       	ldi	r18, 0x01	; 1
+ 42e:	46 e0       	ldi	r20, 0x06	; 6
+ 430:	64 e3       	ldi	r22, 0x34	; 52
+ 432:	70 e0       	ldi	r23, 0x00	; 0
+ 434:	85 e3       	ldi	r24, 0x35	; 53
+ 436:	90 e0       	ldi	r25, 0x00	; 0
+ 438:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(SEGMENT_D_PORT , SEGMENT_D_DDR , SEGMENT_D_PIN_NUMBER , OUTPUT);
+ 43c:	21 e0       	ldi	r18, 0x01	; 1
+ 43e:	47 e0       	ldi	r20, 0x07	; 7
+ 440:	64 e3       	ldi	r22, 0x34	; 52
+ 442:	70 e0       	ldi	r23, 0x00	; 0
+ 444:	85 e3       	ldi	r24, 0x35	; 53
+ 446:	90 e0       	ldi	r25, 0x00	; 0
+ 448:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	
+	// INPUTS
+	Pin_mode(BUTTON0_PORT , BUTTON0_DDR , BUTTON0_PIN_NUMBER , INPUT);
+ 44c:	20 e0       	ldi	r18, 0x00	; 0
+ 44e:	40 e0       	ldi	r20, 0x00	; 0
+ 450:	61 e3       	ldi	r22, 0x31	; 49
+ 452:	70 e0       	ldi	r23, 0x00	; 0
+ 454:	82 e3       	ldi	r24, 0x32	; 50
+ 456:	90 e0       	ldi	r25, 0x00	; 0
+ 458:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(BUTTON1_PORT , BUTTON1_DDR , BUTTON1_PIN_NUMBER , INPUT);
+ 45c:	20 e0       	ldi	r18, 0x00	; 0
+ 45e:	41 e0       	ldi	r20, 0x01	; 1
+ 460:	61 e3       	ldi	r22, 0x31	; 49
+ 462:	70 e0       	ldi	r23, 0x00	; 0
+ 464:	82 e3       	ldi	r24, 0x32	; 50
+ 466:	90 e0       	ldi	r25, 0x00	; 0
+ 468:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	Pin_mode(BUTTON2_PORT , BUTTON2_DDR , BUTTON2_PIN_NUMBER , INPUT);
+ 46c:	20 e0       	ldi	r18, 0x00	; 0
+ 46e:	42 e0       	ldi	r20, 0x02	; 2
+ 470:	61 e3       	ldi	r22, 0x31	; 49
+ 472:	70 e0       	ldi	r23, 0x00	; 0
+ 474:	82 e3       	ldi	r24, 0x32	; 50
+ 476:	90 e0       	ldi	r25, 0x00	; 0
+ 478:	0e 94 16 03 	call	0x62c	; 0x62c <Pin_mode>
+	
+	// Setting initial states
+	SEGMENT_ON(SEGMENT1);
+ 47c:	81 e0       	ldi	r24, 0x01	; 1
+ 47e:	0e 94 23 01 	call	0x246	; 0x246 <SEGMENT_ON>
+	SEGMENT_ON(SEGMENT2);
+ 482:	82 e0       	ldi	r24, 0x02	; 2
+ 484:	0e 94 23 01 	call	0x246	; 0x246 <SEGMENT_ON>
+		
+	LED_OFF(LED1);
+ 488:	81 e0       	ldi	r24, 0x01	; 1
+ 48a:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+	LED_OFF(LED2);
+ 48e:	82 e0       	ldi	r24, 0x02	; 2
+ 490:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+	LED_OFF(LED3);
+ 494:	83 e0       	ldi	r24, 0x03	; 3
+ 496:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+	BUZZER_OFF();
+ 49a:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <BUZZER_OFF>
+	RELAY_OFF();
+ 49e:	0e 94 1d 01 	call	0x23a	; 0x23a <RELAY_OFF>
+	
+	SEGMENT_RESET();
+ 4a2:	0e 94 63 01 	call	0x2c6	; 0x2c6 <SEGMENT_RESET>
+{	
+	uint8_t u8Reading = 0;
+	uint8_t u8Segment7_number = 0;
+	uint8_t u8Button0_hold = 0 ;
+	uint8_t u8Button1_hold = 0 ;
+	uint8_t u8Button2_hold = 0 ;
+ 4a6:	f1 2c       	mov	r15, r1
+int main(void)
+{	
+	uint8_t u8Reading = 0;
+	uint8_t u8Segment7_number = 0;
+	uint8_t u8Button0_hold = 0 ;
+	uint8_t u8Button1_hold = 0 ;
+ 4a8:	00 e0       	ldi	r16, 0x00	; 0
+
+int main(void)
+{	
+	uint8_t u8Reading = 0;
+	uint8_t u8Segment7_number = 0;
+	uint8_t u8Button0_hold = 0 ;
+ 4aa:	10 e0       	ldi	r17, 0x00	; 0
+#include "HAL/BUTTON_INTERFACE.h"
+
+int main(void)
+{	
+	uint8_t u8Reading = 0;
+	uint8_t u8Segment7_number = 0;
+ 4ac:	e1 2c       	mov	r14, r1
+	
+	SEGMENT_RESET();
+	
+    while (1) 
+    {
+		BUTTON0_READ(&u8Reading);
+ 4ae:	ce 01       	movw	r24, r28
+ 4b0:	01 96       	adiw	r24, 0x01	; 1
+ 4b2:	0e 94 36 00 	call	0x6c	; 0x6c <BUTTON0_READ>
+		
+		if (u8Button0_hold == 0)
+ 4b6:	11 11       	cpse	r17, r1
+ 4b8:	2d c0       	rjmp	.+90     	; 0x514 <__LOCK_REGION_LENGTH__+0x114>
+		{
+			if (u8Reading != 0)
+ 4ba:	89 81       	ldd	r24, Y+1	; 0x01
+ 4bc:	88 23       	and	r24, r24
+ 4be:	e9 f0       	breq	.+58     	; 0x4fa <__LOCK_REGION_LENGTH__+0xfa>
+			{
+				LED_ON(LED1);
+ 4c0:	81 e0       	ldi	r24, 0x01	; 1
+ 4c2:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				LED_ON(LED2);
+ 4c6:	82 e0       	ldi	r24, 0x02	; 2
+ 4c8:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				LED_ON(LED3);
+ 4cc:	83 e0       	ldi	r24, 0x03	; 3
+ 4ce:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				BUZZER_ON();
+ 4d2:	0e 94 db 00 	call	0x1b6	; 0x1b6 <BUZZER_ON>
+				RELAY_ON();
+ 4d6:	0e 94 17 01 	call	0x22e	; 0x22e <RELAY_ON>
+			
+				if (u8Segment7_number == 9)
+ 4da:	89 e0       	ldi	r24, 0x09	; 9
+ 4dc:	e8 12       	cpse	r14, r24
+ 4de:	07 c0       	rjmp	.+14     	; 0x4ee <__LOCK_REGION_LENGTH__+0xee>
+				{
+					u8Segment7_number = 0 ;
+					SEGMENT_SHOW_NUMBER(0);
+ 4e0:	80 e0       	ldi	r24, 0x00	; 0
+ 4e2:	0e 94 70 01 	call	0x2e0	; 0x2e0 <SEGMENT_SHOW_NUMBER>
+					SEGMENT_LEDS_FLASH();
+ 4e6:	0e 94 89 01 	call	0x312	; 0x312 <SEGMENT_LEDS_FLASH>
+				BUZZER_ON();
+				RELAY_ON();
+			
+				if (u8Segment7_number == 9)
+				{
+					u8Segment7_number = 0 ;
+ 4ea:	e1 2c       	mov	r14, r1
+ 4ec:	04 c0       	rjmp	.+8      	; 0x4f6 <__LOCK_REGION_LENGTH__+0xf6>
+					SEGMENT_SHOW_NUMBER(0);
+					SEGMENT_LEDS_FLASH();
+				}
+				else
+				{
+					u8Segment7_number ++ ;
+ 4ee:	e3 94       	inc	r14
+					SEGMENT_SHOW_NUMBER(u8Segment7_number);
+ 4f0:	8e 2d       	mov	r24, r14
+ 4f2:	0e 94 70 01 	call	0x2e0	; 0x2e0 <SEGMENT_SHOW_NUMBER>
+				}
+				
+				u8Button0_hold ++ ;
+ 4f6:	11 e0       	ldi	r17, 0x01	; 1
+ 4f8:	0d c0       	rjmp	.+26     	; 0x514 <__LOCK_REGION_LENGTH__+0x114>
+			}
+			else
+			{
+				LED_OFF(LED1);
+ 4fa:	81 e0       	ldi	r24, 0x01	; 1
+ 4fc:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				LED_OFF(LED2);
+ 500:	82 e0       	ldi	r24, 0x02	; 2
+ 502:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				LED_OFF(LED3);
+ 506:	83 e0       	ldi	r24, 0x03	; 3
+ 508:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				BUZZER_OFF();
+ 50c:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <BUZZER_OFF>
+				RELAY_OFF();
+ 510:	0e 94 1d 01 	call	0x23a	; 0x23a <RELAY_OFF>
+		{
+			
+		}
+		
+		// Checking if the button is released 
+		BUTTON0_READ(&u8Reading);
+ 514:	ce 01       	movw	r24, r28
+ 516:	01 96       	adiw	r24, 0x01	; 1
+ 518:	0e 94 36 00 	call	0x6c	; 0x6c <BUTTON0_READ>
+		
+		if (u8Reading == 0)
+ 51c:	89 81       	ldd	r24, Y+1	; 0x01
+ 51e:	81 11       	cpse	r24, r1
+ 520:	01 c0       	rjmp	.+2      	; 0x524 <__LOCK_REGION_LENGTH__+0x124>
+		{
+			u8Button0_hold = 0;
+ 522:	10 e0       	ldi	r17, 0x00	; 0
+		else
+		{
+			
+		}
+		
+		BUTTON1_READ(&u8Reading);
+ 524:	ce 01       	movw	r24, r28
+ 526:	01 96       	adiw	r24, 0x01	; 1
+ 528:	0e 94 6d 00 	call	0xda	; 0xda <BUTTON1_READ>
+		
+		if (u8Button1_hold == 0)
+ 52c:	01 11       	cpse	r16, r1
+ 52e:	28 c0       	rjmp	.+80     	; 0x580 <__LOCK_REGION_LENGTH__+0x180>
+		{
+			if (u8Reading != 0)
+ 530:	89 81       	ldd	r24, Y+1	; 0x01
+ 532:	88 23       	and	r24, r24
+ 534:	c1 f0       	breq	.+48     	; 0x566 <__LOCK_REGION_LENGTH__+0x166>
+			{
+				LED_ON(LED1);
+ 536:	81 e0       	ldi	r24, 0x01	; 1
+ 538:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				LED_ON(LED2);
+ 53c:	82 e0       	ldi	r24, 0x02	; 2
+ 53e:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				LED_ON(LED3);
+ 542:	83 e0       	ldi	r24, 0x03	; 3
+ 544:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				BUZZER_ON();
+ 548:	0e 94 db 00 	call	0x1b6	; 0x1b6 <BUZZER_ON>
+				RELAY_ON();
+ 54c:	0e 94 17 01 	call	0x22e	; 0x22e <RELAY_ON>
+			
+				if (u8Segment7_number == 0)
+ 550:	e1 10       	cpse	r14, r1
+ 552:	03 c0       	rjmp	.+6      	; 0x55a <__LOCK_REGION_LENGTH__+0x15a>
+				{
+					SEGMENT_LEDS_FLASH();
+ 554:	0e 94 89 01 	call	0x312	; 0x312 <SEGMENT_LEDS_FLASH>
+ 558:	04 c0       	rjmp	.+8      	; 0x562 <__LOCK_REGION_LENGTH__+0x162>
+				}
+				else
+				{
+					u8Segment7_number -- ;
+ 55a:	ea 94       	dec	r14
+					SEGMENT_SHOW_NUMBER(u8Segment7_number);
+ 55c:	8e 2d       	mov	r24, r14
+ 55e:	0e 94 70 01 	call	0x2e0	; 0x2e0 <SEGMENT_SHOW_NUMBER>
+				}
+				u8Button1_hold ++;
+ 562:	01 e0       	ldi	r16, 0x01	; 1
+ 564:	0d c0       	rjmp	.+26     	; 0x580 <__LOCK_REGION_LENGTH__+0x180>
+			}
+			else
+			{
+				LED_OFF(LED1);
+ 566:	81 e0       	ldi	r24, 0x01	; 1
+ 568:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				LED_OFF(LED2);
+ 56c:	82 e0       	ldi	r24, 0x02	; 2
+ 56e:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				LED_OFF(LED3);
+ 572:	83 e0       	ldi	r24, 0x03	; 3
+ 574:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				BUZZER_OFF();
+ 578:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <BUZZER_OFF>
+				RELAY_OFF();
+ 57c:	0e 94 1d 01 	call	0x23a	; 0x23a <RELAY_OFF>
+		{
+			
+		}
+		
+		// Checking if the button is released
+		BUTTON1_READ(&u8Reading);
+ 580:	ce 01       	movw	r24, r28
+ 582:	01 96       	adiw	r24, 0x01	; 1
+ 584:	0e 94 6d 00 	call	0xda	; 0xda <BUTTON1_READ>
+		
+		if (u8Reading == 0)
+ 588:	89 81       	ldd	r24, Y+1	; 0x01
+ 58a:	81 11       	cpse	r24, r1
+ 58c:	01 c0       	rjmp	.+2      	; 0x590 <__LOCK_REGION_LENGTH__+0x190>
+		{
+			u8Button1_hold = 0;
+ 58e:	00 e0       	ldi	r16, 0x00	; 0
+		else
+		{
+			
+		}
+		
+		BUTTON2_READ(&u8Reading);
+ 590:	ce 01       	movw	r24, r28
+ 592:	01 96       	adiw	r24, 0x01	; 1
+ 594:	0e 94 a4 00 	call	0x148	; 0x148 <BUTTON2_READ>
+		
+		if(u8Button2_hold == 0)
+ 598:	f1 10       	cpse	r15, r1
+ 59a:	26 c0       	rjmp	.+76     	; 0x5e8 <__LOCK_REGION_LENGTH__+0x1e8>
+		{
+			if (u8Reading != 0)
+ 59c:	89 81       	ldd	r24, Y+1	; 0x01
+ 59e:	88 23       	and	r24, r24
+ 5a0:	b1 f0       	breq	.+44     	; 0x5ce <__LOCK_REGION_LENGTH__+0x1ce>
+			{
+				LED_ON(LED1);
+ 5a2:	81 e0       	ldi	r24, 0x01	; 1
+ 5a4:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				LED_ON(LED2);
+ 5a8:	82 e0       	ldi	r24, 0x02	; 2
+ 5aa:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				LED_ON(LED3);
+ 5ae:	83 e0       	ldi	r24, 0x03	; 3
+ 5b0:	0e 94 e7 00 	call	0x1ce	; 0x1ce <LED_ON>
+				BUZZER_ON();
+ 5b4:	0e 94 db 00 	call	0x1b6	; 0x1b6 <BUZZER_ON>
+				RELAY_ON();
+ 5b8:	0e 94 17 01 	call	0x22e	; 0x22e <RELAY_ON>
+				
+				u8Segment7_number = 0;
+				SEGMENT_SHOW_NUMBER(u8Segment7_number);
+ 5bc:	80 e0       	ldi	r24, 0x00	; 0
+ 5be:	0e 94 70 01 	call	0x2e0	; 0x2e0 <SEGMENT_SHOW_NUMBER>
+				SEGMENT_LEDS_FLASH();
+ 5c2:	0e 94 89 01 	call	0x312	; 0x312 <SEGMENT_LEDS_FLASH>
+				u8Button2_hold ++;
+ 5c6:	ff 24       	eor	r15, r15
+ 5c8:	f3 94       	inc	r15
+				LED_ON(LED2);
+				LED_ON(LED3);
+				BUZZER_ON();
+				RELAY_ON();
+				
+				u8Segment7_number = 0;
+ 5ca:	e1 2c       	mov	r14, r1
+ 5cc:	0d c0       	rjmp	.+26     	; 0x5e8 <__LOCK_REGION_LENGTH__+0x1e8>
+				SEGMENT_LEDS_FLASH();
+				u8Button2_hold ++;
+			}
+			else
+			{
+				LED_OFF(LED1);
+ 5ce:	81 e0       	ldi	r24, 0x01	; 1
+ 5d0:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				LED_OFF(LED2);
+ 5d4:	82 e0       	ldi	r24, 0x02	; 2
+ 5d6:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				LED_OFF(LED3);
+ 5da:	83 e0       	ldi	r24, 0x03	; 3
+ 5dc:	0e 94 ff 00 	call	0x1fe	; 0x1fe <LED_OFF>
+				BUZZER_OFF();
+ 5e0:	0e 94 e1 00 	call	0x1c2	; 0x1c2 <BUZZER_OFF>
+				RELAY_OFF();
+ 5e4:	0e 94 1d 01 	call	0x23a	; 0x23a <RELAY_OFF>
+		{
+			
+		}
+		
+		// Checking if the button is released
+		BUTTON2_READ(&u8Reading);
+ 5e8:	ce 01       	movw	r24, r28
+ 5ea:	01 96       	adiw	r24, 0x01	; 1
+ 5ec:	0e 94 a4 00 	call	0x148	; 0x148 <BUTTON2_READ>
+		
+		if (u8Reading == 0)
+ 5f0:	89 81       	ldd	r24, Y+1	; 0x01
+ 5f2:	81 11       	cpse	r24, r1
+ 5f4:	5c cf       	rjmp	.-328    	; 0x4ae <__LOCK_REGION_LENGTH__+0xae>
+		{
+			u8Button2_hold = 0;
+ 5f6:	f1 2c       	mov	r15, r1
+ 5f8:	5a cf       	rjmp	.-332    	; 0x4ae <__LOCK_REGION_LENGTH__+0xae>
+
+000005fa <Pin_set>:
+	(*(volatile uint8_t *) (PORT_address)) &= ~(1<<Pin_index);
+}
+
+extern void Pin_toggle( unsigned int PORT_address , uint8_t Pin_index)
+{
+	(*(volatile uint8_t *) (PORT_address)) ^= (1<<Pin_index);
+ 5fa:	fc 01       	movw	r30, r24
+ 5fc:	40 81       	ld	r20, Z
+ 5fe:	21 e0       	ldi	r18, 0x01	; 1
+ 600:	30 e0       	ldi	r19, 0x00	; 0
+ 602:	02 c0       	rjmp	.+4      	; 0x608 <Pin_set+0xe>
+ 604:	22 0f       	add	r18, r18
+ 606:	33 1f       	adc	r19, r19
+ 608:	6a 95       	dec	r22
+ 60a:	e2 f7       	brpl	.-8      	; 0x604 <Pin_set+0xa>
+ 60c:	24 2b       	or	r18, r20
+ 60e:	20 83       	st	Z, r18
+ 610:	08 95       	ret
+
+00000612 <Pin_reset>:
+ 612:	fc 01       	movw	r30, r24
+ 614:	90 81       	ld	r25, Z
+ 616:	21 e0       	ldi	r18, 0x01	; 1
+ 618:	30 e0       	ldi	r19, 0x00	; 0
+ 61a:	02 c0       	rjmp	.+4      	; 0x620 <Pin_reset+0xe>
+ 61c:	22 0f       	add	r18, r18
+ 61e:	33 1f       	adc	r19, r19
+ 620:	6a 95       	dec	r22
+ 622:	e2 f7       	brpl	.-8      	; 0x61c <Pin_reset+0xa>
+ 624:	20 95       	com	r18
+ 626:	29 23       	and	r18, r25
+ 628:	20 83       	st	Z, r18
+ 62a:	08 95       	ret
+
+0000062c <Pin_mode>:
+}
+
+extern void Pin_mode(unsigned int PORT_address , unsigned int DDR_address , uint8_t Pin_index , uint8_t Pin_state)
+{
+	if (Pin_state == INPUT)
+ 62c:	21 11       	cpse	r18, r1
+ 62e:	12 c0       	rjmp	.+36     	; 0x654 <Pin_mode+0x28>
+	{
+		(*(volatile uint8_t *)(DDR_address)) &= ~(1<<Pin_index) ;
+ 630:	fb 01       	movw	r30, r22
+ 632:	50 81       	ld	r21, Z
+ 634:	21 e0       	ldi	r18, 0x01	; 1
+ 636:	30 e0       	ldi	r19, 0x00	; 0
+ 638:	02 c0       	rjmp	.+4      	; 0x63e <Pin_mode+0x12>
+ 63a:	22 0f       	add	r18, r18
+ 63c:	33 1f       	adc	r19, r19
+ 63e:	4a 95       	dec	r20
+ 640:	e2 f7       	brpl	.-8      	; 0x63a <Pin_mode+0xe>
+ 642:	32 2f       	mov	r19, r18
+ 644:	30 95       	com	r19
+ 646:	35 23       	and	r19, r21
+ 648:	30 83       	st	Z, r19
+		(*(volatile uint8_t *)(PORT_address)) |= (1<<Pin_index); // To activate the pull up resistor
+ 64a:	fc 01       	movw	r30, r24
+ 64c:	30 81       	ld	r19, Z
+ 64e:	23 2b       	or	r18, r19
+ 650:	20 83       	st	Z, r18
+ 652:	08 95       	ret
+	}
+	else if (Pin_state == OUTPUT)
+ 654:	21 30       	cpi	r18, 0x01	; 1
+ 656:	59 f4       	brne	.+22     	; 0x66e <Pin_mode+0x42>
+	{
+		(*(volatile uint8_t *)(DDR_address )) |= (1<<Pin_index) ;
+ 658:	fb 01       	movw	r30, r22
+ 65a:	20 81       	ld	r18, Z
+ 65c:	81 e0       	ldi	r24, 0x01	; 1
+ 65e:	90 e0       	ldi	r25, 0x00	; 0
+ 660:	02 c0       	rjmp	.+4      	; 0x666 <Pin_mode+0x3a>
+ 662:	88 0f       	add	r24, r24
+ 664:	99 1f       	adc	r25, r25
+ 666:	4a 95       	dec	r20
+ 668:	e2 f7       	brpl	.-8      	; 0x662 <Pin_mode+0x36>
+ 66a:	82 2b       	or	r24, r18
+ 66c:	80 83       	st	Z, r24
+ 66e:	08 95       	ret
+
+00000670 <Pin_read>:
+
+extern void Pin_read(unsigned int PIN_address , uint8_t u8Pin_index , volatile uint8_t *pu8PORT_reading)
+{
+	uint8_t u8Temp = 0;
+	
+	u8Temp = (*(volatile uint8_t *)(PIN_address)) & (1 << u8Pin_index) ;
+ 670:	fc 01       	movw	r30, r24
+ 672:	20 81       	ld	r18, Z
+ 674:	81 e0       	ldi	r24, 0x01	; 1
+ 676:	90 e0       	ldi	r25, 0x00	; 0
+ 678:	02 c0       	rjmp	.+4      	; 0x67e <Pin_read+0xe>
+ 67a:	88 0f       	add	r24, r24
+ 67c:	99 1f       	adc	r25, r25
+ 67e:	6a 95       	dec	r22
+ 680:	e2 f7       	brpl	.-8      	; 0x67a <Pin_read+0xa>
+ 682:	82 23       	and	r24, r18
+	*pu8PORT_reading = u8Temp ;
+ 684:	fa 01       	movw	r30, r20
+ 686:	80 83       	st	Z, r24
+ 688:	08 95       	ret
+
+0000068a <_exit>:
+ 68a:	f8 94       	cli
+
+0000068c <__stop_program>:
+ 68c:	ff cf       	rjmp	.-2      	; 0x68c <__stop_program>
