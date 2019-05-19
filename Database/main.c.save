@@ -1,3 +1,12 @@
+/*
+*
+*AMIT_L
+*
+*
+*
+*
+*/
+
 #include "Database.h"
 
 static Member *pStudent[DATABASE_LIMIT] = {0};
@@ -9,7 +18,7 @@ int main(void)
     uint32_t u32free_element = 0;
     uint32_t u32Deleted_member = 0;
     uint32_t u32Index = 0;
-    char cID[NUMBER_OF_ELEMENTS] = {0};
+    char cStudent_ID[NUMBER_OF_ELEMENTS] = {0};
 
     do
     {
@@ -120,9 +129,9 @@ int main(void)
         else if (u32Choose_operation == OP10)
         {
             printf("Enter the wanted ID   :    ");
-            scanf("%s", cID);
+            scanf("%s", cStudent_ID);
 
-            Search_ID(cID);
+            Search_ID(cStudent_ID);
         }
 
         else if (u32Choose_operation == OP11)
@@ -134,10 +143,10 @@ int main(void)
         {
             Is_DB_full();
         }
-        
+
         else
         {
-            printf("Wrong choice please try again \n ");
+            printf("Wrong choice please try one of the previous choices \n ");
         }
 
         printf("Do you want to continue !?   (Enter any number to continue , enter 0 to quit .. !!)\n");

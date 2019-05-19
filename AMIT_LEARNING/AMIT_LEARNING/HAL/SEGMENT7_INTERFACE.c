@@ -89,15 +89,28 @@ extern void SEGMENT_RESET()
 }
 
 
-extern void SEGMENT_SHOW_NUMBER(uint8_t u8Segment7_number)
+
+extern void SEGMENT_SHOW_NUMBER(uint8_t u8Segment7_number1)
 {
 	uint8_t u8Temp = 0;
 	
-	u8Temp = u8Segment7_number ;
+	u8Temp = u8Segment7_number1 ;
 	
 	SEGMENT_RESET();
 	*((volatile unsigned int *)(SEGMENT_A_PORT)) |= (u8Temp << SEGMENT_A_PIN_NUMBER);
-	_delay_ms(40);
+	_delay_ms(1);
+}
+
+extern void SHOW_TWO_NUMBERS(uint8_t u8Num1 , uint8_t u8Num2)
+{
+	SEGMENT_ON(SEGMENT1);
+	SEGMENT_SHOW_NUMBER(u8Num1);
+	SEGMENT_OFF(SEGMENT1);
+	
+	SEGMENT_ON(SEGMENT2);
+	SEGMENT_SHOW_NUMBER(u8Num2);
+	SEGMENT_OFF(SEGMENT2);
+	
 }
 
 extern void SEGMENT_FLASH()

@@ -113,6 +113,7 @@
             <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.2.209\include</Value>
             <Value>../MCAL</Value>
             <Value>../HAL</Value>
+            <Value>../APP</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
@@ -135,6 +136,18 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="APP\BUZZER_ONE_BUTTON\BUZZER_ON_OFF.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\BUZZER_ONE_BUTTON\BUZZER_ON_OFF.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SEGMENT7\SEGMENT_INC_DEC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\SEGMENT7\SEGMENT_INC_DEC.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\AMIT_SCHEMATIC.h">
       <SubType>compile</SubType>
     </Compile>
@@ -148,6 +161,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\BUZZER_INTERFACE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD_INTERFACE.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD_INTERFACE.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\LEDS_INTERFACE.c">
@@ -179,9 +198,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="APP\BUZZER_ONE_BUTTON" />
+    <Folder Include="APP\LCD_HELLO" />
+    <Folder Include="APP\SEGMENT7" />
     <Folder Include="MCAL" />
     <Folder Include="HAL" />
     <Folder Include="MCAL\GPIO" />
+    <Folder Include="APP" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>

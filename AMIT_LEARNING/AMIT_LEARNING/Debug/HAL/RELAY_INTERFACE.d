@@ -6,7 +6,11 @@ HAL/RELAY_INTERFACE.d HAL/RELAY_INTERFACE.o: ../HAL/RELAY_INTERFACE.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../HAL/AMIT_SCHEMATIC.h
+ ../HAL/AMIT_SCHEMATIC.h ../APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.h \
+ ../HAL/BUZZER_INTERFACE.h ../HAL/BUTTON_INTERFACE.h \
+ ../APP/SEGMENT7/SEGMENT_INC_DEC.h ../HAL/AMIT_SCHEMATIC.h \
+ ../HAL/SEGMENT7_INTERFACE.h ../HAL/LEDS_INTERFACE.h \
+ ../HAL/LEDS_INTERFACE.h ../HAL/RELAY_INTERFACE.h ../HAL/LCD_INTERFACE.h
 
 ../HAL/RELAY_INTERFACE.h:
 
@@ -25,3 +29,23 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 ../HAL/AMIT_SCHEMATIC.h:
+
+../APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.h:
+
+../HAL/BUZZER_INTERFACE.h:
+
+../HAL/BUTTON_INTERFACE.h:
+
+../APP/SEGMENT7/SEGMENT_INC_DEC.h:
+
+../HAL/AMIT_SCHEMATIC.h:
+
+../HAL/SEGMENT7_INTERFACE.h:
+
+../HAL/LEDS_INTERFACE.h:
+
+../HAL/LEDS_INTERFACE.h:
+
+../HAL/RELAY_INTERFACE.h:
+
+../HAL/LCD_INTERFACE.h:

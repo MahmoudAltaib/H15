@@ -1,3 +1,12 @@
+/*
+*
+*AMIT_LEARNING PROJECT
+*
+*
+*
+*
+*/
+
 #include "Database.h"
 
 static Member *pStudent[DATABASE_LIMIT] = {0};

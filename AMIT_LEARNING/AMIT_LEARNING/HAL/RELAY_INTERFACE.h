@@ -12,7 +12,19 @@
 #include "GPIO/GPIO.h"
 #include "AMIT_SCHEMATIC.h"
 
-extern void RELAY_ON();
-extern void RELAY_OFF();
+#define ATMEGA32
+
+#ifdef ATMEGA32
+
+	// RELAY
+	#define RELAY_PORT PORT_D
+	#define RELAY_DDR DDR_D
+	#define RELAY_PIN PIN_D
+	#define RELAY_PIN_NUMBER 3
+
+	extern void RELAY_ON();
+	extern void RELAY_OFF();
+
+#endif
 
 #endif /* RELAY_INTERFACE_H_ */

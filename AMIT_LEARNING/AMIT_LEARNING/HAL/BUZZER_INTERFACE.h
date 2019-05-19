@@ -12,7 +12,19 @@
 #include "GPIO/GPIO.h"
 #include "AMIT_SCHEMATIC.h"
 
-extern void BUZZER_ON();
-extern void BUZZER_OFF();
+#define ATMEGA32
+
+#ifdef ATMEGA32
+
+	// BUZZER
+	#define BUZZER_PORT PORT_D
+	#define BUZZER_DDR DDR_D
+	#define BUZZER_PIN PIN_D
+	#define BUZZER_PIN_NUMBER 4
+
+	extern void BUZZER_ON();
+	extern void BUZZER_OFF();
+
+#endif
 
 #endif /* BUZZER_INTERFACE_H_ */

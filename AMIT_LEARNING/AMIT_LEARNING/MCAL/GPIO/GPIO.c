@@ -44,6 +44,7 @@ extern void Pin_read(unsigned int PIN_address , uint8_t u8Pin_index , volatile u
 	uint8_t u8Temp = 0;
 	
 	u8Temp = (*(volatile uint8_t *)(PIN_address)) & (1 << u8Pin_index) ;
+	
 	*pu8PORT_reading = u8Temp ;
 }
 

@@ -2,24 +2,38 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="Database.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4270" topLine="110" />
+			<Cursor1 position="100" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Database.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2580" topLine="103" />
+			<Cursor1 position="122" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Database.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5534" topLine="45" />
 		</Cursor>
 		<Folding>
 			<Collapse line="5" />
 			<Collapse line="31" />
 			<Collapse line="63" />
+			<Collapse line="87" />
+			<Collapse line="143" />
+			<Collapse line="296" />
+			<Collapse line="315" />
+			<Collapse line="358" />
+			<Collapse line="381" />
+			<Collapse line="443" />
+			<Collapse line="469" />
+			<Collapse line="500" />
+			<Collapse line="529" />
+			<Collapse line="551" />
+			<Collapse line="576" />
+			<Collapse line="595" />
+			<Collapse line="617" />
 		</Folding>
-	</File>
-	<File name="Database.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1302" topLine="18" />
-		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
