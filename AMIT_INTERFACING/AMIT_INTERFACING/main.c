@@ -11,71 +11,21 @@
 #include <avr/io.h>
 #include <inttypes.h>
 #include "HAL/AMIT_SCHEMATIC.h"
+#include "MCAL/TIMER0/TIMER0.h"
 
 int main(void)
-{   uint8_t number = 0;
-	unsigned int B_0 = 0;
-	unsigned int B_1 = 0;
-	unsigned int B_2 = 0;
-	
+{  
+
     /* Replace with your application code */
     while (1) 
-    {	
-		SEGMENT_DISPLAY_NUM(number);
-		
-		READ_BUTTON(AMIT_BUTTON0,&B_0);
-		READ_BUTTON(AMIT_BUTTON1,&B_1);
-		READ_BUTTON(AMIT_BUTTON2,&B_2);
-		
-		if (B_0)
-	{   
-			if (number < 9)
-		{
-			number++;
-			while (1)
-			{
-				READ_BUTTON(AMIT_BUTTON0, &B_0);
-				
-				if (!B_0)
-				{
-					break;
-				}
-			}				
-		}
-	}
-		
-		if (B_1)
-		{
-			if (number > 0)
-			{
-				number--;
-				while (1)
-				{
-					READ_BUTTON(AMIT_BUTTON1, &B_1);
-					if (!B_1)
-					{
-						break;
-					}
-				}
-			}
-		}
-	
-		if (B_2)
-		{	
-				number = 0;
-				while (1)
-				{
-					READ_BUTTON(AMIT_BUTTON2, &B_0);
-					
-					if (!B_0)
-					{
-						break;
-					}
-				}
-			
-		}			
-		
-    }
+{	
+Led_ON(AMIT_LEDNUM_0);
+T0_Delay_ms(500);
+Led_OFF(AMIT_LEDNUM_0);
+T0_Delay_ms(500);
+
+
+}
 
 }
 

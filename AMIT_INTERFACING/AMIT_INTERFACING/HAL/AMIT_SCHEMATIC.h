@@ -20,6 +20,7 @@
 #include "AMIT_BUTTON.h"
 #include "AMIT_LED.h"
 #include "AMIT_7_SEGMENT.h"
+#include "AMIT_BUZZER.h"
 
 
 

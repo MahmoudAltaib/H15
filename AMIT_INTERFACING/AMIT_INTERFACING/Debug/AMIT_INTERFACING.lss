@@ -3,55 +3,57 @@ AMIT_INTERFACING.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000035a  00000000  00000000  00000054  2**1
+  0 .text         00000242  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000003ae  2**0
+  1 .data         00000000  00800060  00800060  000002b6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000003ae  2**0
+  2 .bss          00000001  00800060  00800060  000002b6  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000002b6  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000003e0  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002e8  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 000000a0  00000000  00000000  0000041c  2**0
+  5 .debug_aranges 000000b8  00000000  00000000  00000324  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000cb0  00000000  00000000  000004bc  2**0
+  6 .debug_info   00000c00  00000000  00000000  000003dc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000704  00000000  00000000  0000116c  2**0
+  7 .debug_abbrev 000006b2  00000000  00000000  00000fdc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000495  00000000  00000000  00001870  2**0
+  8 .debug_line   00000420  00000000  00000000  0000168e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  0000010c  00000000  00000000  00001d08  2**2
+  9 .debug_frame  00000114  00000000  00000000  00001ab0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000003c9  00000000  00000000  00001e14  2**0
+ 10 .debug_str    000003c9  00000000  00000000  00001bc4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000331  00000000  00000000  000021dd  2**0
+ 11 .debug_loc    00000239  00000000  00000000  00001f8d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000060  00000000  00000000  0000250e  2**0
+ 12 .debug_ranges 00000078  00000000  00000000  000021c6  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
-   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
-  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 08 01 	jmp	0x210	; 0x210 <__vector_11>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
 
 00000054 <__ctors_end>:
   54:	11 24       	eor	r1, r1
@@ -60,552 +62,355 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 f6 00 	call	0x1ec	; 0x1ec <main>
-  64:	0c 94 ab 01 	jmp	0x356	; 0x356 <_exit>
 
-00000068 <__bad_interrupt>:
-  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+00000060 <__do_clear_bss>:
+  60:	20 e0       	ldi	r18, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
 
-0000006c <SEGMENT_DISPLAY_NUM>:
- * Created: 5/11/2019 10:16:15 PM
- *  Author: hp
- */ 
-#include "AMIT_7_SEGMENT.h"
-extern void SEGMENT_DISPLAY_NUM(unsigned int Num)
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a1 36       	cpi	r26, 0x61	; 97
+  6c:	b2 07       	cpc	r27, r18
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 a6 00 	call	0x14c	; 0x14c <main>
+  74:	0c 94 1f 01 	jmp	0x23e	; 0x23e <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <Led_ON>:
+
+#include "Amit_Led.h"
+
+extern void Led_ON(unsigned int ledNum)
 {
-  6c:	cf 93       	push	r28
-  6e:	df 93       	push	r29
-  70:	ec 01       	movw	r28, r24
-	DIO_pinOUT(AMIT_DDR_SEGMENT_ENABLE1,AMIT_PIN_SEGMENT_ENABLE1);
-  72:	62 e0       	ldi	r22, 0x02	; 2
-  74:	70 e0       	ldi	r23, 0x00	; 0
-  76:	84 e3       	ldi	r24, 0x34	; 52
-  78:	90 e0       	ldi	r25, 0x00	; 0
-  7a:	0e 94 52 01 	call	0x2a4	; 0x2a4 <DIO_pinOUT>
-	DIO_pinOUT(AMIT_DDR_SEGMENT_ENABLE2,AMIT_PIN_SEGMENT_ENABLE2);
-  7e:	63 e0       	ldi	r22, 0x03	; 3
-  80:	70 e0       	ldi	r23, 0x00	; 0
-  82:	84 e3       	ldi	r24, 0x34	; 52
-  84:	90 e0       	ldi	r25, 0x00	; 0
-  86:	0e 94 52 01 	call	0x2a4	; 0x2a4 <DIO_pinOUT>
-	DIO_pinOUT(AMIT_DDR_SEGMENT_A,AMIT_PIN_SEGMENT_A);
-  8a:	64 e0       	ldi	r22, 0x04	; 4
+	switch (ledNum)
+  7c:	81 30       	cpi	r24, 0x01	; 1
+  7e:	91 05       	cpc	r25, r1
+  80:	99 f0       	breq	.+38     	; 0xa8 <Led_ON+0x2c>
+  82:	18 f0       	brcs	.+6      	; 0x8a <Led_ON+0xe>
+  84:	02 97       	sbiw	r24, 0x02	; 2
+  86:	f9 f0       	breq	.+62     	; 0xc6 <Led_ON+0x4a>
+  88:	08 95       	ret
+	{
+		default:
+		break;
+		case(AMIT_LEDNUM_0):
+		DIO_pinOUT(AMIT_DDR_LED0 , AMIT_PIN_LED0);
+  8a:	65 e0       	ldi	r22, 0x05	; 5
   8c:	70 e0       	ldi	r23, 0x00	; 0
-  8e:	84 e3       	ldi	r24, 0x34	; 52
+  8e:	81 e3       	ldi	r24, 0x31	; 49
   90:	90 e0       	ldi	r25, 0x00	; 0
-  92:	0e 94 52 01 	call	0x2a4	; 0x2a4 <DIO_pinOUT>
-	DIO_pinOUT(AMIT_DDR_SEGMENT_B,AMIT_PIN_SEGMENT_B);
-  96:	65 e0       	ldi	r22, 0x05	; 5
-  98:	70 e0       	ldi	r23, 0x00	; 0
-  9a:	84 e3       	ldi	r24, 0x34	; 52
-  9c:	90 e0       	ldi	r25, 0x00	; 0
-  9e:	0e 94 52 01 	call	0x2a4	; 0x2a4 <DIO_pinOUT>
-	DIO_pinOUT(AMIT_DDR_SEGMENT_C,AMIT_PIN_SEGMENT_C);
-  a2:	66 e0       	ldi	r22, 0x06	; 6
-  a4:	70 e0       	ldi	r23, 0x00	; 0
-  a6:	84 e3       	ldi	r24, 0x34	; 52
-  a8:	90 e0       	ldi	r25, 0x00	; 0
-  aa:	0e 94 52 01 	call	0x2a4	; 0x2a4 <DIO_pinOUT>
-	DIO_pinOUT(AMIT_DDR_SEGMENT_D,AMIT_PIN_SEGMENT_D);
-  ae:	67 e0       	ldi	r22, 0x07	; 7
-  b0:	70 e0       	ldi	r23, 0x00	; 0
-  b2:	84 e3       	ldi	r24, 0x34	; 52
-  b4:	90 e0       	ldi	r25, 0x00	; 0
-  b6:	0e 94 52 01 	call	0x2a4	; 0x2a4 <DIO_pinOUT>
-	
-	if (Num < 10)
-  ba:	ca 30       	cpi	r28, 0x0A	; 10
-  bc:	d1 05       	cpc	r29, r1
-  be:	a0 f5       	brcc	.+104    	; 0x128 <SEGMENT_DISPLAY_NUM+0xbc>
-	{
-		DIO_pinWRITE(AMIT_PORT_SEGMENT_ENABLE1,AMIT_PIN_SEGMENT_ENABLE1,1);
-  c0:	41 e0       	ldi	r20, 0x01	; 1
-  c2:	50 e0       	ldi	r21, 0x00	; 0
-  c4:	62 e0       	ldi	r22, 0x02	; 2
-  c6:	70 e0       	ldi	r23, 0x00	; 0
-  c8:	85 e3       	ldi	r24, 0x35	; 53
-  ca:	90 e0       	ldi	r25, 0x00	; 0
-  cc:	0e 94 79 01 	call	0x2f2	; 0x2f2 <DIO_pinWRITE>
-		DIO_pinWRITE(AMIT_PORT_SEGMENT_ENABLE2,AMIT_PIN_SEGMENT_ENABLE2,0);
-  d0:	40 e0       	ldi	r20, 0x00	; 0
-  d2:	50 e0       	ldi	r21, 0x00	; 0
-  d4:	63 e0       	ldi	r22, 0x03	; 3
-  d6:	70 e0       	ldi	r23, 0x00	; 0
-  d8:	85 e3       	ldi	r24, 0x35	; 53
-  da:	90 e0       	ldi	r25, 0x00	; 0
-  dc:	0e 94 79 01 	call	0x2f2	; 0x2f2 <DIO_pinWRITE>
-		DIO_pinWRITE(AMIT_PORT_SEGMENT_A,AMIT_PIN_SEGMENT_A,Num & 0x1);
-  e0:	ae 01       	movw	r20, r28
-  e2:	41 70       	andi	r20, 0x01	; 1
-  e4:	55 27       	eor	r21, r21
-  e6:	64 e0       	ldi	r22, 0x04	; 4
-  e8:	70 e0       	ldi	r23, 0x00	; 0
-  ea:	85 e3       	ldi	r24, 0x35	; 53
-  ec:	90 e0       	ldi	r25, 0x00	; 0
-  ee:	0e 94 79 01 	call	0x2f2	; 0x2f2 <DIO_pinWRITE>
-		DIO_pinWRITE(AMIT_PORT_SEGMENT_B,AMIT_PIN_SEGMENT_B,Num & 0x2);
-  f2:	ae 01       	movw	r20, r28
-  f4:	42 70       	andi	r20, 0x02	; 2
-  f6:	55 27       	eor	r21, r21
-  f8:	65 e0       	ldi	r22, 0x05	; 5
-  fa:	70 e0       	ldi	r23, 0x00	; 0
-  fc:	85 e3       	ldi	r24, 0x35	; 53
-  fe:	90 e0       	ldi	r25, 0x00	; 0
- 100:	0e 94 79 01 	call	0x2f2	; 0x2f2 <DIO_pinWRITE>
-		DIO_pinWRITE(AMIT_PORT_SEGMENT_C,AMIT_PIN_SEGMENT_C,Num & 0x4);
- 104:	ae 01       	movw	r20, r28
- 106:	44 70       	andi	r20, 0x04	; 4
- 108:	55 27       	eor	r21, r21
- 10a:	66 e0       	ldi	r22, 0x06	; 6
- 10c:	70 e0       	ldi	r23, 0x00	; 0
- 10e:	85 e3       	ldi	r24, 0x35	; 53
- 110:	90 e0       	ldi	r25, 0x00	; 0
- 112:	0e 94 79 01 	call	0x2f2	; 0x2f2 <DIO_pinWRITE>
-		DIO_pinWRITE(AMIT_PORT_SEGMENT_D,AMIT_PIN_SEGMENT_D,Num & 0x8);
- 116:	ae 01       	movw	r20, r28
- 118:	48 70       	andi	r20, 0x08	; 8
- 11a:	55 27       	eor	r21, r21
- 11c:	67 e0       	ldi	r22, 0x07	; 7
- 11e:	70 e0       	ldi	r23, 0x00	; 0
- 120:	85 e3       	ldi	r24, 0x35	; 53
- 122:	90 e0       	ldi	r25, 0x00	; 0
- 124:	0e 94 79 01 	call	0x2f2	; 0x2f2 <DIO_pinWRITE>
+  92:	0e 94 b7 00 	call	0x16e	; 0x16e <DIO_pinOUT>
+		DIO_pinWRITE(AMIT_PORT_LED0 , AMIT_PIN_LED0 , LEDON);
+  96:	41 e0       	ldi	r20, 0x01	; 1
+  98:	50 e0       	ldi	r21, 0x00	; 0
+  9a:	65 e0       	ldi	r22, 0x05	; 5
+  9c:	70 e0       	ldi	r23, 0x00	; 0
+  9e:	82 e3       	ldi	r24, 0x32	; 50
+  a0:	90 e0       	ldi	r25, 0x00	; 0
+  a2:	0e 94 c6 00 	call	0x18c	; 0x18c <DIO_pinWRITE>
+		break;
+  a6:	08 95       	ret
+		case(AMIT_LEDNUM_1):
+		DIO_pinOUT(AMIT_DDR_LED1 , AMIT_PIN_LED1);
+  a8:	66 e0       	ldi	r22, 0x06	; 6
+  aa:	70 e0       	ldi	r23, 0x00	; 0
+  ac:	81 e3       	ldi	r24, 0x31	; 49
+  ae:	90 e0       	ldi	r25, 0x00	; 0
+  b0:	0e 94 b7 00 	call	0x16e	; 0x16e <DIO_pinOUT>
+		DIO_pinWRITE(AMIT_PORT_LED1 , AMIT_PIN_LED1 , LEDON);
+  b4:	41 e0       	ldi	r20, 0x01	; 1
+  b6:	50 e0       	ldi	r21, 0x00	; 0
+  b8:	66 e0       	ldi	r22, 0x06	; 6
+  ba:	70 e0       	ldi	r23, 0x00	; 0
+  bc:	82 e3       	ldi	r24, 0x32	; 50
+  be:	90 e0       	ldi	r25, 0x00	; 0
+  c0:	0e 94 c6 00 	call	0x18c	; 0x18c <DIO_pinWRITE>
+		break;
+  c4:	08 95       	ret
+		case(AMIT_LEDNUM_2):
+		DIO_pinOUT(AMIT_DDR_LED1 , AMIT_PIN_LED0);
+  c6:	65 e0       	ldi	r22, 0x05	; 5
+  c8:	70 e0       	ldi	r23, 0x00	; 0
+  ca:	81 e3       	ldi	r24, 0x31	; 49
+  cc:	90 e0       	ldi	r25, 0x00	; 0
+  ce:	0e 94 b7 00 	call	0x16e	; 0x16e <DIO_pinOUT>
+		DIO_pinWRITE(AMIT_PORT_LED1 , AMIT_PIN_LED1 , LEDON);
+  d2:	41 e0       	ldi	r20, 0x01	; 1
+  d4:	50 e0       	ldi	r21, 0x00	; 0
+  d6:	66 e0       	ldi	r22, 0x06	; 6
+  d8:	70 e0       	ldi	r23, 0x00	; 0
+  da:	82 e3       	ldi	r24, 0x32	; 50
+  dc:	90 e0       	ldi	r25, 0x00	; 0
+  de:	0e 94 c6 00 	call	0x18c	; 0x18c <DIO_pinWRITE>
+  e2:	08 95       	ret
+
+000000e4 <Led_OFF>:
 	}
 }
- 128:	df 91       	pop	r29
- 12a:	cf 91       	pop	r28
- 12c:	08 95       	ret
 
-0000012e <READ_BUTTON>:
- */ 
-#include "AMIT_BUTTON.h"
-#include "util/delay.h"
-
-extern void READ_BUTTON(unsigned int button_Num  , unsigned int *button_Val)
+extern void Led_OFF(unsigned int ledNum)
 {
- 12e:	ef 92       	push	r14
- 130:	ff 92       	push	r15
- 132:	1f 93       	push	r17
- 134:	cf 93       	push	r28
- 136:	df 93       	push	r29
- 138:	00 d0       	rcall	.+0      	; 0x13a <READ_BUTTON+0xc>
- 13a:	cd b7       	in	r28, 0x3d	; 61
- 13c:	de b7       	in	r29, 0x3e	; 62
- 13e:	7b 01       	movw	r14, r22
-unsigned int Button_State;
-unsigned char counter;
-
-switch (button_Num)
- 140:	81 30       	cpi	r24, 0x01	; 1
- 142:	91 05       	cpc	r25, r1
- 144:	e1 f0       	breq	.+56     	; 0x17e <READ_BUTTON+0x50>
- 146:	18 f0       	brcs	.+6      	; 0x14e <READ_BUTTON+0x20>
- 148:	02 97       	sbiw	r24, 0x02	; 2
- 14a:	89 f1       	breq	.+98     	; 0x1ae <READ_BUTTON+0x80>
- 14c:	47 c0       	rjmp	.+142    	; 0x1dc <READ_BUTTON+0xae>
-	default:
-	break;
-	
-	case(AMIT_BUTTON0):
-	
-	DIO_pinIN(AMIT_DDR_BUTTON0 , AMIT_PIN_BUTTON0);
- 14e:	60 e0       	ldi	r22, 0x00	; 0
- 150:	70 e0       	ldi	r23, 0x00	; 0
- 152:	81 e3       	ldi	r24, 0x31	; 49
- 154:	90 e0       	ldi	r25, 0x00	; 0
- 156:	0e 94 61 01 	call	0x2c2	; 0x2c2 <DIO_pinIN>
- 15a:	16 e9       	ldi	r17, 0x96	; 150
-	
-	for (counter = 0; counter < 150; counter++)
+	switch (ledNum)
+  e4:	81 30       	cpi	r24, 0x01	; 1
+  e6:	91 05       	cpc	r25, r1
+  e8:	99 f0       	breq	.+38     	; 0x110 <Led_OFF+0x2c>
+  ea:	18 f0       	brcs	.+6      	; 0xf2 <Led_OFF+0xe>
+  ec:	02 97       	sbiw	r24, 0x02	; 2
+  ee:	f9 f0       	breq	.+62     	; 0x12e <Led_OFF+0x4a>
+  f0:	08 95       	ret
 	{
-		DIO_pinREAD(AMIT_PORT_BUTTON0, AMIT_PIN_BUTTON0, &Button_State);
- 15c:	ae 01       	movw	r20, r28
- 15e:	4f 5f       	subi	r20, 0xFF	; 255
- 160:	5f 4f       	sbci	r21, 0xFF	; 255
- 162:	60 e0       	ldi	r22, 0x00	; 0
- 164:	70 e0       	ldi	r23, 0x00	; 0
- 166:	80 e3       	ldi	r24, 0x30	; 48
- 168:	90 e0       	ldi	r25, 0x00	; 0
- 16a:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_pinREAD>
- 16e:	11 50       	subi	r17, 0x01	; 1
-	
-	case(AMIT_BUTTON0):
-	
-	DIO_pinIN(AMIT_DDR_BUTTON0 , AMIT_PIN_BUTTON0);
-	
-	for (counter = 0; counter < 150; counter++)
- 170:	a9 f7       	brne	.-22     	; 0x15c <READ_BUTTON+0x2e>
-	{
-		DIO_pinREAD(AMIT_PORT_BUTTON0, AMIT_PIN_BUTTON0, &Button_State);
-	}
-	
-	*button_Val = Button_State;
- 172:	89 81       	ldd	r24, Y+1	; 0x01
- 174:	9a 81       	ldd	r25, Y+2	; 0x02
- 176:	f7 01       	movw	r30, r14
- 178:	91 83       	std	Z+1, r25	; 0x01
- 17a:	80 83       	st	Z, r24
-	
-	break;
- 17c:	2f c0       	rjmp	.+94     	; 0x1dc <READ_BUTTON+0xae>
-	
-	case(AMIT_BUTTON1):
-	
-	DIO_pinIN(AMIT_DDR_BUTTON1 , AMIT_PIN_BUTTON1); 
- 17e:	61 e0       	ldi	r22, 0x01	; 1
- 180:	70 e0       	ldi	r23, 0x00	; 0
- 182:	81 e3       	ldi	r24, 0x31	; 49
- 184:	90 e0       	ldi	r25, 0x00	; 0
- 186:	0e 94 61 01 	call	0x2c2	; 0x2c2 <DIO_pinIN>
- 18a:	16 e9       	ldi	r17, 0x96	; 150
-	
-		for (counter = 0; counter < 150; counter++)
-		{
-			DIO_pinREAD(AMIT_PORT_BUTTON1, AMIT_PIN_BUTTON1, &Button_State);
- 18c:	ae 01       	movw	r20, r28
- 18e:	4f 5f       	subi	r20, 0xFF	; 255
- 190:	5f 4f       	sbci	r21, 0xFF	; 255
- 192:	61 e0       	ldi	r22, 0x01	; 1
- 194:	70 e0       	ldi	r23, 0x00	; 0
- 196:	80 e3       	ldi	r24, 0x30	; 48
- 198:	90 e0       	ldi	r25, 0x00	; 0
- 19a:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_pinREAD>
- 19e:	11 50       	subi	r17, 0x01	; 1
-	
-	case(AMIT_BUTTON1):
-	
-	DIO_pinIN(AMIT_DDR_BUTTON1 , AMIT_PIN_BUTTON1); 
-	
-		for (counter = 0; counter < 150; counter++)
- 1a0:	a9 f7       	brne	.-22     	; 0x18c <READ_BUTTON+0x5e>
-		{
-			DIO_pinREAD(AMIT_PORT_BUTTON1, AMIT_PIN_BUTTON1, &Button_State);
-		}
-		
-		*button_Val = Button_State;
- 1a2:	89 81       	ldd	r24, Y+1	; 0x01
- 1a4:	9a 81       	ldd	r25, Y+2	; 0x02
- 1a6:	f7 01       	movw	r30, r14
- 1a8:	91 83       	std	Z+1, r25	; 0x01
- 1aa:	80 83       	st	Z, r24
-	
-	break;
- 1ac:	17 c0       	rjmp	.+46     	; 0x1dc <READ_BUTTON+0xae>
-	
-	case(AMIT_BUTTON2):
-	
-	DIO_pinIN(AMIT_DDR_BUTTON2 , AMIT_PIN_BUTTON2); 
- 1ae:	62 e0       	ldi	r22, 0x02	; 2
- 1b0:	70 e0       	ldi	r23, 0x00	; 0
- 1b2:	81 e3       	ldi	r24, 0x31	; 49
- 1b4:	90 e0       	ldi	r25, 0x00	; 0
- 1b6:	0e 94 61 01 	call	0x2c2	; 0x2c2 <DIO_pinIN>
- 1ba:	16 e9       	ldi	r17, 0x96	; 150
-	
-		for (counter = 0; counter < 150; counter++)
-		{
-			DIO_pinREAD(AMIT_PORT_BUTTON2, AMIT_PIN_BUTTON2, &Button_State);
- 1bc:	ae 01       	movw	r20, r28
- 1be:	4f 5f       	subi	r20, 0xFF	; 255
- 1c0:	5f 4f       	sbci	r21, 0xFF	; 255
- 1c2:	62 e0       	ldi	r22, 0x02	; 2
- 1c4:	70 e0       	ldi	r23, 0x00	; 0
- 1c6:	80 e3       	ldi	r24, 0x30	; 48
- 1c8:	90 e0       	ldi	r25, 0x00	; 0
- 1ca:	0e 94 9b 01 	call	0x336	; 0x336 <DIO_pinREAD>
- 1ce:	11 50       	subi	r17, 0x01	; 1
-	
-	case(AMIT_BUTTON2):
-	
-	DIO_pinIN(AMIT_DDR_BUTTON2 , AMIT_PIN_BUTTON2); 
-	
-		for (counter = 0; counter < 150; counter++)
- 1d0:	a9 f7       	brne	.-22     	; 0x1bc <READ_BUTTON+0x8e>
-		{
-			DIO_pinREAD(AMIT_PORT_BUTTON2, AMIT_PIN_BUTTON2, &Button_State);
-		}
-		
-		*button_Val = Button_State;
- 1d2:	89 81       	ldd	r24, Y+1	; 0x01
- 1d4:	9a 81       	ldd	r25, Y+2	; 0x02
- 1d6:	f7 01       	movw	r30, r14
- 1d8:	91 83       	std	Z+1, r25	; 0x01
- 1da:	80 83       	st	Z, r24
-	break;
-}
-	
+		default:
+		break;
+		case(AMIT_LEDNUM_0):
+		DIO_pinOUT(AMIT_DDR_LED0 , AMIT_PIN_LED0);
+  f2:	65 e0       	ldi	r22, 0x05	; 5
+  f4:	70 e0       	ldi	r23, 0x00	; 0
+  f6:	81 e3       	ldi	r24, 0x31	; 49
+  f8:	90 e0       	ldi	r25, 0x00	; 0
+  fa:	0e 94 b7 00 	call	0x16e	; 0x16e <DIO_pinOUT>
+		DIO_pinWRITE(AMIT_PORT_LED0 , AMIT_PIN_LED0 , LEDOFF);
+  fe:	40 e0       	ldi	r20, 0x00	; 0
+ 100:	50 e0       	ldi	r21, 0x00	; 0
+ 102:	65 e0       	ldi	r22, 0x05	; 5
+ 104:	70 e0       	ldi	r23, 0x00	; 0
+ 106:	82 e3       	ldi	r24, 0x32	; 50
+ 108:	90 e0       	ldi	r25, 0x00	; 0
+ 10a:	0e 94 c6 00 	call	0x18c	; 0x18c <DIO_pinWRITE>
+		break;
+ 10e:	08 95       	ret
+		case(AMIT_LEDNUM_1):
+		DIO_pinOUT(AMIT_DDR_LED1 , AMIT_PIN_LED1);
+ 110:	66 e0       	ldi	r22, 0x06	; 6
+ 112:	70 e0       	ldi	r23, 0x00	; 0
+ 114:	81 e3       	ldi	r24, 0x31	; 49
+ 116:	90 e0       	ldi	r25, 0x00	; 0
+ 118:	0e 94 b7 00 	call	0x16e	; 0x16e <DIO_pinOUT>
+		DIO_pinWRITE(AMIT_PORT_LED1 , AMIT_PIN_LED1 , LEDOFF);
+ 11c:	40 e0       	ldi	r20, 0x00	; 0
+ 11e:	50 e0       	ldi	r21, 0x00	; 0
+ 120:	66 e0       	ldi	r22, 0x06	; 6
+ 122:	70 e0       	ldi	r23, 0x00	; 0
+ 124:	82 e3       	ldi	r24, 0x32	; 50
+ 126:	90 e0       	ldi	r25, 0x00	; 0
+ 128:	0e 94 c6 00 	call	0x18c	; 0x18c <DIO_pinWRITE>
+		break;
+ 12c:	08 95       	ret
+		case(AMIT_LEDNUM_2):
+		DIO_pinOUT(AMIT_DDR_LED1 , AMIT_PIN_LED0);
+ 12e:	65 e0       	ldi	r22, 0x05	; 5
+ 130:	70 e0       	ldi	r23, 0x00	; 0
+ 132:	81 e3       	ldi	r24, 0x31	; 49
+ 134:	90 e0       	ldi	r25, 0x00	; 0
+ 136:	0e 94 b7 00 	call	0x16e	; 0x16e <DIO_pinOUT>
+		DIO_pinWRITE(AMIT_PORT_LED1 , AMIT_PIN_LED1 , LEDOFF);
+ 13a:	40 e0       	ldi	r20, 0x00	; 0
+ 13c:	50 e0       	ldi	r21, 0x00	; 0
+ 13e:	66 e0       	ldi	r22, 0x06	; 6
+ 140:	70 e0       	ldi	r23, 0x00	; 0
+ 142:	82 e3       	ldi	r24, 0x32	; 50
+ 144:	90 e0       	ldi	r25, 0x00	; 0
+ 146:	0e 94 c6 00 	call	0x18c	; 0x18c <DIO_pinWRITE>
+ 14a:	08 95       	ret
 
-	
- 1dc:	0f 90       	pop	r0
- 1de:	0f 90       	pop	r0
- 1e0:	df 91       	pop	r29
- 1e2:	cf 91       	pop	r28
- 1e4:	1f 91       	pop	r17
- 1e6:	ff 90       	pop	r15
- 1e8:	ef 90       	pop	r14
- 1ea:	08 95       	ret
+0000014c <main>:
+{  
 
-000001ec <main>:
-#include <avr/io.h>
-#include <inttypes.h>
-#include "HAL/AMIT_SCHEMATIC.h"
-
-int main(void)
-{   uint8_t number = 0;
- 1ec:	cf 93       	push	r28
- 1ee:	df 93       	push	r29
- 1f0:	00 d0       	rcall	.+0      	; 0x1f2 <main+0x6>
- 1f2:	00 d0       	rcall	.+0      	; 0x1f4 <main+0x8>
- 1f4:	00 d0       	rcall	.+0      	; 0x1f6 <main+0xa>
- 1f6:	cd b7       	in	r28, 0x3d	; 61
- 1f8:	de b7       	in	r29, 0x3e	; 62
-	unsigned int B_0 = 0;
- 1fa:	1a 82       	std	Y+2, r1	; 0x02
- 1fc:	19 82       	std	Y+1, r1	; 0x01
-	unsigned int B_1 = 0;
- 1fe:	1c 82       	std	Y+4, r1	; 0x04
- 200:	1b 82       	std	Y+3, r1	; 0x03
-	unsigned int B_2 = 0;
- 202:	1e 82       	std	Y+6, r1	; 0x06
- 204:	1d 82       	std	Y+5, r1	; 0x05
-#include <avr/io.h>
-#include <inttypes.h>
-#include "HAL/AMIT_SCHEMATIC.h"
-
-int main(void)
-{   uint8_t number = 0;
- 206:	10 e0       	ldi	r17, 0x00	; 0
-	unsigned int B_2 = 0;
-	
     /* Replace with your application code */
     while (1) 
-    {	
-		SEGMENT_DISPLAY_NUM(number);
- 208:	81 2f       	mov	r24, r17
- 20a:	90 e0       	ldi	r25, 0x00	; 0
- 20c:	0e 94 36 00 	call	0x6c	; 0x6c <SEGMENT_DISPLAY_NUM>
-		
-		READ_BUTTON(AMIT_BUTTON0,&B_0);
- 210:	be 01       	movw	r22, r28
- 212:	6f 5f       	subi	r22, 0xFF	; 255
- 214:	7f 4f       	sbci	r23, 0xFF	; 255
- 216:	80 e0       	ldi	r24, 0x00	; 0
- 218:	90 e0       	ldi	r25, 0x00	; 0
- 21a:	0e 94 97 00 	call	0x12e	; 0x12e <READ_BUTTON>
-		READ_BUTTON(AMIT_BUTTON1,&B_1);
- 21e:	be 01       	movw	r22, r28
- 220:	6d 5f       	subi	r22, 0xFD	; 253
- 222:	7f 4f       	sbci	r23, 0xFF	; 255
- 224:	81 e0       	ldi	r24, 0x01	; 1
- 226:	90 e0       	ldi	r25, 0x00	; 0
- 228:	0e 94 97 00 	call	0x12e	; 0x12e <READ_BUTTON>
-		READ_BUTTON(AMIT_BUTTON2,&B_2);
- 22c:	be 01       	movw	r22, r28
- 22e:	6b 5f       	subi	r22, 0xFB	; 251
- 230:	7f 4f       	sbci	r23, 0xFF	; 255
- 232:	82 e0       	ldi	r24, 0x02	; 2
- 234:	90 e0       	ldi	r25, 0x00	; 0
- 236:	0e 94 97 00 	call	0x12e	; 0x12e <READ_BUTTON>
-		
-		if (B_0)
- 23a:	89 81       	ldd	r24, Y+1	; 0x01
- 23c:	9a 81       	ldd	r25, Y+2	; 0x02
- 23e:	89 2b       	or	r24, r25
- 240:	71 f0       	breq	.+28     	; 0x25e <main+0x72>
-	{   
-			if (number < 9)
- 242:	19 30       	cpi	r17, 0x09	; 9
- 244:	60 f4       	brcc	.+24     	; 0x25e <main+0x72>
-		{
-			number++;
- 246:	1f 5f       	subi	r17, 0xFF	; 255
-			while (1)
-			{
-				READ_BUTTON(AMIT_BUTTON0, &B_0);
- 248:	be 01       	movw	r22, r28
- 24a:	6f 5f       	subi	r22, 0xFF	; 255
- 24c:	7f 4f       	sbci	r23, 0xFF	; 255
- 24e:	80 e0       	ldi	r24, 0x00	; 0
- 250:	90 e0       	ldi	r25, 0x00	; 0
- 252:	0e 94 97 00 	call	0x12e	; 0x12e <READ_BUTTON>
-				
-				if (!B_0)
- 256:	89 81       	ldd	r24, Y+1	; 0x01
- 258:	9a 81       	ldd	r25, Y+2	; 0x02
- 25a:	89 2b       	or	r24, r25
- 25c:	a9 f7       	brne	.-22     	; 0x248 <main+0x5c>
-				}
-			}				
-		}
-	}
-		
-		if (B_1)
- 25e:	8b 81       	ldd	r24, Y+3	; 0x03
- 260:	9c 81       	ldd	r25, Y+4	; 0x04
- 262:	89 2b       	or	r24, r25
- 264:	71 f0       	breq	.+28     	; 0x282 <main+0x96>
-		{
-			if (number > 0)
- 266:	11 23       	and	r17, r17
- 268:	61 f0       	breq	.+24     	; 0x282 <main+0x96>
-			{
-				number--;
- 26a:	11 50       	subi	r17, 0x01	; 1
-				while (1)
-				{
-					READ_BUTTON(AMIT_BUTTON1, &B_1);
- 26c:	be 01       	movw	r22, r28
- 26e:	6d 5f       	subi	r22, 0xFD	; 253
- 270:	7f 4f       	sbci	r23, 0xFF	; 255
- 272:	81 e0       	ldi	r24, 0x01	; 1
- 274:	90 e0       	ldi	r25, 0x00	; 0
- 276:	0e 94 97 00 	call	0x12e	; 0x12e <READ_BUTTON>
-					if (!B_1)
- 27a:	8b 81       	ldd	r24, Y+3	; 0x03
- 27c:	9c 81       	ldd	r25, Y+4	; 0x04
- 27e:	89 2b       	or	r24, r25
- 280:	a9 f7       	brne	.-22     	; 0x26c <main+0x80>
-					}
-				}
-			}
-		}
-	
-		if (B_2)
- 282:	8d 81       	ldd	r24, Y+5	; 0x05
- 284:	9e 81       	ldd	r25, Y+6	; 0x06
- 286:	89 2b       	or	r24, r25
- 288:	09 f4       	brne	.+2      	; 0x28c <main+0xa0>
- 28a:	be cf       	rjmp	.-132    	; 0x208 <main+0x1c>
-		{	
-				number = 0;
-				while (1)
-				{
-					READ_BUTTON(AMIT_BUTTON2, &B_0);
- 28c:	be 01       	movw	r22, r28
- 28e:	6f 5f       	subi	r22, 0xFF	; 255
- 290:	7f 4f       	sbci	r23, 0xFF	; 255
- 292:	82 e0       	ldi	r24, 0x02	; 2
- 294:	90 e0       	ldi	r25, 0x00	; 0
- 296:	0e 94 97 00 	call	0x12e	; 0x12e <READ_BUTTON>
-					
-					if (!B_0)
- 29a:	89 81       	ldd	r24, Y+1	; 0x01
- 29c:	9a 81       	ldd	r25, Y+2	; 0x02
- 29e:	89 2b       	or	r24, r25
- 2a0:	a9 f7       	brne	.-22     	; 0x28c <main+0xa0>
- 2a2:	b1 cf       	rjmp	.-158    	; 0x206 <main+0x1a>
+{	
+Led_ON(AMIT_LEDNUM_0);
+ 14c:	80 e0       	ldi	r24, 0x00	; 0
+ 14e:	90 e0       	ldi	r25, 0x00	; 0
+ 150:	0e 94 3e 00 	call	0x7c	; 0x7c <Led_ON>
+T0_Delay_ms(500);
+ 154:	84 ef       	ldi	r24, 0xF4	; 244
+ 156:	91 e0       	ldi	r25, 0x01	; 1
+ 158:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <T0_Delay_ms>
+Led_OFF(AMIT_LEDNUM_0);
+ 15c:	80 e0       	ldi	r24, 0x00	; 0
+ 15e:	90 e0       	ldi	r25, 0x00	; 0
+ 160:	0e 94 72 00 	call	0xe4	; 0xe4 <Led_OFF>
+T0_Delay_ms(500);
+ 164:	84 ef       	ldi	r24, 0xF4	; 244
+ 166:	91 e0       	ldi	r25, 0x01	; 1
+ 168:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <T0_Delay_ms>
+ 16c:	ef cf       	rjmp	.-34     	; 0x14c <main>
 
-000002a4 <DIO_pinOUT>:
- 
+0000016e <DIO_pinOUT>:
+UTIL_SETPIN(port_address,pin_number);
 }
-
-extern void DIO_pinTOGGLE(unsigned int port_address, unsigned int pin_number)
+extern void DIO_pinIN(unsigned int port_address, unsigned int pin_number)
 {
-	UTIL_TOGGLEPIN(port_address,pin_number);
- 2a4:	fc 01       	movw	r30, r24
- 2a6:	40 81       	ld	r20, Z
- 2a8:	51 81       	ldd	r21, Z+1	; 0x01
- 2aa:	21 e0       	ldi	r18, 0x01	; 1
- 2ac:	30 e0       	ldi	r19, 0x00	; 0
- 2ae:	02 c0       	rjmp	.+4      	; 0x2b4 <DIO_pinOUT+0x10>
- 2b0:	22 0f       	add	r18, r18
- 2b2:	33 1f       	adc	r19, r19
- 2b4:	6a 95       	dec	r22
- 2b6:	e2 f7       	brpl	.-8      	; 0x2b0 <DIO_pinOUT+0xc>
- 2b8:	24 2b       	or	r18, r20
- 2ba:	35 2b       	or	r19, r21
- 2bc:	31 83       	std	Z+1, r19	; 0x01
- 2be:	20 83       	st	Z, r18
- 2c0:	08 95       	ret
+ UTIL_CLEARPIN(port_address,pin_number);
+ UTIL_SETPIN(port_address + 1,pin_number); //Activate pull up resistor of this pin (port address + 1 is the address of the specified port based in the address of the DDRx sent)
+ 16e:	fc 01       	movw	r30, r24
+ 170:	40 81       	ld	r20, Z
+ 172:	51 81       	ldd	r21, Z+1	; 0x01
+ 174:	21 e0       	ldi	r18, 0x01	; 1
+ 176:	30 e0       	ldi	r19, 0x00	; 0
+ 178:	02 c0       	rjmp	.+4      	; 0x17e <DIO_pinOUT+0x10>
+ 17a:	22 0f       	add	r18, r18
+ 17c:	33 1f       	adc	r19, r19
+ 17e:	6a 95       	dec	r22
+ 180:	e2 f7       	brpl	.-8      	; 0x17a <DIO_pinOUT+0xc>
+ 182:	24 2b       	or	r18, r20
+ 184:	35 2b       	or	r19, r21
+ 186:	31 83       	std	Z+1, r19	; 0x01
+ 188:	20 83       	st	Z, r18
+ 18a:	08 95       	ret
 
-000002c2 <DIO_pinIN>:
- 2c2:	fc 01       	movw	r30, r24
- 2c4:	20 81       	ld	r18, Z
- 2c6:	31 81       	ldd	r19, Z+1	; 0x01
- 2c8:	81 e0       	ldi	r24, 0x01	; 1
- 2ca:	90 e0       	ldi	r25, 0x00	; 0
- 2cc:	02 c0       	rjmp	.+4      	; 0x2d2 <DIO_pinIN+0x10>
- 2ce:	88 0f       	add	r24, r24
- 2d0:	99 1f       	adc	r25, r25
- 2d2:	6a 95       	dec	r22
- 2d4:	e2 f7       	brpl	.-8      	; 0x2ce <DIO_pinIN+0xc>
- 2d6:	ac 01       	movw	r20, r24
- 2d8:	40 95       	com	r20
- 2da:	50 95       	com	r21
- 2dc:	24 23       	and	r18, r20
- 2de:	35 23       	and	r19, r21
- 2e0:	31 83       	std	Z+1, r19	; 0x01
- 2e2:	20 83       	st	Z, r18
- 2e4:	21 81       	ldd	r18, Z+1	; 0x01
- 2e6:	32 81       	ldd	r19, Z+2	; 0x02
- 2e8:	82 2b       	or	r24, r18
- 2ea:	93 2b       	or	r25, r19
- 2ec:	92 83       	std	Z+2, r25	; 0x02
- 2ee:	81 83       	std	Z+1, r24	; 0x01
- 2f0:	08 95       	ret
+0000018c <DIO_pinWRITE>:
 
-000002f2 <DIO_pinWRITE>:
- 2f2:	45 2b       	or	r20, r21
- 2f4:	89 f4       	brne	.+34     	; 0x318 <DIO_pinWRITE+0x26>
- 2f6:	fc 01       	movw	r30, r24
- 2f8:	40 81       	ld	r20, Z
- 2fa:	51 81       	ldd	r21, Z+1	; 0x01
- 2fc:	21 e0       	ldi	r18, 0x01	; 1
- 2fe:	30 e0       	ldi	r19, 0x00	; 0
- 300:	02 c0       	rjmp	.+4      	; 0x306 <DIO_pinWRITE+0x14>
- 302:	22 0f       	add	r18, r18
- 304:	33 1f       	adc	r19, r19
- 306:	6a 95       	dec	r22
- 308:	e2 f7       	brpl	.-8      	; 0x302 <DIO_pinWRITE+0x10>
- 30a:	20 95       	com	r18
- 30c:	30 95       	com	r19
- 30e:	24 23       	and	r18, r20
- 310:	35 23       	and	r19, r21
- 312:	31 83       	std	Z+1, r19	; 0x01
- 314:	20 83       	st	Z, r18
- 316:	08 95       	ret
- 318:	fc 01       	movw	r30, r24
- 31a:	40 81       	ld	r20, Z
- 31c:	51 81       	ldd	r21, Z+1	; 0x01
- 31e:	21 e0       	ldi	r18, 0x01	; 1
- 320:	30 e0       	ldi	r19, 0x00	; 0
- 322:	02 c0       	rjmp	.+4      	; 0x328 <DIO_pinWRITE+0x36>
- 324:	22 0f       	add	r18, r18
- 326:	33 1f       	adc	r19, r19
- 328:	6a 95       	dec	r22
- 32a:	e2 f7       	brpl	.-8      	; 0x324 <DIO_pinWRITE+0x32>
- 32c:	24 2b       	or	r18, r20
- 32e:	35 2b       	or	r19, r21
- 330:	31 83       	std	Z+1, r19	; 0x01
- 332:	20 83       	st	Z, r18
- 334:	08 95       	ret
+}
+extern void DIO_pinWRITE(unsigned int port_address, unsigned int pin_number, unsigned int value)
+{
+ if(value == 0)
+ 18c:	45 2b       	or	r20, r21
+ 18e:	89 f4       	brne	.+34     	; 0x1b2 <DIO_pinWRITE+0x26>
+ {
+   UTIL_CLEARPIN(port_address, pin_number);
+ 190:	fc 01       	movw	r30, r24
+ 192:	40 81       	ld	r20, Z
+ 194:	51 81       	ldd	r21, Z+1	; 0x01
+ 196:	21 e0       	ldi	r18, 0x01	; 1
+ 198:	30 e0       	ldi	r19, 0x00	; 0
+ 19a:	02 c0       	rjmp	.+4      	; 0x1a0 <DIO_pinWRITE+0x14>
+ 19c:	22 0f       	add	r18, r18
+ 19e:	33 1f       	adc	r19, r19
+ 1a0:	6a 95       	dec	r22
+ 1a2:	e2 f7       	brpl	.-8      	; 0x19c <DIO_pinWRITE+0x10>
+ 1a4:	20 95       	com	r18
+ 1a6:	30 95       	com	r19
+ 1a8:	24 23       	and	r18, r20
+ 1aa:	35 23       	and	r19, r21
+ 1ac:	31 83       	std	Z+1, r19	; 0x01
+ 1ae:	20 83       	st	Z, r18
+ 1b0:	08 95       	ret
+ }
+ else
+ {
+   UTIL_SETPIN(port_address, pin_number);
+ 1b2:	fc 01       	movw	r30, r24
+ 1b4:	40 81       	ld	r20, Z
+ 1b6:	51 81       	ldd	r21, Z+1	; 0x01
+ 1b8:	21 e0       	ldi	r18, 0x01	; 1
+ 1ba:	30 e0       	ldi	r19, 0x00	; 0
+ 1bc:	02 c0       	rjmp	.+4      	; 0x1c2 <DIO_pinWRITE+0x36>
+ 1be:	22 0f       	add	r18, r18
+ 1c0:	33 1f       	adc	r19, r19
+ 1c2:	6a 95       	dec	r22
+ 1c4:	e2 f7       	brpl	.-8      	; 0x1be <DIO_pinWRITE+0x32>
+ 1c6:	24 2b       	or	r18, r20
+ 1c8:	35 2b       	or	r19, r21
+ 1ca:	31 83       	std	Z+1, r19	; 0x01
+ 1cc:	20 83       	st	Z, r18
+ 1ce:	08 95       	ret
 
-00000336 <DIO_pinREAD>:
+000001d0 <T0_Delay_ms>:
+
+static void T0_INIT(void);
+volatile static unsigned char gu8_msFlag = 0; 
+
+extern void T0_Delay_ms(unsigned int i32_delay)
+{   
+ 1d0:	9c 01       	movw	r18, r24
+	}
+	
 }
 
-extern void DIO_pinREAD(unsigned int port_address, unsigned int pin_number, unsigned int * pin_value)
-{    
-	 //PV= port_address & (1<<pin_number);
-	*pin_value = (*((volatile unsigned int *)(port_address))) & (1<<pin_number);
- 336:	fc 01       	movw	r30, r24
- 338:	20 81       	ld	r18, Z
- 33a:	31 81       	ldd	r19, Z+1	; 0x01
- 33c:	81 e0       	ldi	r24, 0x01	; 1
- 33e:	90 e0       	ldi	r25, 0x00	; 0
- 340:	02 c0       	rjmp	.+4      	; 0x346 <DIO_pinREAD+0x10>
- 342:	88 0f       	add	r24, r24
- 344:	99 1f       	adc	r25, r25
- 346:	6a 95       	dec	r22
- 348:	e2 f7       	brpl	.-8      	; 0x342 <DIO_pinREAD+0xc>
- 34a:	82 23       	and	r24, r18
- 34c:	93 23       	and	r25, r19
- 34e:	fa 01       	movw	r30, r20
- 350:	91 83       	std	Z+1, r25	; 0x01
- 352:	80 83       	st	Z, r24
- 354:	08 95       	ret
+static void T0_INIT(void)
+{   gu8_msFlag = 0;
+ 1d2:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <_edata>
+	T0_CR = 0x03;
+ 1d6:	83 e0       	ldi	r24, 0x03	; 3
+ 1d8:	90 e0       	ldi	r25, 0x00	; 0
+ 1da:	94 bf       	out	0x34, r25	; 52
+ 1dc:	83 bf       	out	0x33, r24	; 51
+    T0_CNT = 0x06;
+ 1de:	86 e0       	ldi	r24, 0x06	; 6
+ 1e0:	90 e0       	ldi	r25, 0x00	; 0
+ 1e2:	93 bf       	out	0x33, r25	; 51
+ 1e4:	82 bf       	out	0x32, r24	; 50
+	T0_INTMSK |= (1<<(TOIE0));
+ 1e6:	89 b7       	in	r24, 0x39	; 57
+ 1e8:	9a b7       	in	r25, 0x3a	; 58
+ 1ea:	81 60       	ori	r24, 0x01	; 1
+ 1ec:	9a bf       	out	0x3a, r25	; 58
+ 1ee:	89 bf       	out	0x39, r24	; 57
+	
+	sei();
+ 1f0:	78 94       	sei
 
-00000356 <_exit>:
- 356:	f8 94       	cli
+extern void T0_Delay_ms(unsigned int i32_delay)
+{   
+	T0_INIT();
+	
+	while (i32_delay != 0)
+ 1f2:	21 15       	cp	r18, r1
+ 1f4:	31 05       	cpc	r19, r1
+ 1f6:	59 f0       	breq	.+22     	; 0x20e <T0_Delay_ms+0x3e>
+	{   
+		
+		while (gu8_msFlag == 0);
+ 1f8:	90 91 60 00 	lds	r25, 0x0060	; 0x800060 <_edata>
+ 1fc:	99 23       	and	r25, r25
+ 1fe:	e1 f3       	breq	.-8      	; 0x1f8 <T0_Delay_ms+0x28>
+			i32_delay--;
+ 200:	21 50       	subi	r18, 0x01	; 1
+ 202:	31 09       	sbc	r19, r1
+			gu8_msFlag = 0;
+ 204:	10 92 60 00 	sts	0x0060, r1	; 0x800060 <_edata>
 
-00000358 <__stop_program>:
- 358:	ff cf       	rjmp	.-2      	; 0x358 <__stop_program>
+extern void T0_Delay_ms(unsigned int i32_delay)
+{   
+	T0_INIT();
+	
+	while (i32_delay != 0)
+ 208:	21 15       	cp	r18, r1
+ 20a:	31 05       	cpc	r19, r1
+ 20c:	a9 f7       	brne	.-22     	; 0x1f8 <T0_Delay_ms+0x28>
+ 20e:	08 95       	ret
+
+00000210 <__vector_11>:
+	sei();
+
+}
+
+ISR(TIMER0_OVF_vect)
+{
+ 210:	1f 92       	push	r1
+ 212:	0f 92       	push	r0
+ 214:	0f b6       	in	r0, 0x3f	; 63
+ 216:	0f 92       	push	r0
+ 218:	11 24       	eor	r1, r1
+ 21a:	8f 93       	push	r24
+ 21c:	9f 93       	push	r25
+	gu8_msFlag++;
+ 21e:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <_edata>
+ 222:	8f 5f       	subi	r24, 0xFF	; 255
+ 224:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <_edata>
+	T0_CNT = 0x06;
+ 228:	86 e0       	ldi	r24, 0x06	; 6
+ 22a:	90 e0       	ldi	r25, 0x00	; 0
+ 22c:	93 bf       	out	0x33, r25	; 51
+ 22e:	82 bf       	out	0x32, r24	; 50
+	
+ 230:	9f 91       	pop	r25
+ 232:	8f 91       	pop	r24
+ 234:	0f 90       	pop	r0
+ 236:	0f be       	out	0x3f, r0	; 63
+ 238:	0f 90       	pop	r0
+ 23a:	1f 90       	pop	r1
+ 23c:	18 95       	reti
+
+0000023e <_exit>:
+ 23e:	f8 94       	cli
+
+00000240 <__stop_program>:
+ 240:	ff cf       	rjmp	.-2      	; 0x240 <__stop_program>
