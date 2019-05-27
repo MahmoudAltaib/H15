@@ -16,3 +16,17 @@ extern void RELAY_OFF()
 {
 	Pin_reset(RELAY_PORT , RELAY_PIN_NUMBER);
 }
+
+extern void RELAY_FLICKER()
+{
+	uint8_t u8Count = 0;
+	
+	for (u8Count = 0 ; u8Count < NUMBER_OF_RELAY_FLICKERS ; u8Count ++)
+	{
+		RELAY_ON();
+		_delay_ms(RELAY_FLICKERING_PERIOD);
+		RELAY_OFF();
+		_delay_ms(RELAY_FLICKERING_PERIOD);
+	}
+	
+}

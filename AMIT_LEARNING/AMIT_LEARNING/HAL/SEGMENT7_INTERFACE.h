@@ -55,6 +55,9 @@
 #define BCD_C 3
 #define BCD_D 4
 
+#define NUMBER_OF_SEGMENT_FLICKERS 3
+#define SEGMENT7_FLICKERING_PERIOD 300 // in milliseconds
+
 extern void SEGMENT_ON(uint8_t u8Segment_number);
 extern void SEGMENT_OFF(uint8_t u8Segment_number);
 

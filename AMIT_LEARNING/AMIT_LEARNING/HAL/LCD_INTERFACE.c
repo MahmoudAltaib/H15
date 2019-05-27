@@ -95,7 +95,7 @@ extern void LCD_DATA_STRING(uint8_t *pu8Data , uint8_t u8Size)
 {
 	uint8_t u8Count = 0;
 	
-	for (u8Count = 0; u8Count <u8Size ; u8Count ++)
+	for (u8Count = 0; u8Count < u8Size ; u8Count ++)
 	{
 		LCD_DATA(pu8Data[u8Count]);
 	}
@@ -115,17 +115,17 @@ extern void LCD_INIT()
 	ENABLE_STATE(ENABLE_LOW);
 	_delay_us(2000);
 	
-	LCD_COMMAND(0x33); // 4-bit mode
+	LCD_COMMAND(INITIALIZE_COMMAND_1); 
 	_delay_us(100);
-	LCD_COMMAND(0x32); // 4-bit mode
+	LCD_COMMAND(INITIALIZE_COMMAND_2); 
 	_delay_us(100);
-	LCD_COMMAND(0x28); // 4-bit mode
+	LCD_COMMAND(BIT_MODE4); 
 	_delay_us(100);
-	LCD_COMMAND(0x0e); // display on , cursor on
+	LCD_COMMAND(DISPLAY_ON_CURSOR_BLINKING); 
 	_delay_us(100);
-	LCD_COMMAND(0x01); // Clear LCD
+	LCD_COMMAND(CLEAR_DISPLAY); 
 	_delay_us(2000);
-	LCD_COMMAND(0x06); // Shift cursor right
+	LCD_COMMAND(SHIFT_CURSOR_RIGHT); 
 	_delay_us(100);
 	
 }

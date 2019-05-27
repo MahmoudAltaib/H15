@@ -21,9 +21,14 @@
 	#define RELAY_DDR DDR_D
 	#define RELAY_PIN PIN_D
 	#define RELAY_PIN_NUMBER 3
+	
+	#define NUMBER_OF_RELAY_FLICKERS 5
+	#define RELAY_FLICKERING_PERIOD 500 // in milliseconds
 
 	extern void RELAY_ON();
 	extern void RELAY_OFF();
+	
+	extern void RELAY_FLICKER();
 
 #endif
 

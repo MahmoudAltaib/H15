@@ -24,7 +24,7 @@
 	#define ENABLE_LOW 0
 	#define ENABLE_HIGH 1
 	
-	#define PULSE_WIDTH 5
+	#define PULSE_WIDTH 5  // Microsecond
 	
 	// LCD CONNECTIONS
 	#define D4_PORT PORT_A
@@ -62,6 +62,27 @@
 	#define ENABLE_PIN PIN_B
 	#define ENABLE_PIN_NUMBER 3
 	
+	// COMMANDS 
+	#define CLEAR_DISPLAY 0x01
+	
+	#define SHIFT_CURSOR_RIGHT 0x06
+	
+	#define DISPLAY_ON_CURSOR_OFF 0x0c
+	#define DISPLAY_ON_CURSOR_NOT_BLINKING 0x0e
+	#define DISPLAY_ON_CURSOR_BLINKING 0x0f
+	
+		// Initialization of 4-bit mode
+	#define BIT_MODE4 0x28
+	#define INITIALIZE_COMMAND_1 0x33
+	#define INITIALIZE_COMMAND_2 0x32
+		// 
+		
+	#define SHIFT_DISPLAY_RIGHT 0x1c
+	#define SHIFT_DISPLAY_LEFT 0x18
+	
+	#define FIRST_LINE_START 0x80
+	#define SECOND_LINE_START 0xc0
+	
 	extern void RW_STATE(uint8_t u8State);
 	extern void RS_STATE(uint8_t u8State);
 	extern void ENABLE_STATE(uint8_t u8State);
@@ -71,8 +92,6 @@
 	extern void LCD_DATA_STRING(uint8_t *pu8Data , uint8_t u8Size);
 	extern void LCD_INIT();
 	extern void LCD_PRINT(unsigned char *puStatement);
-
-
 
 #endif
 

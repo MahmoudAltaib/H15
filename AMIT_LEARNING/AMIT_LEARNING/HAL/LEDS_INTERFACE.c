@@ -110,15 +110,15 @@ extern void LEDS_FLASH()
 {
 	uint8_t u8Count = 0 ;
 	
-	for (u8Count = 0 ; u8Count < NUMBER_OF_FLASHES ; u8Count ++)
+	for (u8Count = 0 ; u8Count < NUMBER_OF_LEDS_FLICKERS ; u8Count ++)
 	{
 		LED_ON(LED1);
 		LED_ON(LED2);
 		LED_ON(LED3);
-		_delay_ms(150);
+		_delay_ms(LEDS_FLASHING_PERIOD);
 		LED_OFF(LED1);
 		LED_OFF(LED2);
 		LED_OFF(LED3);
-		_delay_ms(150);	
+		_delay_ms(LEDS_FLASHING_PERIOD);	
 	}
 }

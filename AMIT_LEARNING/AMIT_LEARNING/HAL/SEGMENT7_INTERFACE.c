@@ -90,11 +90,11 @@ extern void SEGMENT_RESET()
 
 
 
-extern void SEGMENT_SHOW_NUMBER(uint8_t u8Segment7_number1)
+extern void SEGMENT_SHOW_NUMBER(uint8_t gu8Segment7_number1)
 {
 	uint8_t u8Temp = 0;
 	
-	u8Temp = u8Segment7_number1 ;
+	u8Temp = gu8Segment7_number1 ;
 	
 	SEGMENT_RESET();
 	*((volatile unsigned int *)(SEGMENT_A_PORT)) |= (u8Temp << SEGMENT_A_PIN_NUMBER);
@@ -117,14 +117,14 @@ extern void SEGMENT_FLASH()
 {
 	uint8_t u8Count = 0;
 	
-	for (u8Count = 0 ; u8Count < NUMBER_OF_FLASHES ; u8Count ++)
+	for (u8Count = 0 ; u8Count < NUMBER_OF_SEGMENT_FLICKERS ; u8Count ++)
 	{
 		SEGMENT_OFF(SEGMENT1);
 		SEGMENT_OFF(SEGMENT2);
-		_delay_ms(150);
+		_delay_ms(SEGMENT7_FLICKERING_PERIOD);
 		SEGMENT_ON(SEGMENT1);
 		SEGMENT_ON(SEGMENT2);
-		_delay_ms(150);	
+		_delay_ms(SEGMENT7_FLICKERING_PERIOD);	
 	}
 }
 
@@ -132,20 +132,20 @@ extern void SEGMENT_LEDS_FLASH()
 {
 	uint8_t u8Count = 0;
 	
-	for (u8Count = 0 ; u8Count < NUMBER_OF_FLASHES ; u8Count ++)
+	for (u8Count = 0 ; u8Count < NUMBER_OF_SEGMENT_FLICKERS ; u8Count ++)
 	{
 		LED_OFF(LED1);
 		LED_OFF(LED2);
 		LED_OFF(LED3);
 		SEGMENT_OFF(SEGMENT1);
 		SEGMENT_OFF(SEGMENT2);
-		_delay_ms(150);
+		_delay_ms(SEGMENT7_FLICKERING_PERIOD);
 		LED_ON(LED1);
 		LED_ON(LED2);
 		LED_ON(LED3);
 		SEGMENT_ON(SEGMENT1);
 		SEGMENT_ON(SEGMENT2);
-		_delay_ms(150);	
+		_delay_ms(SEGMENT7_FLICKERING_PERIOD);	
 	}
 	LED_OFF(LED1);
 	LED_OFF(LED2);

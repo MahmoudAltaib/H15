@@ -15,3 +15,16 @@ extern void BUZZER_OFF()
 {
 	Pin_reset(BUZZER_PORT , BUZZER_PIN_NUMBER);
 }
+
+extern void BUZZER_FLICKER()
+{
+	uint8_t u8Count = 0;
+	
+	for (u8Count = 0 ; u8Count < NUMBER_OF_BUZZER_FLICKERS ; u8Count ++)
+	{
+		BUZZER_ON();
+		_delay_ms(BUZZER_FLICKERING_PERIOD);
+		BUZZER_OFF();
+		_delay_ms(BUZZER_FLICKERING_PERIOD);
+	}
+}

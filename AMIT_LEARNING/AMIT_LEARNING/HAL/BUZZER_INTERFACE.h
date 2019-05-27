@@ -22,8 +22,12 @@
 	#define BUZZER_PIN PIN_D
 	#define BUZZER_PIN_NUMBER 4
 
+	#define NUMBER_OF_BUZZER_FLICKERS 3
+	#define BUZZER_FLICKERING_PERIOD 300 // in milliseconds
+	
 	extern void BUZZER_ON();
 	extern void BUZZER_OFF();
+	extern void BUZZER_FLICKER();
 
 #endif
 

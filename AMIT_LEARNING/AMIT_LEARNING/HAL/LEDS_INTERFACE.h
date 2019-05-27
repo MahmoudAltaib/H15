@@ -36,8 +36,9 @@
 	#define LED2 2
 	#define LED3 3
 
-	#define NUMBER_OF_FLASHES 3
-
+	#define NUMBER_OF_LEDS_FLICKERS 5
+	#define LEDS_FLASHING_PERIOD 500 // in milliseconds
+	
 	extern void LED_ON(uint8_t u8LED_Number);
 	extern void LED_OFF(uint8_t u8LED_Number);
 
