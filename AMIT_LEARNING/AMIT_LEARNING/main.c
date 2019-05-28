@@ -53,22 +53,26 @@ int main(void)
 	LED_OFF(LED3);
 	BUZZER_OFF();
 	RELAY_OFF();
-	SEGMENT_RESET();
+	/*SEGMENT_RESET();*/
 	LCD_INIT();
-	
-	
+		
 	
 	while (1)
 	{
 		
-		if (gu8Password_right != 0)
+		/*if (gu8Password_right != 0)
 		{
 			LCD_TEST();
 		} 
 		else
 		{
 			KEYPAD_WITH_LCD();
-		}
+		}*/
+		
+		LED_ON(LED1);
+		T0_DELAY_ms(2000);
+		LED_OFF(LED1);
+		T0_DELAY_ms(2000);
 	}
 }
 

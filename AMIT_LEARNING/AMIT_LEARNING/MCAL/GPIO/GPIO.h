@@ -9,7 +9,7 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#define F_CPU 16000000ul
+#define F_CPU 12000000ul
 #include <inttypes.h>
 #include <util/delay.h>
 

@@ -1,5 +1,6 @@
 MCAL/TIMER0/TIMER0.d MCAL/TIMER0/TIMER0.o: ../MCAL/TIMER0/TIMER0.c \
- ../MCAL/TIMER0/TIMER0.h \
+ ../MCAL/TIMER0/TIMER0.h ../HAL/AMIT_SCHEMATIC.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -11,9 +12,23 @@ MCAL/TIMER0/TIMER0.d MCAL/TIMER0/TIMER0.o: ../MCAL/TIMER0/TIMER0.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h
+ ../APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.h ../MCAL/GPIO/GPIO.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ ../HAL/BUZZER_INTERFACE.h ../HAL/AMIT_SCHEMATIC.h \
+ ../HAL/BUTTON_INTERFACE.h ../APP/SEGMENT7/SEGMENT_INC_DEC.h \
+ ../HAL/SEGMENT7_INTERFACE.h ../HAL/LEDS_INTERFACE.h \
+ ../HAL/LEDS_INTERFACE.h ../HAL/RELAY_INTERFACE.h \
+ ../APP/LCD_HELLO/LCD_HELLO.h ../HAL/LCD_INTERFACE.h \
+ ../APP/LCD_TEST/LCD_TEST.h ../APP/KEYPAD/KEYPAD_LCD.h \
+ ../HAL/KEYPAD_INTERFACE.h
 
 ../MCAL/TIMER0/TIMER0.h:
+
+../HAL/AMIT_SCHEMATIC.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -37,4 +52,38 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
+../APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.h:
+
+../MCAL/GPIO/GPIO.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../HAL/BUZZER_INTERFACE.h:
+
+../HAL/AMIT_SCHEMATIC.h:
+
+../HAL/BUTTON_INTERFACE.h:
+
+../APP/SEGMENT7/SEGMENT_INC_DEC.h:
+
+../HAL/SEGMENT7_INTERFACE.h:
+
+../HAL/LEDS_INTERFACE.h:
+
+../HAL/LEDS_INTERFACE.h:
+
+../HAL/RELAY_INTERFACE.h:
+
+../APP/LCD_HELLO/LCD_HELLO.h:
+
+../HAL/LCD_INTERFACE.h:
+
+../APP/LCD_TEST/LCD_TEST.h:
+
+../APP/KEYPAD/KEYPAD_LCD.h:
+
+../HAL/KEYPAD_INTERFACE.h:

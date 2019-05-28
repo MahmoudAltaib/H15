@@ -35,6 +35,55 @@ Discarded input sections
  .text          0x00000000        0x0 APP/KEYPAD/KEYPAD_LCD.o
  .data          0x00000000        0x0 APP/KEYPAD/KEYPAD_LCD.o
  .bss           0x00000000        0x0 APP/KEYPAD/KEYPAD_LCD.o
+ .text.GET_KEY_ROW
+                0x00000000       0x74 APP/KEYPAD/KEYPAD_LCD.o
+ .text.GET_KEY_COLUMN
+                0x00000000       0x74 APP/KEYPAD/KEYPAD_LCD.o
+ .rodata        0x00000000        0x6 APP/KEYPAD/KEYPAD_LCD.o
+ .text.KEYPAD_WITH_LCD
+                0x00000000      0x29a APP/KEYPAD/KEYPAD_LCD.o
+ .data.u8Statement_p3_2
+                0x00000000       0x11 APP/KEYPAD/KEYPAD_LCD.o
+ .data.u8Statement_p3_1
+                0x00000000       0x11 APP/KEYPAD/KEYPAD_LCD.o
+ .data.u8Statement_p2_2
+                0x00000000       0x11 APP/KEYPAD/KEYPAD_LCD.o
+ .data.u8Statement_p2_1
+                0x00000000       0x11 APP/KEYPAD/KEYPAD_LCD.o
+ .data.u8Statement_pHome_1
+                0x00000000       0x11 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Captured_column
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Captured_row
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Row4_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Row3_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Row2_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Row1_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Column4_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Column3_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Column2_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Column1_reading
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .bss.u8Entered_character
+                0x00000000        0x1 APP/KEYPAD/KEYPAD_LCD.o
+ .debug_info    0x00000000      0xae8 APP/KEYPAD/KEYPAD_LCD.o
+ .debug_abbrev  0x00000000      0x19d APP/KEYPAD/KEYPAD_LCD.o
+ .debug_loc     0x00000000      0x451 APP/KEYPAD/KEYPAD_LCD.o
+ .debug_aranges
+                0x00000000       0x30 APP/KEYPAD/KEYPAD_LCD.o
+ .debug_ranges  0x00000000       0x20 APP/KEYPAD/KEYPAD_LCD.o
+ .debug_line    0x00000000      0x4bf APP/KEYPAD/KEYPAD_LCD.o
+ .debug_str     0x00000000      0x542 APP/KEYPAD/KEYPAD_LCD.o
+ .comment       0x00000000       0x31 APP/KEYPAD/KEYPAD_LCD.o
+ .debug_frame   0x00000000       0x94 APP/KEYPAD/KEYPAD_LCD.o
  .text          0x00000000        0x0 APP/LCD_HELLO/LCD_HELLO.o
  .data          0x00000000        0x0 APP/LCD_HELLO/LCD_HELLO.o
  .bss           0x00000000        0x0 APP/LCD_HELLO/LCD_HELLO.o
@@ -67,7 +116,21 @@ Discarded input sections
  .text          0x00000000        0x0 APP/LCD_TEST/LCD_TEST.o
  .data          0x00000000        0x0 APP/LCD_TEST/LCD_TEST.o
  .bss           0x00000000        0x0 APP/LCD_TEST/LCD_TEST.o
+ .text.HOME_PAGE
+                0x00000000       0x68 APP/LCD_TEST/LCD_TEST.o
+ .text.PAGE2    0x00000000      0x116 APP/LCD_TEST/LCD_TEST.o
+ .text.PAGE3    0x00000000       0xc4 APP/LCD_TEST/LCD_TEST.o
+ .text.LCD_TEST
+                0x00000000        0xe APP/LCD_TEST/LCD_TEST.o
  .text.PAGE4    0x00000000      0x106 APP/LCD_TEST/LCD_TEST.o
+ .bss.u8Button2_reading
+                0x00000000        0x1 APP/LCD_TEST/LCD_TEST.o
+ .bss.u8Button1_reading
+                0x00000000        0x1 APP/LCD_TEST/LCD_TEST.o
+ .bss.u8Button0_reading
+                0x00000000        0x1 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_test
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
  .data.u8Statement_p4_1_2
                 0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
  .data.u8Statement_p4_1_1
@@ -76,6 +139,28 @@ Discarded input sections
                 0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
  .data.u8Statement_p4_1
                 0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_p3_2
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_p3_1
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_p2_2
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_p2_1
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_pHome_2
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .data.u8Statement_pHome_1
+                0x00000000       0x11 APP/LCD_TEST/LCD_TEST.o
+ .debug_info    0x00000000      0xdce APP/LCD_TEST/LCD_TEST.o
+ .debug_abbrev  0x00000000      0x169 APP/LCD_TEST/LCD_TEST.o
+ .debug_loc     0x00000000      0x668 APP/LCD_TEST/LCD_TEST.o
+ .debug_aranges
+                0x00000000       0x40 APP/LCD_TEST/LCD_TEST.o
+ .debug_ranges  0x00000000       0x30 APP/LCD_TEST/LCD_TEST.o
+ .debug_line    0x00000000      0x4fa APP/LCD_TEST/LCD_TEST.o
+ .debug_str     0x00000000      0x48a APP/LCD_TEST/LCD_TEST.o
+ .comment       0x00000000       0x31 APP/LCD_TEST/LCD_TEST.o
+ .debug_frame   0x00000000       0x64 APP/LCD_TEST/LCD_TEST.o
  .text          0x00000000        0x0 APP/SEGMENT7/SEGMENT_INC_DEC.o
  .data          0x00000000        0x0 APP/SEGMENT7/SEGMENT_INC_DEC.o
  .bss           0x00000000        0x0 APP/SEGMENT7/SEGMENT_INC_DEC.o
@@ -115,25 +200,113 @@ Discarded input sections
  .text          0x00000000        0x0 HAL/BUTTON_INTERFACE.o
  .data          0x00000000        0x0 HAL/BUTTON_INTERFACE.o
  .bss           0x00000000        0x0 HAL/BUTTON_INTERFACE.o
+ .text.BUTTON0_READ
+                0x00000000       0x6e HAL/BUTTON_INTERFACE.o
+ .text.BUTTON1_READ
+                0x00000000       0x6e HAL/BUTTON_INTERFACE.o
+ .text.BUTTON2_READ
+                0x00000000       0x6e HAL/BUTTON_INTERFACE.o
+ .debug_info    0x00000000      0x26c HAL/BUTTON_INTERFACE.o
+ .debug_abbrev  0x00000000       0xbf HAL/BUTTON_INTERFACE.o
+ .debug_loc     0x00000000      0x38d HAL/BUTTON_INTERFACE.o
+ .debug_aranges
+                0x00000000       0x30 HAL/BUTTON_INTERFACE.o
+ .debug_ranges  0x00000000       0x20 HAL/BUTTON_INTERFACE.o
+ .debug_line    0x00000000      0x1c5 HAL/BUTTON_INTERFACE.o
+ .debug_str     0x00000000      0x1df HAL/BUTTON_INTERFACE.o
+ .comment       0x00000000       0x31 HAL/BUTTON_INTERFACE.o
+ .debug_frame   0x00000000       0xb0 HAL/BUTTON_INTERFACE.o
  .text          0x00000000        0x0 HAL/BUZZER_INTERFACE.o
  .data          0x00000000        0x0 HAL/BUZZER_INTERFACE.o
  .bss           0x00000000        0x0 HAL/BUZZER_INTERFACE.o
+ .text.BUZZER_ON
+                0x00000000        0xc HAL/BUZZER_INTERFACE.o
+ .text.BUZZER_FLICKER
+                0x00000000       0x38 HAL/BUZZER_INTERFACE.o
  .text          0x00000000        0x0 HAL/KEYPAD_INTERFACE.o
  .data          0x00000000        0x0 HAL/KEYPAD_INTERFACE.o
  .bss           0x00000000        0x0 HAL/KEYPAD_INTERFACE.o
+ .text.POWER_ROW1
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_ROW2
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_ROW3
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_ROW4
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_ALL_ROWS
+                0x00000000       0x12 HAL/KEYPAD_INTERFACE.o
+ .text.GROUND_ALL_ROWS
+                0x00000000       0x2a HAL/KEYPAD_INTERFACE.o
+ .text.READ_ROW1
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.READ_ROW2
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.READ_ROW3
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.READ_ROW4
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.SET_ROWS_INPUT
+                0x00000000       0x42 HAL/KEYPAD_INTERFACE.o
+ .text.SET_ROWS_OUTPUT
+                0x00000000       0x42 HAL/KEYPAD_INTERFACE.o
+ .text.POWER_COLUMN1
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_COLUMN2
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_COLUMN3
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_COLUMN4
+                0x00000000        0xc HAL/KEYPAD_INTERFACE.o
+ .text.POWER_ALL_COLUMNS
+                0x00000000       0x12 HAL/KEYPAD_INTERFACE.o
+ .text.GROUND_ALL_COLUMNS
+                0x00000000       0x2a HAL/KEYPAD_INTERFACE.o
+ .text.READ_COLUMN1
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.READ_COLUMN2
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.READ_COLUMN3
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.READ_COLUMN4
+                0x00000000       0x6e HAL/KEYPAD_INTERFACE.o
+ .text.SET_COLUMNS_INPUT
+                0x00000000       0x42 HAL/KEYPAD_INTERFACE.o
+ .text.SET_COLUMNS_OUTPUT
+                0x00000000       0x42 HAL/KEYPAD_INTERFACE.o
  .text.ACTIVATE_PULL_UP_RESISTORS
                 0x00000000       0x2a HAL/KEYPAD_INTERFACE.o
+ .debug_info    0x00000000      0xcdc HAL/KEYPAD_INTERFACE.o
+ .debug_abbrev  0x00000000      0x141 HAL/KEYPAD_INTERFACE.o
+ .debug_loc     0x00000000      0x978 HAL/KEYPAD_INTERFACE.o
+ .debug_aranges
+                0x00000000       0xe0 HAL/KEYPAD_INTERFACE.o
+ .debug_ranges  0x00000000       0xd0 HAL/KEYPAD_INTERFACE.o
+ .debug_line    0x00000000      0x5ba HAL/KEYPAD_INTERFACE.o
+ .debug_str     0x00000000      0x33c HAL/KEYPAD_INTERFACE.o
+ .comment       0x00000000       0x31 HAL/KEYPAD_INTERFACE.o
+ .debug_frame   0x00000000      0x2c4 HAL/KEYPAD_INTERFACE.o
  .text          0x00000000        0x0 HAL/LCD_INTERFACE.o
  .data          0x00000000        0x0 HAL/LCD_INTERFACE.o
  .bss           0x00000000        0x0 HAL/LCD_INTERFACE.o
+ .text.LCD_DATA
+                0x00000000       0x3a HAL/LCD_INTERFACE.o
+ .text.LCD_DATA_STRING
+                0x00000000       0x32 HAL/LCD_INTERFACE.o
  .text          0x00000000        0x0 HAL/LEDS_INTERFACE.o
  .data          0x00000000        0x0 HAL/LEDS_INTERFACE.o
  .bss           0x00000000        0x0 HAL/LEDS_INTERFACE.o
  .text.LED_FLASH
                 0x00000000      0x1c2 HAL/LEDS_INTERFACE.o
+ .text.LEDS_FLASH
+                0x00000000       0x54 HAL/LEDS_INTERFACE.o
  .text          0x00000000        0x0 HAL/RELAY_INTERFACE.o
  .data          0x00000000        0x0 HAL/RELAY_INTERFACE.o
  .bss           0x00000000        0x0 HAL/RELAY_INTERFACE.o
+ .text.RELAY_ON
+                0x00000000        0xc HAL/RELAY_INTERFACE.o
+ .text.RELAY_FLICKER
+                0x00000000       0x38 HAL/RELAY_INTERFACE.o
  .text          0x00000000        0x0 HAL/SEGMENT7_INTERFACE.o
  .data          0x00000000        0x0 HAL/SEGMENT7_INTERFACE.o
  .bss           0x00000000        0x0 HAL/SEGMENT7_INTERFACE.o
@@ -143,6 +316,10 @@ Discarded input sections
                 0x00000000       0x20 HAL/SEGMENT7_INTERFACE.o
  .text.BCD_PIN_SET
                 0x00000000       0x40 HAL/SEGMENT7_INTERFACE.o
+ .text.BCD_PIN_RESET
+                0x00000000       0x40 HAL/SEGMENT7_INTERFACE.o
+ .text.SEGMENT_RESET
+                0x00000000       0x1a HAL/SEGMENT7_INTERFACE.o
  .text.SEGMENT_SHOW_NUMBER
                 0x00000000       0x2c HAL/SEGMENT7_INTERFACE.o
  .text.SHOW_TWO_NUMBERS
@@ -151,9 +328,23 @@ Discarded input sections
                 0x00000000       0x48 HAL/SEGMENT7_INTERFACE.o
  .text.SEGMENT_LEDS_FLASH
                 0x00000000       0x7e HAL/SEGMENT7_INTERFACE.o
+ .debug_info    0x00000000      0x6e3 HAL/SEGMENT7_INTERFACE.o
+ .debug_abbrev  0x00000000      0x164 HAL/SEGMENT7_INTERFACE.o
+ .debug_loc     0x00000000      0x479 HAL/SEGMENT7_INTERFACE.o
+ .debug_aranges
+                0x00000000       0x60 HAL/SEGMENT7_INTERFACE.o
+ .debug_ranges  0x00000000       0x50 HAL/SEGMENT7_INTERFACE.o
+ .debug_line    0x00000000      0x3b5 HAL/SEGMENT7_INTERFACE.o
+ .debug_str     0x00000000      0x2bf HAL/SEGMENT7_INTERFACE.o
+ .comment       0x00000000       0x31 HAL/SEGMENT7_INTERFACE.o
+ .debug_frame   0x00000000       0xc8 HAL/SEGMENT7_INTERFACE.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .rodata.gu8Key_pad
+                0x00000000       0x10 main.o
+ .bss.gu8Password_right
+                0x00000000        0x1 main.o
  .bss.gu8Segment7_number2
                 0x00000000        0x1 main.o
  .bss.gu8Segment7_number1
@@ -163,15 +354,13 @@ Discarded input sections
  .bss           0x00000000        0x0 MCAL/GPIO/GPIO.o
  .text.Pin_toggle
                 0x00000000       0x18 MCAL/GPIO/GPIO.o
+ .text.Pin_read
+                0x00000000       0x1a MCAL/GPIO/GPIO.o
  .text          0x00000000        0x0 MCAL/TIMER0/TIMER0.o
  .data          0x00000000        0x0 MCAL/TIMER0/TIMER0.o
  .bss           0x00000000        0x0 MCAL/TIMER0/TIMER0.o
- .text.T0_DELAY_1ms
-                0x00000000        0x2 MCAL/TIMER0/TIMER0.o
- .text.T0_DELAY_3ms
-                0x00000000        0x2 MCAL/TIMER0/TIMER0.o
- .text.T0_INIT  0x00000000        0x2 MCAL/TIMER0/TIMER0.o
- .bss.gu8Flage  0x00000000        0x1 MCAL/TIMER0/TIMER0.o
+ .text.TIMER0_STOP
+                0x00000000        0x6 MCAL/TIMER0/TIMER0.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -359,7 +548,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1260
+.text           0x00000000      0x4fc
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -440,182 +629,69 @@ END GROUP
                 0x0000008e                __vector_20
                 0x00000092                . = ALIGN (0x2)
  *(.text.*)
- .text.GET_KEY_ROW
-                0x00000092       0x74 APP/KEYPAD/KEYPAD_LCD.o
-                0x00000092                GET_KEY_ROW
- .text.GET_KEY_COLUMN
-                0x00000106       0x74 APP/KEYPAD/KEYPAD_LCD.o
-                0x00000106                GET_KEY_COLUMN
- .text.KEYPAD_WITH_LCD
-                0x0000017a      0x29a APP/KEYPAD/KEYPAD_LCD.o
-                0x0000017a                KEYPAD_WITH_LCD
- .text.HOME_PAGE
-                0x00000414       0x68 APP/LCD_TEST/LCD_TEST.o
-                0x00000414                HOME_PAGE
- .text.PAGE2    0x0000047c      0x116 APP/LCD_TEST/LCD_TEST.o
-                0x0000047c                PAGE2
- .text.PAGE3    0x00000592       0xc4 APP/LCD_TEST/LCD_TEST.o
-                0x00000592                PAGE3
- .text.LCD_TEST
-                0x00000656        0xe APP/LCD_TEST/LCD_TEST.o
-                0x00000656                LCD_TEST
- .text.BUTTON0_READ
-                0x00000664       0x6e HAL/BUTTON_INTERFACE.o
-                0x00000664                BUTTON0_READ
- .text.BUTTON1_READ
-                0x000006d2       0x6e HAL/BUTTON_INTERFACE.o
-                0x000006d2                BUTTON1_READ
- .text.BUTTON2_READ
-                0x00000740       0x6e HAL/BUTTON_INTERFACE.o
-                0x00000740                BUTTON2_READ
- .text.BUZZER_ON
-                0x000007ae        0xc HAL/BUZZER_INTERFACE.o
-                0x000007ae                BUZZER_ON
  .text.BUZZER_OFF
-                0x000007ba        0xc HAL/BUZZER_INTERFACE.o
-                0x000007ba                BUZZER_OFF
- .text.BUZZER_FLICKER
-                0x000007c6       0x38 HAL/BUZZER_INTERFACE.o
-                0x000007c6                BUZZER_FLICKER
- .text.POWER_ROW1
-                0x000007fe        0xc HAL/KEYPAD_INTERFACE.o
-                0x000007fe                POWER_ROW1
- .text.POWER_ROW2
-                0x0000080a        0xc HAL/KEYPAD_INTERFACE.o
-                0x0000080a                POWER_ROW2
- .text.POWER_ROW3
-                0x00000816        0xc HAL/KEYPAD_INTERFACE.o
-                0x00000816                POWER_ROW3
- .text.POWER_ROW4
-                0x00000822        0xc HAL/KEYPAD_INTERFACE.o
-                0x00000822                POWER_ROW4
- .text.POWER_ALL_ROWS
-                0x0000082e       0x12 HAL/KEYPAD_INTERFACE.o
-                0x0000082e                POWER_ALL_ROWS
- .text.GROUND_ALL_ROWS
-                0x00000840       0x2a HAL/KEYPAD_INTERFACE.o
-                0x00000840                GROUND_ALL_ROWS
- .text.READ_ROW1
-                0x0000086a       0x6e HAL/KEYPAD_INTERFACE.o
-                0x0000086a                READ_ROW1
- .text.READ_ROW2
-                0x000008d8       0x6e HAL/KEYPAD_INTERFACE.o
-                0x000008d8                READ_ROW2
- .text.READ_ROW3
-                0x00000946       0x6e HAL/KEYPAD_INTERFACE.o
-                0x00000946                READ_ROW3
- .text.READ_ROW4
-                0x000009b4       0x6e HAL/KEYPAD_INTERFACE.o
-                0x000009b4                READ_ROW4
- .text.SET_ROWS_INPUT
-                0x00000a22       0x42 HAL/KEYPAD_INTERFACE.o
-                0x00000a22                SET_ROWS_INPUT
- .text.SET_ROWS_OUTPUT
-                0x00000a64       0x42 HAL/KEYPAD_INTERFACE.o
-                0x00000a64                SET_ROWS_OUTPUT
- .text.POWER_COLUMN1
-                0x00000aa6        0xc HAL/KEYPAD_INTERFACE.o
-                0x00000aa6                POWER_COLUMN1
- .text.POWER_COLUMN2
-                0x00000ab2        0xc HAL/KEYPAD_INTERFACE.o
-                0x00000ab2                POWER_COLUMN2
- .text.POWER_COLUMN3
-                0x00000abe        0xc HAL/KEYPAD_INTERFACE.o
-                0x00000abe                POWER_COLUMN3
- .text.POWER_COLUMN4
-                0x00000aca        0xc HAL/KEYPAD_INTERFACE.o
-                0x00000aca                POWER_COLUMN4
- .text.POWER_ALL_COLUMNS
-                0x00000ad6       0x12 HAL/KEYPAD_INTERFACE.o
-                0x00000ad6                POWER_ALL_COLUMNS
- .text.GROUND_ALL_COLUMNS
-                0x00000ae8       0x2a HAL/KEYPAD_INTERFACE.o
-                0x00000ae8                GROUND_ALL_COLUMNS
- .text.READ_COLUMN1
-                0x00000b12       0x6e HAL/KEYPAD_INTERFACE.o
-                0x00000b12                READ_COLUMN1
- .text.READ_COLUMN2
-                0x00000b80       0x6e HAL/KEYPAD_INTERFACE.o
-                0x00000b80                READ_COLUMN2
- .text.READ_COLUMN3
-                0x00000bee       0x6e HAL/KEYPAD_INTERFACE.o
-                0x00000bee                READ_COLUMN3
- .text.READ_COLUMN4
-                0x00000c5c       0x6e HAL/KEYPAD_INTERFACE.o
-                0x00000c5c                READ_COLUMN4
- .text.SET_COLUMNS_INPUT
-                0x00000cca       0x42 HAL/KEYPAD_INTERFACE.o
-                0x00000cca                SET_COLUMNS_INPUT
- .text.SET_COLUMNS_OUTPUT
-                0x00000d0c       0x42 HAL/KEYPAD_INTERFACE.o
-                0x00000d0c                SET_COLUMNS_OUTPUT
+                0x00000092        0xc HAL/BUZZER_INTERFACE.o
+                0x00000092                BUZZER_OFF
  .text.RW_STATE
-                0x00000d4e       0x36 HAL/LCD_INTERFACE.o
-                0x00000d4e                RW_STATE
+                0x0000009e       0x36 HAL/LCD_INTERFACE.o
+                0x0000009e                RW_STATE
  .text.RS_STATE
-                0x00000d84       0x36 HAL/LCD_INTERFACE.o
-                0x00000d84                RS_STATE
+                0x000000d4       0x36 HAL/LCD_INTERFACE.o
+                0x000000d4                RS_STATE
  .text.ENABLE_STATE
-                0x00000dba       0x36 HAL/LCD_INTERFACE.o
-                0x00000dba                ENABLE_STATE
+                0x0000010a       0x36 HAL/LCD_INTERFACE.o
+                0x0000010a                ENABLE_STATE
  .text.HIGH_TO_LOW_PULSE
-                0x00000df0       0x1e HAL/LCD_INTERFACE.o
-                0x00000df0                HIGH_TO_LOW_PULSE
+                0x00000140       0x1a HAL/LCD_INTERFACE.o
+                0x00000140                HIGH_TO_LOW_PULSE
  .text.LCD_COMMAND
-                0x00000e0e       0x3a HAL/LCD_INTERFACE.o
-                0x00000e0e                LCD_COMMAND
- .text.LCD_DATA
-                0x00000e48       0x3a HAL/LCD_INTERFACE.o
-                0x00000e48                LCD_DATA
- .text.LCD_DATA_STRING
-                0x00000e82       0x32 HAL/LCD_INTERFACE.o
-                0x00000e82                LCD_DATA_STRING
+                0x0000015a       0x3a HAL/LCD_INTERFACE.o
+                0x0000015a                LCD_COMMAND
  .text.LCD_INIT
-                0x00000eb4       0xf0 HAL/LCD_INTERFACE.o
-                0x00000eb4                LCD_INIT
- .text.LED_ON   0x00000fa4       0x30 HAL/LEDS_INTERFACE.o
-                0x00000fa4                LED_ON
- .text.LED_OFF  0x00000fd4       0x30 HAL/LEDS_INTERFACE.o
-                0x00000fd4                LED_OFF
- .text.LEDS_FLASH
-                0x00001004       0x54 HAL/LEDS_INTERFACE.o
-                0x00001004                LEDS_FLASH
- .text.RELAY_ON
-                0x00001058        0xc HAL/RELAY_INTERFACE.o
-                0x00001058                RELAY_ON
+                0x00000194       0xf0 HAL/LCD_INTERFACE.o
+                0x00000194                LCD_INIT
+ .text.LED_ON   0x00000284       0x30 HAL/LEDS_INTERFACE.o
+                0x00000284                LED_ON
+ .text.LED_OFF  0x000002b4       0x30 HAL/LEDS_INTERFACE.o
+                0x000002b4                LED_OFF
  .text.RELAY_OFF
-                0x00001064        0xc HAL/RELAY_INTERFACE.o
-                0x00001064                RELAY_OFF
- .text.RELAY_FLICKER
-                0x00001070       0x38 HAL/RELAY_INTERFACE.o
-                0x00001070                RELAY_FLICKER
- .text.BCD_PIN_RESET
-                0x000010a8       0x40 HAL/SEGMENT7_INTERFACE.o
-                0x000010a8                BCD_PIN_RESET
- .text.SEGMENT_RESET
-                0x000010e8       0x1a HAL/SEGMENT7_INTERFACE.o
-                0x000010e8                SEGMENT_RESET
- .text.main     0x00001102       0xb6 main.o
-                0x00001102                main
- .text.Pin_set  0x000011b8       0x18 MCAL/GPIO/GPIO.o
-                0x000011b8                Pin_set
+                0x000002e4        0xc HAL/RELAY_INTERFACE.o
+                0x000002e4                RELAY_OFF
+ .text.main     0x000002f0       0xc4 main.o
+                0x000002f0                main
+ .text.Pin_set  0x000003b4       0x18 MCAL/GPIO/GPIO.o
+                0x000003b4                Pin_set
  .text.Pin_reset
-                0x000011d0       0x1a MCAL/GPIO/GPIO.o
-                0x000011d0                Pin_reset
+                0x000003cc       0x1a MCAL/GPIO/GPIO.o
+                0x000003cc                Pin_reset
  .text.Pin_mode
-                0x000011ea       0x44 MCAL/GPIO/GPIO.o
-                0x000011ea                Pin_mode
- .text.Pin_read
-                0x0000122e       0x1a MCAL/GPIO/GPIO.o
-                0x0000122e                Pin_read
+                0x000003e6       0x44 MCAL/GPIO/GPIO.o
+                0x000003e6                Pin_mode
+ .text.TIMER0_SET_PRESCALE_64
+                0x0000042a       0x24 MCAL/TIMER0/TIMER0.o
+                0x0000042a                TIMER0_SET_PRESCALE_64
+ .text.TIMER0_DISABLE_IOVERFLOW
+                0x0000044e        0xe MCAL/TIMER0/TIMER0.o
+                0x0000044e                TIMER0_DISABLE_IOVERFLOW
+ .text.T0_DEINIT
+                0x0000045c       0x14 MCAL/TIMER0/TIMER0.o
+                0x0000045c                T0_DEINIT
+ .text.TIMER0_ENABLE_IOVERFLOW
+                0x00000470        0xc MCAL/TIMER0/TIMER0.o
+                0x00000470                TIMER0_ENABLE_IOVERFLOW
+ .text.T0_INIT  0x0000047c       0x18 MCAL/TIMER0/TIMER0.o
+                0x0000047c                T0_INIT
+ .text.T0_DELAY_ms
+                0x00000494       0x42 MCAL/TIMER0/TIMER0.o
+                0x00000494                T0_DELAY_ms
  .text.__vector_11
-                0x00001248       0x14 MCAL/TIMER0/TIMER0.o
-                0x00001248                __vector_11
-                0x0000125c                . = ALIGN (0x2)
+                0x000004d6       0x22 MCAL/TIMER0/TIMER0.o
+                0x000004d6                __vector_11
+                0x000004f8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000125c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000125c                _exit
-                0x0000125c                exit
+ .fini9         0x000004f8        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000004f8                _exit
+                0x000004f8                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -634,95 +710,37 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000125c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000004f8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001260                _etext = .
+                0x000004fc                _etext = .
 
-.data           0x00800060       0xe2 load address 0x00001260
+.data           0x00800060        0x0 load address 0x000004fc
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.u8Statement_p3_2
-                0x00800060       0x11 APP/KEYPAD/KEYPAD_LCD.o
- .data.u8Statement_p3_1
-                0x00800071       0x11 APP/KEYPAD/KEYPAD_LCD.o
- .data.u8Statement_p2_2
-                0x00800082       0x11 APP/KEYPAD/KEYPAD_LCD.o
- .data.u8Statement_p2_1
-                0x00800093       0x11 APP/KEYPAD/KEYPAD_LCD.o
- .data.u8Statement_pHome_1
-                0x008000a4       0x11 APP/KEYPAD/KEYPAD_LCD.o
- .data.u8Statement_test
-                0x008000b5       0x11 APP/LCD_TEST/LCD_TEST.o
- .data.u8Statement_p3_2
-                0x008000c6       0x11 APP/LCD_TEST/LCD_TEST.o
- .data.u8Statement_p3_1
-                0x008000d7       0x11 APP/LCD_TEST/LCD_TEST.o
- .data.u8Statement_p2_2
-                0x008000e8       0x11 APP/LCD_TEST/LCD_TEST.o
- .data.u8Statement_p2_1
-                0x008000f9       0x11 APP/LCD_TEST/LCD_TEST.o
- .data.u8Statement_pHome_2
-                0x0080010a       0x11 APP/LCD_TEST/LCD_TEST.o
- .data.u8Statement_pHome_1
-                0x0080011b       0x11 APP/LCD_TEST/LCD_TEST.o
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x0080012c        0x6 APP/KEYPAD/KEYPAD_LCD.o
  *(.rodata*)
- .rodata.gu8Key_pad
-                0x00800132       0x10 main.o
-                0x00800132                gu8Key_pad
  *(.gnu.linkonce.r*)
-                0x00800142                . = ALIGN (0x2)
-                0x00800142                _edata = .
-                0x00800142                PROVIDE (__data_end, .)
+                0x00800060                . = ALIGN (0x2)
+                0x00800060                _edata = .
+                0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800142        0xf
-                0x00800142                PROVIDE (__bss_start, .)
+.bss            0x00800060        0x1
+                0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.u8Captured_column
-                0x00800142        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Captured_row
-                0x00800143        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Row4_reading
-                0x00800144        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Row3_reading
-                0x00800145        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Row2_reading
-                0x00800146        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Row1_reading
-                0x00800147        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Column4_reading
-                0x00800148        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Column3_reading
-                0x00800149        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Column2_reading
-                0x0080014a        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Column1_reading
-                0x0080014b        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Entered_character
-                0x0080014c        0x1 APP/KEYPAD/KEYPAD_LCD.o
- .bss.u8Button2_reading
-                0x0080014d        0x1 APP/LCD_TEST/LCD_TEST.o
- .bss.u8Button1_reading
-                0x0080014e        0x1 APP/LCD_TEST/LCD_TEST.o
- .bss.u8Button0_reading
-                0x0080014f        0x1 APP/LCD_TEST/LCD_TEST.o
- .bss.gu8Password_right
-                0x00800150        0x1 main.o
-                0x00800150                gu8Password_right
+ .bss.gu8Flag   0x00800060        0x1 MCAL/TIMER0/TIMER0.o
  *(COMMON)
-                0x00800151                PROVIDE (__bss_end, .)
-                0x00001260                __data_load_start = LOADADDR (.data)
-                0x00001342                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800061                PROVIDE (__bss_end, .)
+                0x000004fc                __data_load_start = LOADADDR (.data)
+                0x000004fc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800151        0x0
+.noinit         0x00800061        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800151                _end = .
+                0x00800061                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -764,16 +782,11 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 APP/KEYPAD/KEYPAD_LCD.o
+ .comment       0x00000000       0x30 HAL/BUZZER_INTERFACE.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 APP/LCD_TEST/LCD_TEST.o
- .comment       0x00000030       0x31 HAL/BUTTON_INTERFACE.o
- .comment       0x00000030       0x31 HAL/BUZZER_INTERFACE.o
- .comment       0x00000030       0x31 HAL/KEYPAD_INTERFACE.o
  .comment       0x00000030       0x31 HAL/LCD_INTERFACE.o
  .comment       0x00000030       0x31 HAL/LEDS_INTERFACE.o
  .comment       0x00000030       0x31 HAL/RELAY_INTERFACE.o
- .comment       0x00000030       0x31 HAL/SEGMENT7_INTERFACE.o
  .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 MCAL/GPIO/GPIO.o
  .comment       0x00000030       0x31 MCAL/TIMER0/TIMER0.o
@@ -798,140 +811,95 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x368
+.debug_aranges  0x00000000      0x1a8
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x30 APP/KEYPAD/KEYPAD_LCD.o
+                0x00000000       0x30 HAL/BUZZER_INTERFACE.o
  .debug_aranges
-                0x00000030       0x40 APP/LCD_TEST/LCD_TEST.o
+                0x00000030       0x58 HAL/LCD_INTERFACE.o
  .debug_aranges
-                0x00000070       0x30 HAL/BUTTON_INTERFACE.o
+                0x00000088       0x38 HAL/LEDS_INTERFACE.o
  .debug_aranges
-                0x000000a0       0x30 HAL/BUZZER_INTERFACE.o
+                0x000000c0       0x30 HAL/RELAY_INTERFACE.o
  .debug_aranges
-                0x000000d0       0xe0 HAL/KEYPAD_INTERFACE.o
+                0x000000f0       0x20 main.o
  .debug_aranges
-                0x000001b0       0x58 HAL/LCD_INTERFACE.o
+                0x00000110       0x40 MCAL/GPIO/GPIO.o
  .debug_aranges
-                0x00000208       0x38 HAL/LEDS_INTERFACE.o
- .debug_aranges
-                0x00000240       0x30 HAL/RELAY_INTERFACE.o
- .debug_aranges
-                0x00000270       0x60 HAL/SEGMENT7_INTERFACE.o
- .debug_aranges
-                0x000002d0       0x20 main.o
- .debug_aranges
-                0x000002f0       0x40 MCAL/GPIO/GPIO.o
- .debug_aranges
-                0x00000330       0x38 MCAL/TIMER0/TIMER0.o
+                0x00000150       0x58 MCAL/TIMER0/TIMER0.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x4d9f
+.debug_info     0x00000000     0x1fb7
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_info    0x000004e6      0xae8 APP/KEYPAD/KEYPAD_LCD.o
- .debug_info    0x00000fce      0xdce APP/LCD_TEST/LCD_TEST.o
- .debug_info    0x00001d9c      0x26c HAL/BUTTON_INTERFACE.o
- .debug_info    0x00002008      0x1e7 HAL/BUZZER_INTERFACE.o
- .debug_info    0x000021ef      0xcdc HAL/KEYPAD_INTERFACE.o
- .debug_info    0x00002ecb      0x7ca HAL/LCD_INTERFACE.o
- .debug_info    0x00003695      0x847 HAL/LEDS_INTERFACE.o
- .debug_info    0x00003edc      0x1e7 HAL/RELAY_INTERFACE.o
- .debug_info    0x000040c3      0x6e3 HAL/SEGMENT7_INTERFACE.o
- .debug_info    0x000047a6      0x348 main.o
- .debug_info    0x00004aee      0x1d6 MCAL/GPIO/GPIO.o
- .debug_info    0x00004cc4       0xdb MCAL/TIMER0/TIMER0.o
+ .debug_info    0x000004e6      0x1e7 HAL/BUZZER_INTERFACE.o
+ .debug_info    0x000006cd      0x7ca HAL/LCD_INTERFACE.o
+ .debug_info    0x00000e97      0x847 HAL/LEDS_INTERFACE.o
+ .debug_info    0x000016de      0x1e7 HAL/RELAY_INTERFACE.o
+ .debug_info    0x000018c5      0x382 main.o
+ .debug_info    0x00001c47      0x1d6 MCAL/GPIO/GPIO.o
+ .debug_info    0x00001e1d      0x19a MCAL/TIMER0/TIMER0.o
 
-.debug_abbrev   0x00000000     0x1170
+.debug_abbrev   0x00000000      0xb8b
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_abbrev  0x000004a3      0x19d APP/KEYPAD/KEYPAD_LCD.o
- .debug_abbrev  0x00000640      0x169 APP/LCD_TEST/LCD_TEST.o
- .debug_abbrev  0x000007a9       0xbf HAL/BUTTON_INTERFACE.o
- .debug_abbrev  0x00000868      0x114 HAL/BUZZER_INTERFACE.o
- .debug_abbrev  0x0000097c      0x141 HAL/KEYPAD_INTERFACE.o
- .debug_abbrev  0x00000abd      0x13b HAL/LCD_INTERFACE.o
- .debug_abbrev  0x00000bf8      0x132 HAL/LEDS_INTERFACE.o
- .debug_abbrev  0x00000d2a      0x114 HAL/RELAY_INTERFACE.o
- .debug_abbrev  0x00000e3e      0x164 HAL/SEGMENT7_INTERFACE.o
- .debug_abbrev  0x00000fa2       0xbf main.o
- .debug_abbrev  0x00001061       0x90 MCAL/GPIO/GPIO.o
- .debug_abbrev  0x000010f1       0x7f MCAL/TIMER0/TIMER0.o
+ .debug_abbrev  0x000004a3      0x114 HAL/BUZZER_INTERFACE.o
+ .debug_abbrev  0x000005b7      0x13b HAL/LCD_INTERFACE.o
+ .debug_abbrev  0x000006f2      0x132 HAL/LEDS_INTERFACE.o
+ .debug_abbrev  0x00000824      0x114 HAL/RELAY_INTERFACE.o
+ .debug_abbrev  0x00000938       0xca main.o
+ .debug_abbrev  0x00000a02       0x90 MCAL/GPIO/GPIO.o
+ .debug_abbrev  0x00000a92       0xf9 MCAL/TIMER0/TIMER0.o
 
-.debug_line     0x00000000     0x23a6
+.debug_line     0x00000000      0xf66
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x115 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_line    0x00000115      0x4bf APP/KEYPAD/KEYPAD_LCD.o
- .debug_line    0x000005d4      0x4fa APP/LCD_TEST/LCD_TEST.o
- .debug_line    0x00000ace      0x1c5 HAL/BUTTON_INTERFACE.o
- .debug_line    0x00000c93      0x19c HAL/BUZZER_INTERFACE.o
- .debug_line    0x00000e2f      0x5ba HAL/KEYPAD_INTERFACE.o
- .debug_line    0x000013e9      0x33e HAL/LCD_INTERFACE.o
- .debug_line    0x00001727      0x362 HAL/LEDS_INTERFACE.o
- .debug_line    0x00001a89      0x19b HAL/RELAY_INTERFACE.o
- .debug_line    0x00001c24      0x3b5 HAL/SEGMENT7_INTERFACE.o
- .debug_line    0x00001fd9      0x1cb main.o
- .debug_line    0x000021a4      0x11f MCAL/GPIO/GPIO.o
- .debug_line    0x000022c3       0xe3 MCAL/TIMER0/TIMER0.o
+ .debug_line    0x00000115      0x19c HAL/BUZZER_INTERFACE.o
+ .debug_line    0x000002b1      0x33e HAL/LCD_INTERFACE.o
+ .debug_line    0x000005ef      0x362 HAL/LEDS_INTERFACE.o
+ .debug_line    0x00000951      0x19b HAL/RELAY_INTERFACE.o
+ .debug_line    0x00000aec      0x1a2 main.o
+ .debug_line    0x00000c8e      0x11f MCAL/GPIO/GPIO.o
+ .debug_line    0x00000dad      0x1b9 MCAL/TIMER0/TIMER0.o
 
-.debug_frame    0x00000000      0x7e0
+.debug_frame    0x00000000      0x304
  *(.debug_frame)
- .debug_frame   0x00000000       0x94 APP/KEYPAD/KEYPAD_LCD.o
- .debug_frame   0x00000094       0x64 APP/LCD_TEST/LCD_TEST.o
- .debug_frame   0x000000f8       0xb0 HAL/BUTTON_INTERFACE.o
- .debug_frame   0x000001a8       0x4c HAL/BUZZER_INTERFACE.o
- .debug_frame   0x000001f4      0x2c4 HAL/KEYPAD_INTERFACE.o
- .debug_frame   0x000004b8       0xd0 HAL/LCD_INTERFACE.o
- .debug_frame   0x00000588       0x5c HAL/LEDS_INTERFACE.o
- .debug_frame   0x000005e4       0x4c HAL/RELAY_INTERFACE.o
- .debug_frame   0x00000630       0xc8 HAL/SEGMENT7_INTERFACE.o
- .debug_frame   0x000006f8       0x24 main.o
- .debug_frame   0x0000071c       0x64 MCAL/GPIO/GPIO.o
- .debug_frame   0x00000780       0x60 MCAL/TIMER0/TIMER0.o
+ .debug_frame   0x00000000       0x4c HAL/BUZZER_INTERFACE.o
+ .debug_frame   0x0000004c       0xd0 HAL/LCD_INTERFACE.o
+ .debug_frame   0x0000011c       0x5c HAL/LEDS_INTERFACE.o
+ .debug_frame   0x00000178       0x4c HAL/RELAY_INTERFACE.o
+ .debug_frame   0x000001c4       0x24 main.o
+ .debug_frame   0x000001e8       0x64 MCAL/GPIO/GPIO.o
+ .debug_frame   0x0000024c       0xb8 MCAL/TIMER0/TIMER0.o
 
-.debug_str      0x00000000      0xc10
+.debug_str      0x00000000      0x61f
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_str     0x00000196      0x4ed APP/KEYPAD/KEYPAD_LCD.o
-                                0x542 (size before relaxing)
- .debug_str     0x00000683      0x1c5 APP/LCD_TEST/LCD_TEST.o
-                                0x48a (size before relaxing)
- .debug_str     0x00000848       0x4d HAL/BUTTON_INTERFACE.o
-                                0x1df (size before relaxing)
- .debug_str     0x00000895       0x2c HAL/BUZZER_INTERFACE.o
+ .debug_str     0x00000196      0x1d2 HAL/BUZZER_INTERFACE.o
                                 0x206 (size before relaxing)
- .debug_str     0x000008c1       0xbd HAL/KEYPAD_INTERFACE.o
-                                0x33c (size before relaxing)
- .debug_str     0x0000097e       0x72 HAL/LCD_INTERFACE.o
+ .debug_str     0x00000368       0xaf HAL/LCD_INTERFACE.o
                                 0x26f (size before relaxing)
- .debug_str     0x000009f0       0x3e HAL/LEDS_INTERFACE.o
+ .debug_str     0x00000417       0x49 HAL/LEDS_INTERFACE.o
                                 0x211 (size before relaxing)
- .debug_str     0x00000a2e       0x23 HAL/RELAY_INTERFACE.o
+ .debug_str     0x00000460       0x3a HAL/RELAY_INTERFACE.o
                                 0x202 (size before relaxing)
- .debug_str     0x00000a51       0xe1 HAL/SEGMENT7_INTERFACE.o
-                                0x2bf (size before relaxing)
- .debug_str     0x00000b32       0x25 main.o
+ .debug_str     0x0000049a       0x6b main.o
+                                0x204 (size before relaxing)
+ .debug_str     0x00000505       0x7a MCAL/GPIO/GPIO.o
+                                0x202 (size before relaxing)
+ .debug_str     0x0000057f       0xa0 MCAL/TIMER0/TIMER0.o
                                 0x218 (size before relaxing)
- .debug_str     0x00000b57       0x6a MCAL/GPIO/GPIO.o
-                                0x202 (size before relaxing)
- .debug_str     0x00000bc1       0x4f MCAL/TIMER0/TIMER0.o
-                                0x1b2 (size before relaxing)
 
-.debug_loc      0x00000000     0x2add
+.debug_loc      0x00000000      0xf2f
  *(.debug_loc)
- .debug_loc     0x00000000      0x451 APP/KEYPAD/KEYPAD_LCD.o
- .debug_loc     0x00000451      0x668 APP/LCD_TEST/LCD_TEST.o
- .debug_loc     0x00000ab9      0x38d HAL/BUTTON_INTERFACE.o
- .debug_loc     0x00000e46       0xf3 HAL/BUZZER_INTERFACE.o
- .debug_loc     0x00000f39      0x978 HAL/KEYPAD_INTERFACE.o
- .debug_loc     0x000018b1      0x4e0 HAL/LCD_INTERFACE.o
- .debug_loc     0x00001d91      0x6fc HAL/LEDS_INTERFACE.o
- .debug_loc     0x0000248d       0xf3 HAL/RELAY_INTERFACE.o
- .debug_loc     0x00002580      0x479 HAL/SEGMENT7_INTERFACE.o
- .debug_loc     0x000029f9       0xb5 MCAL/GPIO/GPIO.o
- .debug_loc     0x00002aae       0x2f MCAL/TIMER0/TIMER0.o
+ .debug_loc     0x00000000       0xf3 HAL/BUZZER_INTERFACE.o
+ .debug_loc     0x000000f3      0x4df HAL/LCD_INTERFACE.o
+ .debug_loc     0x000005d2      0x6fc HAL/LEDS_INTERFACE.o
+ .debug_loc     0x00000cce       0xf3 HAL/RELAY_INTERFACE.o
+ .debug_loc     0x00000dc1       0xb5 MCAL/GPIO/GPIO.o
+ .debug_loc     0x00000e76       0xb9 MCAL/TIMER0/TIMER0.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -951,20 +919,15 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x2a8
+.debug_ranges   0x00000000      0x138
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x20 APP/KEYPAD/KEYPAD_LCD.o
- .debug_ranges  0x00000020       0x30 APP/LCD_TEST/LCD_TEST.o
- .debug_ranges  0x00000050       0x20 HAL/BUTTON_INTERFACE.o
- .debug_ranges  0x00000070       0x20 HAL/BUZZER_INTERFACE.o
- .debug_ranges  0x00000090       0xd0 HAL/KEYPAD_INTERFACE.o
- .debug_ranges  0x00000160       0x48 HAL/LCD_INTERFACE.o
- .debug_ranges  0x000001a8       0x28 HAL/LEDS_INTERFACE.o
- .debug_ranges  0x000001d0       0x20 HAL/RELAY_INTERFACE.o
- .debug_ranges  0x000001f0       0x50 HAL/SEGMENT7_INTERFACE.o
- .debug_ranges  0x00000240       0x10 main.o
- .debug_ranges  0x00000250       0x30 MCAL/GPIO/GPIO.o
- .debug_ranges  0x00000280       0x28 MCAL/TIMER0/TIMER0.o
+ .debug_ranges  0x00000000       0x20 HAL/BUZZER_INTERFACE.o
+ .debug_ranges  0x00000020       0x48 HAL/LCD_INTERFACE.o
+ .debug_ranges  0x00000068       0x28 HAL/LEDS_INTERFACE.o
+ .debug_ranges  0x00000090       0x20 HAL/RELAY_INTERFACE.o
+ .debug_ranges  0x000000b0       0x10 main.o
+ .debug_ranges  0x000000c0       0x30 MCAL/GPIO/GPIO.o
+ .debug_ranges  0x000000f0       0x48 MCAL/TIMER0/TIMER0.o
 
 .debug_macro
  *(.debug_macro)

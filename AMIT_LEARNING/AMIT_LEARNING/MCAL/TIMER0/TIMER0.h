@@ -13,17 +13,23 @@
 
 #ifdef ATMEGA32
 
-	#include "avr/io.h"
-	#include "avr/interrupt.h"
+	#include "AMIT_SCHEMATIC.h"
 
-	#define TIMER0_CR (*(volatile unsigned int *)(0x33))
-	#define TIMER0_COUNT TCNT0
-	#define TIMER0_INT_F TIFR
-	#define TIMER0_IMS TIMSK
+	#define TCCR_0 (*(volatile unsigned int *)(0x53))
+	#define TCNT_0 (*(volatile unsigned int *)(0x52))
+	#define OCR_0 (*(volatile unsigned int *)(0x5c))
+	#define TCIFR (*(volatile unsigned int *)(0x58))
+	#define TCIMSK (*(volatile unsigned int *)(0x59))
 	
-	extern void T0_DELAY_1ms(void);
-	extern void T0_DELAY_3ms(void);
+	extern void TIMER0_SET_PRESCALE_64();
+	extern void TIMER0_ENABLE_IOVERFLOW();
+	extern void TIMER0_DISABLE_IOVERFLOW();
+	
+	extern void TIMER0_STOP();
+
+	extern void T0_DELAY_ms(uint32_t u32Delay_time);
 	extern void T0_INIT(void);
+	extern void T0_DEINIT(void);
 
 #endif
 

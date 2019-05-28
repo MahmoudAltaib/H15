@@ -50,6 +50,7 @@ extern void KEYPAD_WITH_LCD()
 			
 	LCD_COMMAND(CLEAR_DISPLAY);
 	_delay_us(2000);
+	
 	LCD_COMMAND(SHIFT_CURSOR_RIGHT);
 	_delay_us(100);
 	
@@ -60,13 +61,13 @@ extern void KEYPAD_WITH_LCD()
 
 	do
 	{
-		for (u8Count = 0;u8Count < MAXIMUM_NUMBER_OF_LETTERS; u8Count ++)
+		for (u8Count = 0;u8Count < MAXIMUM_NUMBER_OF_LETTERS; u8Count ++)  
 		{
 			SET_COLUMNS_INPUT();
 			POWER_ALL_COLUMNS(); // To activate pull up resistors
 			
 			SET_ROWS_OUTPUT();
-			GROUND_ALL_ROWS();
+			GROUND_ALL_ROWS();  
 			
 			do  // To make sure that all buttons are released
 			{
@@ -137,7 +138,7 @@ extern void KEYPAD_WITH_LCD()
 		LCD_DATA_STRING(u8Statement_p3_2 , u8Statement_p3_2_size);
 		
 		BUZZER_ON();
-		_delay_ms(1500);
+		_delay_ms(500);
 		BUZZER_OFF();
 		
 		_delay_ms(500);

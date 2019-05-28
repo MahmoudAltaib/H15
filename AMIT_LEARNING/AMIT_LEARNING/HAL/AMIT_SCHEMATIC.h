@@ -12,12 +12,15 @@
 
 #ifdef AMIT_KIT_ATMEGA32
 
+#include "avr/interrupt.h"
+
 #include "BUZZER_ONE_BUTTON/BUZZER_ON_OFF.h"
 #include "SEGMENT7/SEGMENT_INC_DEC.h"
 #include "LCD_HELLO/LCD_HELLO.h"	
 #include "LCD_TEST/LCD_TEST.h"
 #include "KEYPAD/KEYPAD_LCD.h"
-	
+
+#include "TIMER0/TIMER0.h"	
 #endif
 
 #endif /* AMIT_SCHEMATIC_H_ */
