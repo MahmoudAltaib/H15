@@ -9,9 +9,10 @@
 uint8_t gu8Segment7_number1 = 0;
 uint8_t gu8Segment7_number2 = 0;
 
+volatile uint8_t gu8ID_right = 0;
 volatile uint8_t gu8Password_right = 0;
 
-const unsigned char gu8Key_pad[4][4] = {{'D','C','B','A'},
+const unsigned char gu8Key_pad[4][4] = {{'-','C','B','A'},
 										{'#','9','6','3'},
 										{'0','8','5','2'},
 										{'*','7','4','1'}};
@@ -60,19 +61,15 @@ int main(void)
 	while (1)
 	{
 		
-		/*if (gu8Password_right != 0)
+		if (gu8ID_right != 0 && gu8Password_right != 0)
 		{
 			LCD_TEST();
 		} 
 		else
 		{
 			KEYPAD_WITH_LCD();
-		}*/
+		}
 		
-		LED_ON(LED1);
-		T0_DELAY_ms(2000);
-		LED_OFF(LED1);
-		T0_DELAY_ms(2000);
 	}
 }
 

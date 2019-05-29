@@ -23,11 +23,12 @@
 #include "AMIT_SCHEMATIC.h"
 #include "BUTTON_INTERFACE.h"
 
-#define MAXIMUM_NUMBER_OF_LETTERS 6
+#define MAXIMUM_NUMBER_OF_LETTERS 7
 
 extern void KEYPAD_WITH_LCD();
 
 extern void GET_KEY_ROW(uint8_t *pu8Captured_row);
 extern void GET_KEY_COLUMN(uint8_t *pu8Captured_column);
+extern void ANALYZE_PRESS(uint8_t u8Entered_character );
 
 #endif /* KEYPAD_LCD_H_ */

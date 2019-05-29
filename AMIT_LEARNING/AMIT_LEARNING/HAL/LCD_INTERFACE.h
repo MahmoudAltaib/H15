@@ -65,6 +65,7 @@
 	// COMMANDS 
 	#define CLEAR_DISPLAY 0x01
 	
+	#define SHIFT_CURSOR_LEFT 0x04
 	#define SHIFT_CURSOR_RIGHT 0x06
 	
 	#define DISPLAY_ON_CURSOR_OFF 0x0c
