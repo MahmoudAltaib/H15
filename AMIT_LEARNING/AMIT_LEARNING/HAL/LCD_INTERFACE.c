@@ -95,10 +95,11 @@ extern void LCD_DATA_STRING(uint8_t *pu8Data , uint8_t u8Size)
 {
 	uint8_t u8Count = 0;
 	
-	for (u8Count = 0; u8Count < u8Size ; u8Count ++)
+	for (u8Count = 0; u8Count < u8Size - 1 ; u8Count ++)
 	{
 		LCD_DATA(pu8Data[u8Count]);
 	}
+	LCD_COMMAND(SHIFT_CURSOR_POSITION_RIGHT);
 }
 
 extern void LCD_INIT()

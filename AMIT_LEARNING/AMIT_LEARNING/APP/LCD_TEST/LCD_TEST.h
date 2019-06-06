@@ -11,6 +11,8 @@
 
 #include "AMIT_SCHEMATIC.h"
 #include "LEDS_INTERFACE.h"
+#include "ADC/ADC.h"
+#include <inttypes.h>
 
 #define DELAY_BETWEEN_ACTIONS_ms 300  // in milliseconds
 
@@ -20,6 +22,7 @@ extern void PAGE2();
 extern void PAGE3();
 extern void PAGE4();
 extern void PAGE5();
+extern void PAGE6();
 
 
 #endif /* LCD_TEST_H_ */

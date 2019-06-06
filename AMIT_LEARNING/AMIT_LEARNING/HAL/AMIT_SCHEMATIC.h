@@ -21,6 +21,9 @@
 #include "KEYPAD/KEYPAD_LCD.h"
 
 #include "TIMER0/TIMER0.h"	
+#include "TIMER1/TIMER1.h"
+
+#include "ADC/ADC.h"
 #endif
 
 #endif /* AMIT_SCHEMATIC_H_ */

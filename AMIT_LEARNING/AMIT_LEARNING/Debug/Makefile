@@ -43,6 +43,8 @@ SUBDIRS :=  \
 ../HAL \
 ../MCAL/GPIO \
 ../APP \
+../MCAL/ADC \
+../MCAL/TIMER1 \
 ../MCAL/TIMER0
 
 
@@ -62,8 +64,10 @@ C_SRCS +=  \
 ../HAL/RELAY_INTERFACE.c \
 ../HAL/SEGMENT7_INTERFACE.c \
 ../main.c \
+../MCAL/ADC/ADC.c \
 ../MCAL/GPIO/GPIO.c \
-../MCAL/TIMER0/TIMER0.c
+../MCAL/TIMER0/TIMER0.c \
+../MCAL/TIMER1/TIMER1.c
 
 
 PREPROCESSING_SRCS += 
@@ -87,8 +91,10 @@ HAL/LEDS_INTERFACE.o \
 HAL/RELAY_INTERFACE.o \
 HAL/SEGMENT7_INTERFACE.o \
 main.o \
+MCAL/ADC/ADC.o \
 MCAL/GPIO/GPIO.o \
-MCAL/TIMER0/TIMER0.o
+MCAL/TIMER0/TIMER0.o \
+MCAL/TIMER1/TIMER1.o
 
 OBJS_AS_ARGS +=  \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.o \
@@ -105,8 +111,10 @@ HAL/LEDS_INTERFACE.o \
 HAL/RELAY_INTERFACE.o \
 HAL/SEGMENT7_INTERFACE.o \
 main.o \
+MCAL/ADC/ADC.o \
 MCAL/GPIO/GPIO.o \
-MCAL/TIMER0/TIMER0.o
+MCAL/TIMER0/TIMER0.o \
+MCAL/TIMER1/TIMER1.o
 
 C_DEPS +=  \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.d \
@@ -123,8 +131,10 @@ HAL/LEDS_INTERFACE.d \
 HAL/RELAY_INTERFACE.d \
 HAL/SEGMENT7_INTERFACE.d \
 main.d \
+MCAL/ADC/ADC.d \
 MCAL/GPIO/GPIO.d \
-MCAL/TIMER0/TIMER0.d
+MCAL/TIMER0/TIMER0.d \
+MCAL/TIMER1/TIMER1.d
 
 C_DEPS_AS_ARGS +=  \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.d \
@@ -141,8 +151,10 @@ HAL/LEDS_INTERFACE.d \
 HAL/RELAY_INTERFACE.d \
 HAL/SEGMENT7_INTERFACE.d \
 main.d \
+MCAL/ADC/ADC.d \
 MCAL/GPIO/GPIO.d \
-MCAL/TIMER0/TIMER0.d
+MCAL/TIMER0/TIMER0.d \
+MCAL/TIMER1/TIMER1.d
 
 OUTPUT_FILE_PATH +=AMIT_LEARNING.elf
 
@@ -256,6 +268,13 @@ HAL/SEGMENT7_INTERFACE.o: ../HAL/SEGMENT7_INTERFACE.c
 	@echo Finished building: $<
 	
 
+MCAL/ADC/ADC.o: ../MCAL/ADC/ADC.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MCAL/GPIO/GPIO.o: ../MCAL/GPIO/GPIO.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -264,6 +283,13 @@ MCAL/GPIO/GPIO.o: ../MCAL/GPIO/GPIO.c
 	
 
 MCAL/TIMER0/TIMER0.o: ../MCAL/TIMER0/TIMER0.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/TIMER1/TIMER1.o: ../MCAL/TIMER1/TIMER1.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

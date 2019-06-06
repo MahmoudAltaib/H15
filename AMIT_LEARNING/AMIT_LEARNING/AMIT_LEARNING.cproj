@@ -217,6 +217,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\ADC\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC\ADC.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\GPIO\GPIO.c">
       <SubType>compile</SubType>
     </Compile>
@@ -227,6 +233,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\TIMER0\TIMER0.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\TIMER1\TIMER1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\TIMER1\TIMER1.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
@@ -241,6 +253,8 @@
     <Folder Include="HAL" />
     <Folder Include="MCAL\GPIO" />
     <Folder Include="APP" />
+    <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\TIMER1" />
     <Folder Include="MCAL\TIMER0" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

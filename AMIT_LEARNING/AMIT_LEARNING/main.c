@@ -12,11 +12,14 @@ uint8_t gu8Segment7_number2 = 0;
 volatile uint8_t gu8ID_right = 0;
 volatile uint8_t gu8Password_right = 0;
 
-const unsigned char gu8Key_pad[4][4] = {{'-','C','B','A'},
+volatile uint8_t gu8T1_flag = 0;
+
+const unsigned char gu8Key_pad[4][4] = {{'o','s','B','A'},
 										{'#','9','6','3'},
 										{'0','8','5','2'},
 										{'*','7','4','1'}};
-              
+     
+	 #include "avr/io.h"         
 int main(void)
 {	
 	// OUTPUTS
@@ -46,7 +49,9 @@ int main(void)
 	Pin_mode(BUTTON0_PORT , BUTTON0_DDR , BUTTON0_PIN_NUMBER , INPUT);
 	Pin_mode(BUTTON1_PORT , BUTTON1_DDR , BUTTON1_PIN_NUMBER , INPUT);
 	Pin_mode(BUTTON2_PORT , BUTTON2_DDR , BUTTON2_PIN_NUMBER , INPUT);
-
+		// ADC
+	Pin_reset(ADC0_DDR, ADC0_PIN_NUMBER); //No pull up resistors
+	Pin_reset(ADC1_DDR, ADC1_PIN_NUMBER);
 	// Setting initial states
 	
 	LED_OFF(LED1);
@@ -56,12 +61,12 @@ int main(void)
 	RELAY_OFF();
 	/*SEGMENT_RESET();*/
 	LCD_INIT();
-		
 	
+extern void KEYPAD_TEST();
+
 	while (1)
 	{
-		
-		if (gu8ID_right != 0 && gu8Password_right != 0)
+		if (gu8ID_right != 0 || gu8Password_right != 0)
 		{
 			LCD_TEST();
 		} 
@@ -69,7 +74,6 @@ int main(void)
 		{
 			KEYPAD_WITH_LCD();
 		}
-		
 	}
 }
 
