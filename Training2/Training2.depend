@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1557858636 source:c:\users\ahmed elkholi\desktop\git hub new\h15\training2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

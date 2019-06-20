@@ -1,0 +1,174 @@
+
+Buzzer.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000ea  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000013e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  0000013e  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000170  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000060  00000000  00000000  000001ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000837  00000000  00000000  0000020c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005d9  00000000  00000000  00000a43  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000033d  00000000  00000000  0000101c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000088  00000000  00000000  0000135c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000376  00000000  00000000  000013e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000b5  00000000  00000000  0000175a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000040  00000000  00000000  0000180f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 4f 00 	call	0x9e	; 0x9e <main>
+  64:	0c 94 73 00 	jmp	0xe6	; 0xe6 <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <Pin_set>:
+
+#include "GPIO.h"
+
+extern void Pin_set( unsigned int PORT_address , uint8_t  Pin_index)
+{
+	(*(volatile uint8_t *) (PORT_address)) |= (1<<Pin_index);
+  6c:	fc 01       	movw	r30, r24
+  6e:	40 81       	ld	r20, Z
+  70:	21 e0       	ldi	r18, 0x01	; 1
+  72:	30 e0       	ldi	r19, 0x00	; 0
+  74:	02 c0       	rjmp	.+4      	; 0x7a <Pin_set+0xe>
+  76:	22 0f       	add	r18, r18
+  78:	33 1f       	adc	r19, r19
+  7a:	6a 95       	dec	r22
+  7c:	e2 f7       	brpl	.-8      	; 0x76 <Pin_set+0xa>
+  7e:	24 2b       	or	r18, r20
+  80:	20 83       	st	Z, r18
+  82:	08 95       	ret
+
+00000084 <Pin_reset>:
+}
+
+extern void Pin_reset( unsigned int PORT_address , uint8_t Pin_index)
+{
+  84:	fc 01       	movw	r30, r24
+	(*(volatile uint8_t *) (PORT_address)) &= ~(1<<Pin_index);
+  86:	90 81       	ld	r25, Z
+  88:	21 e0       	ldi	r18, 0x01	; 1
+  8a:	30 e0       	ldi	r19, 0x00	; 0
+  8c:	02 c0       	rjmp	.+4      	; 0x92 <Pin_reset+0xe>
+  8e:	22 0f       	add	r18, r18
+  90:	33 1f       	adc	r19, r19
+  92:	6a 95       	dec	r22
+  94:	e2 f7       	brpl	.-8      	; 0x8e <Pin_reset+0xa>
+  96:	20 95       	com	r18
+  98:	29 23       	and	r18, r25
+  9a:	20 83       	st	Z, r18
+  9c:	08 95       	ret
+
+0000009e <main>:
+#include <GPIO/GPIO.h/GPIO.h>
+
+
+int main(void)
+{
+	 Pin_set(0x32,0);
+  9e:	60 e0       	ldi	r22, 0x00	; 0
+  a0:	82 e3       	ldi	r24, 0x32	; 50
+  a2:	90 e0       	ldi	r25, 0x00	; 0
+  a4:	0e 94 36 00 	call	0x6c	; 0x6c <Pin_set>
+	 Pin_set(0x32,1);
+  a8:	61 e0       	ldi	r22, 0x01	; 1
+  aa:	82 e3       	ldi	r24, 0x32	; 50
+  ac:	90 e0       	ldi	r25, 0x00	; 0
+  ae:	0e 94 36 00 	call	0x6c	; 0x6c <Pin_set>
+	 Pin_reset(0x31,0);
+  b2:	60 e0       	ldi	r22, 0x00	; 0
+  b4:	81 e3       	ldi	r24, 0x31	; 49
+  b6:	90 e0       	ldi	r25, 0x00	; 0
+  b8:	0e 94 42 00 	call	0x84	; 0x84 <Pin_reset>
+	 Pin_reset(0x31,1);
+  bc:	61 e0       	ldi	r22, 0x01	; 1
+  be:	81 e3       	ldi	r24, 0x31	; 49
+  c0:	90 e0       	ldi	r25, 0x00	; 0
+  c2:	0e 94 42 00 	call	0x84	; 0x84 <Pin_reset>
+	 Pin_set(0x31,4);
+  c6:	64 e0       	ldi	r22, 0x04	; 4
+  c8:	81 e3       	ldi	r24, 0x31	; 49
+  ca:	90 e0       	ldi	r25, 0x00	; 0
+  cc:	0e 94 36 00 	call	0x6c	; 0x6c <Pin_set>
+	 Pin_reset(0x32,4);
+  d0:	64 e0       	ldi	r22, 0x04	; 4
+  d2:	82 e3       	ldi	r24, 0x32	; 50
+  d4:	90 e0       	ldi	r25, 0x00	; 0
+  d6:	0e 94 42 00 	call	0x84	; 0x84 <Pin_reset>
+		uint8_t pin6_value;
+		uint8_t pin7_value;
+		
+		pin6_value = (( PIND ) & 1);
+		
+		if( pin6_value == 1 )
+  da:	80 99       	sbic	0x10, 0	; 16
+	
+		{
+			PORTD |= (1<<4);
+  dc:	94 9a       	sbi	0x12, 4	; 18
+			
+		}
+		
+		pin7_value = ((PIND>>1) & 1);
+		
+		if( pin7_value == 1)
+  de:	81 9b       	sbis	0x10, 1	; 16
+  e0:	fc cf       	rjmp	.-8      	; 0xda <main+0x3c>
+		
+		{
+			PORTD &= ~(1<<4);
+  e2:	94 98       	cbi	0x12, 4	; 18
+  e4:	fa cf       	rjmp	.-12     	; 0xda <main+0x3c>
+
+000000e6 <_exit>:
+  e6:	f8 94       	cli
+
+000000e8 <__stop_program>:
+  e8:	ff cf       	rjmp	.-2      	; 0xe8 <__stop_program>
