@@ -27,7 +27,7 @@ extern void Pin_mode(unsigned int PORT_address , unsigned int DDR_address , uint
 	if (Pin_state == INPUT)
 	{
 		(*(volatile uint8_t *)(DDR_address)) &= ~(1<<Pin_index) ;
-		(*(volatile uint8_t *)(PORT_address)) |= (1<<Pin_index); // To activate the pull up resistor
+		(*(volatile uint8_t *)(PORT_address)) |= (1<<Pin_index) ; // To activate the pull up resistor
 	}
 	else if (Pin_state == OUTPUT)
 	{

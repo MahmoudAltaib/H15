@@ -128,11 +128,11 @@ extern void ADC_VALUE_ANALYSE(uint16_t u16ADC_value , uint16_t *pu16ADC_array_va
 
 extern void ADC_SHOW_VALUE(uint16_t *pu16Value)
 {
-	LCD_DATA(pu16Value[3]);
-	LCD_DATA('.');
+	LCD_CERTAIN_DATA(pu16Value[3]);
+	LCD_CERTAIN_DATA('.');
 	
-	LCD_DATA(pu16Value[2]);
-	LCD_DATA(pu16Value[1]);
-	LCD_DATA(pu16Value[0]);
+	LCD_CERTAIN_DATA(pu16Value[2]);
+	LCD_CERTAIN_DATA(pu16Value[1]);
+	LCD_CERTAIN_DATA(pu16Value[0]);
 }
 

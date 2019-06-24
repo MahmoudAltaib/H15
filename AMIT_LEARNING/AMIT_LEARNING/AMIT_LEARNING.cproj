@@ -136,6 +136,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="APP\AMIT_BT\AMIT_BLUETOOTH.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="APP\AMIT_BT\AMIT_BLUETOOTH.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="APP\BUZZER_ONE_BUTTON\BUZZER_ON_OFF.c">
       <SubType>compile</SubType>
     </Compile>
@@ -229,6 +235,12 @@
     <Compile Include="MCAL\GPIO\GPIO.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\SPI\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\TIMER0\TIMER0.h">
       <SubType>compile</SubType>
     </Compile>
@@ -241,12 +253,19 @@
     <Compile Include="MCAL\TIMER1\TIMER1.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\USART\USART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\USART\USART.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="APP\BUZZER_ONE_BUTTON" />
     <Folder Include="APP\LCD_HELLO" />
     <Folder Include="APP\LCD_TEST" />
     <Folder Include="APP\KEYPAD" />
+    <Folder Include="APP\AMIT_BT" />
     <Folder Include="APP\TEST" />
     <Folder Include="APP\SEGMENT7" />
     <Folder Include="MCAL" />
@@ -254,6 +273,8 @@
     <Folder Include="MCAL\GPIO" />
     <Folder Include="APP" />
     <Folder Include="MCAL\ADC" />
+    <Folder Include="MCAL\SPI" />
+    <Folder Include="MCAL\USART" />
     <Folder Include="MCAL\TIMER1" />
     <Folder Include="MCAL\TIMER0" />
   </ItemGroup>

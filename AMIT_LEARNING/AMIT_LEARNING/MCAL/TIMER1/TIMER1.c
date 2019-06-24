@@ -17,6 +17,9 @@ extern void T1_PWM_INIT(void)
 	
 	TCCR_1A |= 0xa1 ;
 	TCCR_1B |= 0x0a ;
+	
+	TOCR1A_1L = 0x00;
+	TOCR1B_1L = 0x00;
 }
 
 extern void T1_PWM_DEINIT(void)

@@ -102,6 +102,28 @@ extern void LCD_DATA_STRING(uint8_t *pu8Data , uint8_t u8Size)
 	LCD_COMMAND(SHIFT_CURSOR_POSITION_RIGHT);
 }
 
+extern void LCD_CERTAIN_DATA(char u8Data)
+{
+	*((unsigned int *)(D4_PORT)) = (*((unsigned int *)(D4_PORT)) & 0x0F) | (u8Data & 0xF0) ;
+	RS_STATE(RS_DATA);
+	RW_STATE(RW_WRITE);
+	HIGH_TO_LOW_PULSE();
+	
+	*((unsigned int *)(D4_PORT)) = u8Data << 4;
+	HIGH_TO_LOW_PULSE();
+}
+
+extern void LCD_DATA_CERTAIN_STRING(char *pu8Data , uint8_t u8Size)
+{
+	uint8_t u8Count = 0;
+	
+	for (u8Count = 0; u8Count < u8Size ; u8Count ++)
+	{
+		LCD_CERTAIN_DATA(pu8Data[u8Count]);
+	}
+	
+}
+
 extern void LCD_INIT()
 {
 	Pin_mode(RW_PORT, RW_DDR , RW_PIN_NUMBER , OUTPUT);

@@ -96,6 +96,8 @@
 	extern void LCD_DATA_STRING(uint8_t *pu8Data , uint8_t u8Size);
 	extern void LCD_INIT();
 	extern void LCD_PRINT(unsigned char *puStatement);
+	extern void LCD_DATA_CERTAIN_STRING(char *pu8Data , uint8_t u8Size);
+	extern void LCD_CERTAIN_DATA(char u8Data);
 
 #endif
 

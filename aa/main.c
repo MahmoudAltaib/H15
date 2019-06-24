@@ -3,12 +3,7 @@
 
 int main()
 {
-    const int x = 10 ;
-    int *ptr = &x ;
+    char aaa[] = "5) Test PWM with ADC";
 
-    printf("%d",x);
-
-    *ptr = 5 ;
-    printf("%d",x);
-
+    printf("%d" , sizeof(aaa));
 }

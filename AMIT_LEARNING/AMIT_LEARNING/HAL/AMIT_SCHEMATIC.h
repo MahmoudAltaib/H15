@@ -19,7 +19,8 @@
 #include "LCD_HELLO/LCD_HELLO.h"	
 #include "LCD_TEST/LCD_TEST.h"
 #include "KEYPAD/KEYPAD_LCD.h"
-
+#include "AMIT_BT/AMIT_BLUETOOTH.h"
+#include "USART/USART.h"
 #include "TIMER0/TIMER0.h"	
 #include "TIMER1/TIMER1.h"
 

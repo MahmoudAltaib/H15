@@ -10,9 +10,6 @@
 #define LCD_TEST_H_
 
 #include "AMIT_SCHEMATIC.h"
-#include "LEDS_INTERFACE.h"
-#include "ADC/ADC.h"
-#include <inttypes.h>
 
 #define DELAY_BETWEEN_ACTIONS_ms 300  // in milliseconds
 

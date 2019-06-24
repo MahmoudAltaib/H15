@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+APP\AMIT_BT\AMIT_BLUETOOTH.c
+
 APP\BUZZER_ONE_BUTTON\BUZZER_ON_OFF.c
 
 APP\KEYPAD\KEYPAD_LCD.c
@@ -34,7 +36,11 @@ MCAL\ADC\ADC.c
 
 MCAL\GPIO\GPIO.c
 
+MCAL\SPI\SPI.c
+
 MCAL\TIMER0\TIMER0.c
 
 MCAL\TIMER1\TIMER1.c
+
+MCAL\USART\USART.c
 

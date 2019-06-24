@@ -18,8 +18,6 @@ const unsigned char gu8Key_pad[4][4] = {{'o','s','B','A'},
 										{'#','9','6','3'},
 										{'0','8','5','2'},
 										{'*','7','4','1'}};
-     
-	 #include "avr/io.h"         
 int main(void)
 {	
 	// OUTPUTS
@@ -46,8 +44,11 @@ int main(void)
 	// INPUTS
 
 		// BUTTONS
-	Pin_mode(BUTTON0_PORT , BUTTON0_DDR , BUTTON0_PIN_NUMBER , INPUT);
-	Pin_mode(BUTTON1_PORT , BUTTON1_DDR , BUTTON1_PIN_NUMBER , INPUT);
+		
+		
+	/*Pin_mode(BUTTON0_PORT , BUTTON0_DDR , BUTTON0_PIN_NUMBER , INPUT);
+	Pin_mode(BUTTON1_PORT , BUTTON1_DDR , BUTTON1_PIN_NUMBER , INPUT);*/
+	
 	Pin_mode(BUTTON2_PORT , BUTTON2_DDR , BUTTON2_PIN_NUMBER , INPUT);
 		// ADC
 	Pin_reset(ADC0_DDR, ADC0_PIN_NUMBER); //No pull up resistors
@@ -61,19 +62,21 @@ int main(void)
 	RELAY_OFF();
 	/*SEGMENT_RESET();*/
 	LCD_INIT();
+	USART_INIT();
 	
-extern void KEYPAD_TEST();
-
 	while (1)
 	{
-		if (gu8ID_right != 0 || gu8Password_right != 0)
+		
+		/*if (gu8ID_right != 0 && gu8Password_right != 0)
 		{
-			LCD_TEST();
+			AMIT_BT_TEST();
 		} 
 		else
 		{
 			KEYPAD_WITH_LCD();
-		}
+		}*/
+		AMIT_BT_TEST();
+		
 	}
 }
 

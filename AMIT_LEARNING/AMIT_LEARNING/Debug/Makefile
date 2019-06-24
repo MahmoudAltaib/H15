@@ -37,6 +37,7 @@ SUBDIRS :=  \
 ../APP/LCD_HELLO \
 ../APP/LCD_TEST \
 ../APP/KEYPAD \
+../APP/AMIT_BT \
 ../APP/TEST \
 ../APP/SEGMENT7 \
 ../MCAL \
@@ -44,12 +45,15 @@ SUBDIRS :=  \
 ../MCAL/GPIO \
 ../APP \
 ../MCAL/ADC \
+../MCAL/SPI \
+../MCAL/USART \
 ../MCAL/TIMER1 \
 ../MCAL/TIMER0
 
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../APP/AMIT_BT/AMIT_BLUETOOTH.c \
 ../APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.c \
 ../APP/KEYPAD/KEYPAD_LCD.c \
 ../APP/LCD_HELLO/LCD_HELLO.c \
@@ -66,8 +70,10 @@ C_SRCS +=  \
 ../main.c \
 ../MCAL/ADC/ADC.c \
 ../MCAL/GPIO/GPIO.c \
+../MCAL/SPI/SPI.c \
 ../MCAL/TIMER0/TIMER0.c \
-../MCAL/TIMER1/TIMER1.c
+../MCAL/TIMER1/TIMER1.c \
+../MCAL/USART/USART.c
 
 
 PREPROCESSING_SRCS += 
@@ -77,6 +83,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+APP/AMIT_BT/AMIT_BLUETOOTH.o \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.o \
 APP/KEYPAD/KEYPAD_LCD.o \
 APP/LCD_HELLO/LCD_HELLO.o \
@@ -93,10 +100,13 @@ HAL/SEGMENT7_INTERFACE.o \
 main.o \
 MCAL/ADC/ADC.o \
 MCAL/GPIO/GPIO.o \
+MCAL/SPI/SPI.o \
 MCAL/TIMER0/TIMER0.o \
-MCAL/TIMER1/TIMER1.o
+MCAL/TIMER1/TIMER1.o \
+MCAL/USART/USART.o
 
 OBJS_AS_ARGS +=  \
+APP/AMIT_BT/AMIT_BLUETOOTH.o \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.o \
 APP/KEYPAD/KEYPAD_LCD.o \
 APP/LCD_HELLO/LCD_HELLO.o \
@@ -113,10 +123,13 @@ HAL/SEGMENT7_INTERFACE.o \
 main.o \
 MCAL/ADC/ADC.o \
 MCAL/GPIO/GPIO.o \
+MCAL/SPI/SPI.o \
 MCAL/TIMER0/TIMER0.o \
-MCAL/TIMER1/TIMER1.o
+MCAL/TIMER1/TIMER1.o \
+MCAL/USART/USART.o
 
 C_DEPS +=  \
+APP/AMIT_BT/AMIT_BLUETOOTH.d \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.d \
 APP/KEYPAD/KEYPAD_LCD.d \
 APP/LCD_HELLO/LCD_HELLO.d \
@@ -133,10 +146,13 @@ HAL/SEGMENT7_INTERFACE.d \
 main.d \
 MCAL/ADC/ADC.d \
 MCAL/GPIO/GPIO.d \
+MCAL/SPI/SPI.d \
 MCAL/TIMER0/TIMER0.d \
-MCAL/TIMER1/TIMER1.d
+MCAL/TIMER1/TIMER1.d \
+MCAL/USART/USART.d
 
 C_DEPS_AS_ARGS +=  \
+APP/AMIT_BT/AMIT_BLUETOOTH.d \
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.d \
 APP/KEYPAD/KEYPAD_LCD.d \
 APP/LCD_HELLO/LCD_HELLO.d \
@@ -153,8 +169,10 @@ HAL/SEGMENT7_INTERFACE.d \
 main.d \
 MCAL/ADC/ADC.d \
 MCAL/GPIO/GPIO.d \
+MCAL/SPI/SPI.d \
 MCAL/TIMER0/TIMER0.d \
-MCAL/TIMER1/TIMER1.d
+MCAL/TIMER1/TIMER1.d \
+MCAL/USART/USART.d
 
 OUTPUT_FILE_PATH +=AMIT_LEARNING.elf
 
@@ -170,6 +188,13 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+APP/AMIT_BT/AMIT_BLUETOOTH.o: ../APP/AMIT_BT/AMIT_BLUETOOTH.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.o: ../APP/BUZZER_ONE_BUTTON/BUZZER_ON_OFF.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -282,6 +307,13 @@ MCAL/GPIO/GPIO.o: ../MCAL/GPIO/GPIO.c
 	@echo Finished building: $<
 	
 
+MCAL/SPI/SPI.o: ../MCAL/SPI/SPI.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 MCAL/TIMER0/TIMER0.o: ../MCAL/TIMER0/TIMER0.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -290,6 +322,13 @@ MCAL/TIMER0/TIMER0.o: ../MCAL/TIMER0/TIMER0.c
 	
 
 MCAL/TIMER1/TIMER1.o: ../MCAL/TIMER1/TIMER1.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/USART/USART.o: ../MCAL/USART/USART.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\include" -I"../MCAL" -I"../HAL" -I"../APP"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
